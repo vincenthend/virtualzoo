@@ -2,7 +2,7 @@
 
 ## Timeline
 
-Timeline :
+	Timeline :
 		1. Sourcecode 				: 24 Maret 2017
 			1.1 Sourcecode VZ02 	: 21 Maret 2017
 			1.2 Sourcecode VZ03		: 24 Maret 2017
@@ -11,7 +11,7 @@ Timeline :
 
 ## Daftar Package
 
-Daftar Package & Pembagian Tugas :
+	Daftar Package & Pembagian Tugas :
 		1. VZ02
 			- Animal												|		AMUL		|
 			- Cage													|		ALIF		|
