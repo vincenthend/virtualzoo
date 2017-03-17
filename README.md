@@ -11,7 +11,7 @@ Timeline :
 
 ## Daftar Package
 
-	Daftar Package & Pembagian Tugas :
+Daftar Package & Pembagian Tugas :
 		1. VZ02
 			- Animal												|		AMUL		|
 			- Cage													|		ALIF		|
