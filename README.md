@@ -31,3 +31,8 @@
 			- Renderable												|		ALIF		|
 			- Water_Animal												|		AMUL		|
 			- Zoo													|		ALIF		|
+
+			
+## Notes
+
+Jangan ubah isi folder C++ Files dan Specs karena digunakan sebagai template dan referensi

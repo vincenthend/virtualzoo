@@ -1,0 +1,18 @@
+Running main() from gtest_main.cc
+[==========] Running 4 tests from 1 test case.
+[----------] Global test environment set-up.
+[----------] 4 tests from VZTest
+[ RUN      ] VZTest.OutputTest1
+[       OK ] VZTest.OutputTest1 (1 ms)
+[ RUN      ] VZTest.OutputTest2
+[       OK ] VZTest.OutputTest2 (0 ms)
+[ RUN      ] VZTest.OutputTest3
+[       OK ] VZTest.OutputTest3 (0 ms)
+[ RUN      ] VZTest.OutputTest4
+[       OK ] VZTest.OutputTest4 (0 ms)
+[----------] 4 tests from VZTest (1 ms total)
+
+[----------] Global test environment tear-down
+[==========] 4 tests from 1 test case ran. (1 ms total)
+[  PASSED  ] 4 tests.
+
