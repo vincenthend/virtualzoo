@@ -1,11 +1,17 @@
 class Cage
 {
+	private int cage_id;
+    private int n_animal;
+    private int n_cell;
+    private int cage_type;
+    private Animal a[];
+    private Cell c[];
 	Cage()
 	{
 		n_animal = 0;
 		n_cell = 0;
-		a = new Animal[999][];
-		c = new Cell[999][];
+		a = new Animal[999];
+		c = new Cell[999];
 		cage_id = -1;
 		cage_type = 0;
 	}
@@ -43,11 +49,68 @@ class Cage
 				i += 1;
 		return ret;	
 	}
-	
-	int cage_id;
-    int n_animal;
-    int n_cell;
-    int cage_type;
-    Animal a[][];
-    Cell c[][];
+	public int CountFoodHerbivore()
+	{
+		int i;
+		int sum = 0;
+		for(i=0;i<n_animal;i++)
+		{
+			if (a[i].GetFoodType==1)
+				sum += a[i].GetFoodQuantity();
+		}
+		return sum;
+	}
+	public int CountFoodCarnivore()
+	{
+		int i;
+		int sum = 0;
+		for(i=0;i<n_animal;i++)
+		{
+			if (a[i].GetFoodType==2)
+				sum += a[i].GetFoodQuantity();
+		}
+		return sum;
+	}
+	public int CountFoodOmnivore()
+	{
+		int i;
+		int sum = 0;
+		for(i=0;i<n_animal;i++)
+		{
+			if (a[i].GetFoodType==3)
+				sum += a[i].GetFoodQuantity();
+		}
+		return sum;
+	}
+	public void AddHabitat(Cell H)
+	{
+		if (n_cell==0)
+		{
+			cage_type = H.GetCellID();
+			c[n_cell] = H;
+			n_cell += 1;
+			H.SetCageID(cage_id);
+		}
+		else
+		{
+			if (cage_type == H.GetCellID())
+			{
+				c[n_cell] = H;
+				n_cell += 1;
+				H.SetCageID(cage_id);
+			}
+		}
+	}
+	public boolean IsExist(int ID)
+	{
+		boolean found = false;
+		int i = 0;
+		while (i < n_animal)
+		{
+			if (a[i].GetType() == ID)
+				found = true;
+			i++;
+		}
+		return found;
+	}
 }			 
