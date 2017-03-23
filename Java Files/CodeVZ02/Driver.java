@@ -3,19 +3,154 @@
  * Class driver, main program dan inisialisasi isi awal zoo
  */
 
+import java.io.BufferedReader;
+import java.io.FileReader;
 import java.util.Scanner;
 import java.util.Random;
+import java.io.IOException;
 
 class Driver {
   private Zoo z;
-
 
   public Driver() {
     //TBD
   }
 
   public Driver(String input) {
-    //TBD
+    try {
+      //Input File
+      FileReader infile = new FileReader(input);
+      BufferedReader reader = new BufferedReader(infile);
+    /*DataInputStream in_stream = new DataInputStream(
+            new BufferedInputStream(
+                    new FileInputStream(input)));*/
+
+      Cell c;
+      StringBuffer st;
+      int i, j, k, l, w, h, temp, a_id, a_count;
+      boolean found, enemy;
+      Animal a;
+
+      c = null;
+
+      h = Integer.parseInt(reader.readLine());
+      w = Integer.parseInt(reader.readLine());
+
+      z = new Zoo(w, h);
+      for (i = 0; i < z.GetHeight(); i++) {
+        st = new StringBuffer(reader.readLine());
+        for (j = 0; j <= z.GetWidth(); j++) {
+          if ((st.substring(j,j+1)).equals("L")) {
+            c = new Cell(i, j, 11);
+          }
+          else {
+            if ((st.substring(j, j + 1)).equals("W")) {
+              c = new Cell(i, j, 12);
+            }
+            else {
+              if ((st.substring(j, j + 1)).equals("A")) {
+                c = new Cell(i, j, 13);
+              }
+              else {
+                if ((st.substring(j, j + 1)).equals("S")) {
+                  c = new Cell(i, j, 210);
+                }
+                else {
+                  if ((st.substring(j, j + 1)).equals("F")) {
+                    c = new Cell(i, j, 211);
+                  }
+                  else {
+                    if ((st.substring(j, j + 1)).equals("X")) {
+                      c = new Cell(i, j, 21);
+                    }
+                    else {
+                      if ((st.substring(j, j + 1)).equals("R")) {
+                        c = new Cell(i, j, 22);
+                      }
+                      else {
+                        if ((st.substring(j, j + 1)).equals("P")) {
+                          c = new Cell(i, j, 23);
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+          z.AddCell(i, j, c);
+        }
+      }
+      //Add Cage
+      for (i = 0; i < z.GetHeight(); i++) {
+        for (j = 0; j < z.GetWidth(); j++) {
+          found = false;
+          c = z.GetCell(i, j);
+          if ((c.GetCellID() >= 11) && (c.GetCellID() <= 13)) {
+            if (((j - 1) >= 0) && (!(found))) {
+              if (((z.GetCell(i, j).GetCellID()) == (z.GetCell(i, j - 1).GetCellID()))) {
+                z.GetCage(z.GetCell(i, j - 1).GetCageID()).AddHabitat(z.GetCell(i, j));
+                found = true;
+              }
+            }
+            if (((i - 1) >= 0) && (!(found))) {
+              if (((z.GetCell(i, j).GetCellID()) == (z.GetCell(i - 1, j).GetCellID()))) {
+                z.GetCage(z.GetCell(i - 1, j).GetCageID()).AddHabitat(z.GetCell(i, j));
+                found = true;
+              }
+            }
+            if (!(found)) {
+              z.AddCage();
+              z.GetCage(z.GetNCage() - 1).AddHabitat(z.GetCell(i, j));
+            }
+          }
+        }
+      }
+      //Add animal
+      temp = Integer.parseInt(reader.readLine());
+      for (i = 0; i < temp; i++) {
+        st = new StringBuffer (reader.readLine());
+
+        a_id = 0;
+        j = 0;
+        while ((s[j] >= '0') && (s[j] <= '9')) {
+          a_id = (a_id * 10) + (s[j] - '0');
+          j++;
+        }
+        j++;
+        a_count = 0;
+        while ((s[j] >= '0') && (s[j] <= '9')) {
+          a_count = (a_count * 10) + (s[j] - '0');
+          j++;
+        }
+        k = 0;
+        for (j = 0; j < a_count; j++) {
+          a = new Animal(a_id);
+          found = false;
+          while ((!(found)) && (k < z.GetNCage())) {
+            if ((a.GetHabitat()[(((z.GetCage(k)).GetCageType()) % 10) - 1]) && !(z.GetCage(k).IsFull())) {
+              l = 0;
+              enemy = false;
+              while (l < a.GetCEnemy()) {
+                if (z.GetCage(k).IsExist(a.GetEnemyList()[l])) {
+                  enemy = true;
+                }
+                l++;
+              }
+              if (!(enemy)) {
+                found = true;
+                (z.GetCage(k)).AddAnimal(a);
+              }
+            }
+            k++;
+          }
+        }
+      }
+      reader.close();
+    }
+    catch(IOException excp){
+      excp.getCause();
+    }
   }
 
   public void PrintMenu() {
@@ -24,7 +159,7 @@ class Driver {
     choice = 0;
     do {
       System.out.println("=========================================");
-      System.out.println("|							 VIRTUAL ZOO						 |");
+      System.out.println("|		          VIRTUAL ZOO		      |");
       System.out.println("=========================================");
       System.out.println("Menu :");
       System.out.println("1. Tampilkan Zoo");
@@ -38,7 +173,7 @@ class Driver {
       if (choice == 1) {
         do {
           System.out.println("=========================================");
-          System.out.println("|							 VIRTUAL ZOO						 |");
+          System.out.println("|		          VIRTUAL ZOO		      |");
           System.out.println("=========================================");
           System.out.println("1. Tampilkan seluruhnya");
           System.out.println("2. Tampilkan sebagian");
@@ -79,15 +214,15 @@ class Driver {
       }
     } while (choice != 9);
   }
-  public void PrintStatus() {
+  public void PrintStatus() {//lebih pas dipindah ke zoo
     System.out.println("========================================");
-    System.out.println("			- Food Count -");
+    System.out.println("		 	  - Food Count -");
     System.out.println("	 Herbivore : " + z.CountFoodHerbivore());
     System.out.println("	 Carnivore : " + z.CountFoodCarnivore());
     System.out.println("	 Omnivore	: " + z.CountFoodOmnivore());
     System.out.println("========================================");
   }
-  public void PrintZoo() {
+  public void PrintZoo() {//lebih pas dipindah ke zoo
     int i, j;
     Cell c;
     Animal a;
@@ -122,7 +257,7 @@ class Driver {
       System.out.println();
     }
   }
-  public void PrintZoo(int x, int y) {
+  public void PrintZoo(int x, int y) {//lebih pas dipindah ke zoo
     int i, j;
     Cell c;
     Animal a;
@@ -157,7 +292,7 @@ class Driver {
       System.out.println("");
     }
   }
-  public void PrintZoo(int x1, int x2, int y1, int y2) {
+  public void PrintZoo(int x1, int x2, int y1, int y2) {//lebih pas dipindah ke zoo
     int i, j;
     Cell c;
     Animal a;
