@@ -9,9 +9,146 @@ import java.util.Random;
 class Driver {
   private Zoo z;
   public Driver(String input) {
-    //TBD
-
-
+    Cell c;
+	DataInputStream in_stream = new DataInputStream(
+      new BufferedInputStream(
+        new FileInputStream(Input)));
+    String s;
+    int i, j, k, l, w, h, temp, a_id, a_count;
+    bool found, enemy;
+    Animal a;
+    a = NULL;
+    getline(myfile, s);
+    i = 0;
+    temp = 0;
+    c = NULL;
+    while ((s[i] >= '0') && (s[i] <= '9')) {
+      temp = (temp * 10) + (s[i] - '0');
+      i++;
+    }
+    h = temp;
+    getline(myfile, s);
+    i = 0;
+    temp = 0;
+    while ((s[i] >= '0') && (s[i] <= '9')) {
+      temp = (temp * 10) + (s[i] - '0');
+      i++;
+    }
+    w = temp;
+    z = new Zoo(w, h);
+    for (i = 0; i < z.GetHeight(); i++) {
+      getline(myfile, s);
+      for (j = 0; j <= z.GetWidth(); j++) {
+        if (s[j] == 'L'){
+          c = new Cell(i, j, 11);
+        }
+        else {
+          if (s[j] == 'W') {
+            c = new Cell(i, j, 12);
+          }
+          else {
+            if (s[j] == 'A') {
+              c = new Cell(i, j, 13);
+            }
+            else {
+              if (s[j] == 'S') {
+                c = new Cell(i, j, 210);
+              }
+              else {
+                if (s[j] == 'F') {
+                  c = new Cell(i, j, 211);
+                }
+                else {
+                  if (s[j] == 'X') {
+                    c = new Cell(i, j, 21);
+                  }
+                  else {
+                    if (s[j] == 'R') {
+                      c = new Cell(i, j, 22);
+                    }
+                    else {
+                      if (s[j] == 'P') {
+                        c = new Cell(i, j, 23);
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+        z.AddCell(i, j, c);
+      }
+    }
+    for (i = 0; i < z.GetHeight(); i++) {
+      for (j = 0; j < z.GetWidth(); j++) {
+        found = false;
+        c = z.GetCell(i, j);
+        if ((c.GetCellID()>= 11) && (c.GetCellID() <= 13)) {
+          if (((j - 1) >= 0) && (!(found))) {
+            if (((z.GetCell(i, j).GetCellID()) == (z.GetCell(i, j - 1).GetCellID()))) {
+              z.GetCage(z.GetCell(i, j - 1).GetCageID()).AddHabitat(z.GetCell(i, j));
+              found = true;
+            }
+          }
+          if (((i - 1) >= 0) && (!(found))) {
+            if (((z.GetCell(i, j).GetCellID()) == (z.GetCell(i - 1, j).GetCellID()))) {
+              z.GetCage(z.GetCell(i - 1, j).GetCageID()).AddHabitat(z.GetCell(i, j));
+              found = true;
+            }
+          }
+          if (!(found)) {
+            z.AddCage();
+            z.GetCage(z.GetNCage() - 1).AddHabitat(z.GetCell(i, j));
+          }
+        }
+      }
+    }
+    getline(myfile, s);
+    i = 0;
+    temp = 0;
+    while ((s[i] >= '0') && (s[i] <= '9')) {
+      temp = (temp * 10) + (s[i] - '0');
+      i++;
+    }
+    for (i = 0; i < temp; i++) {
+      getline(myfile, s);
+      a_id = 0;
+      j = 0;
+      while ((s[j] >= '0') && (s[j] <= '9')) {
+        a_id = (a_id * 10) + (s[j] - '0');
+        j++;
+      }
+      j++;
+      a_count = 0;
+      while ((s[j] >= '0') && (s[j] <= '9')) {
+        a_count = (a_count * 10) + (s[j] - '0');
+        j++;
+      }
+      k = 0;
+      for (j = 0; j < a_count; j++) {
+        a = new Animal(a_id);
+        found = false;
+        while ((!(found)) && (k < z.GetNCage())) {
+          if ((a.GetHabitat()[(((z.GetCage(k)).GetCageType()) % 10) - 1]) && !(z.GetCage(k).IsFull())) {
+            l = 0;
+            enemy = false;
+            while (l < a.GetCEnemy()) {
+              if (z.GetCage(k).IsExist(a.GetEnemyList()[l])) {
+                enemy = true;
+              }
+              l++;
+            }
+            if (!(enemy)) {
+              found = true;
+              (z.GetCage(k)).AddAnimal(a);
+            }
+          }
+          k++;
+        }
+      }
+    }
+    myfile.close();
   }
 
   public void PrintMenu() {
@@ -20,7 +157,7 @@ class Driver {
     choice = 0;
     do {
       System.out.println("=========================================");
-      System.out.println("|							 VIRTUAL ZOO						 |");
+      System.out.println("|		          VIRTUAL ZOO		      |");
       System.out.println("=========================================");
       System.out.println("Menu :");
       System.out.println("1. Tampilkan Zoo");
@@ -34,8 +171,8 @@ class Driver {
       if (choice == 1) {
         do {
           System.out.println("=========================================");
-          System.out.println("|							 VIRTUAL ZOO						 |");
-          System.out.println("=========================================");
+		  System.out.println("|		          VIRTUAL ZOO		      |");
+		  System.out.println("=========================================");
           System.out.println("1. Tampilkan seluruhnya");
           System.out.println("2. Tampilkan sebagian");
           System.out.println("9. Keluar");
@@ -75,15 +212,15 @@ class Driver {
       }
     } while (choice != 9);
   }
-  public void PrintStatus() {
+  public void PrintStatus() {//lebih pas dipindah ke zoo
     System.out.println("========================================");
-    System.out.println("			- Food Count -");
+    System.out.println("		 	  - Food Count -");
     System.out.println("	 Herbivore : " + z.CountFoodHerbivore());
     System.out.println("	 Carnivore : " + z.CountFoodCarnivore());
     System.out.println("	 Omnivore	: " + z.CountFoodOmnivore());
     System.out.println("========================================");
   }
-  public void PrintZoo() {
+  public void PrintZoo() {//lebih pas dipindah ke zoo
     int i, j;
     Cell c;
     Animal a;
@@ -118,7 +255,7 @@ class Driver {
       System.out.println();
     }
   }
-  public void PrintZoo(int x, int y) {
+  public void PrintZoo(int x, int y) {//lebih pas dipindah ke zoo
     int i, j;
     Cell c;
     Animal a;
@@ -153,7 +290,7 @@ class Driver {
       System.out.println("");
     }
   }
-  public void PrintZoo(int x1, int x2, int y1, int y2) {
+  public void PrintZoo(int x1, int x2, int y1, int y2) {//lebih pas dipindah ke zoo
     int i, j;
     Cell c;
     Animal a;
