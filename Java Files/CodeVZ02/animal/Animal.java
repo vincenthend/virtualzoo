@@ -362,7 +362,7 @@ public class Animal {
    * Melakukan pencetakan terhadap code
    */
   public void Render() {
-    System.out.println(code);
+    System.out.print(code);
   }
   /**
    * Mengambil jumlah musuh hewan

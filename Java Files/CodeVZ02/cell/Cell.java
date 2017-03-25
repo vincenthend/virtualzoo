@@ -55,7 +55,7 @@ class Cell {
    * Melakukan Render (mencetak Code)
    */
   public void Render() {
-    System.out.println(code);
+    System.out.print(code);
   }
   /**
    * @param c Code yang diinginkan

@@ -4,6 +4,7 @@
  */
 
 import java.io.BufferedReader;
+import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.util.Scanner;
 import java.util.Random;
@@ -16,12 +17,13 @@ class Driver {
     //TBD
   }
 
-  public Driver(String input) {
+  public Driver(String input_file) {
     try {
       //Input File
-      FileReader infile = new FileReader(input);
+      System.out.println(System.getProperty("user.dir"));
+      FileReader infile = new FileReader(input_file);
       BufferedReader reader = new BufferedReader(infile);
-    /*DataInputStream in_stream = new DataInputStream(
+    /*DataInputS1tream in_stream = new DataInputStream(
             new BufferedInputStream(
                     new FileInputStream(input)));*/
 
@@ -39,36 +41,36 @@ class Driver {
       z = new Zoo(w, h);
       for (i = 0; i < z.GetHeight(); i++) {
         st = new StringBuffer(reader.readLine());
-        for (j = 0; j <= z.GetWidth(); j++) {
+        for (j = 0; j < z.GetWidth(); j++) {
           if ((st.substring(j,j+1)).equals("L")) {
             c = new Cell(i, j, 11);
           }
           else {
-            if ((st.substring(j, j + 1)).equals("W")) {
+            if ((st.substring(j, j+1)).equals("W")) {
               c = new Cell(i, j, 12);
             }
             else {
-              if ((st.substring(j, j + 1)).equals("A")) {
+              if ((st.substring(j, j+1).equals("A"))) {
                 c = new Cell(i, j, 13);
               }
               else {
-                if ((st.substring(j, j + 1)).equals("S")) {
+                if ((st.substring(j, j+1)).equals("S")) {
                   c = new Cell(i, j, 210);
                 }
                 else {
-                  if ((st.substring(j, j + 1)).equals("F")) {
+                  if ((st.substring(j, j+1)).equals("F")) {
                     c = new Cell(i, j, 211);
                   }
                   else {
-                    if ((st.substring(j, j + 1)).equals("X")) {
+                    if ((st.substring(j, j+1)).equals("X")) {
                       c = new Cell(i, j, 21);
                     }
                     else {
-                      if ((st.substring(j, j + 1)).equals("R")) {
+                      if ((st.substring(j, j+1)).equals("R")) {
                         c = new Cell(i, j, 22);
                       }
                       else {
-                        if ((st.substring(j, j + 1)).equals("P")) {
+                        if ((st.substring(j, j+1)).equals("P")) {
                           c = new Cell(i, j, 23);
                         }
                       }
@@ -106,27 +108,23 @@ class Driver {
           }
         }
       }
+
       //Add animal
       temp = Integer.parseInt(reader.readLine());
       for (i = 0; i < temp; i++) {
-        st = new StringBuffer (reader.readLine());
+        st = new StringBuffer(reader.readLine());
 
-        a_id = 0;
-        j = 0;
-        while ((s[j] >= '0') && (s[j] <= '9')) {
-          a_id = (a_id * 10) + (s[j] - '0');
-          j++;
-        }
-        j++;
-        a_count = 0;
-        while ((s[j] >= '0') && (s[j] <= '9')) {
-          a_count = (a_count * 10) + (s[j] - '0');
-          j++;
-        }
-        k = 0;
+        //Get Animal ID and Animal Count from line
+        j = st.indexOf(" ");
+        k = st.length();
+        a_id = Integer.parseInt(st.substring(0,j));
+        a_count = Integer.parseInt(st.substring(j+1,k));
+
+        //Create a new animal and find a suitable cage
         for (j = 0; j < a_count; j++) {
           a = new Animal(a_id);
           found = false;
+          //Finding a suitable cage
           while ((!(found)) && (k < z.GetNCage())) {
             if ((a.GetHabitat()[(((z.GetCage(k)).GetCageType()) % 10) - 1]) && !(z.GetCage(k).IsFull())) {
               l = 0;
@@ -148,8 +146,11 @@ class Driver {
       }
       reader.close();
     }
+    catch(FileNotFoundException excp){
+      System.out.println("File not Found");
+    }
     catch(IOException excp){
-      excp.getCause();
+      System.out.println("Input Error");
     }
   }
 
@@ -229,10 +230,6 @@ class Driver {
     for (i = 0; i < z.GetWidth(); i++) {
       System.out.print("|");
       for (j = 0; j < z.GetHeight(); j++) {
-        if (x == j && y == i) {
-          System.out.print("X");
-        }
-        else {
           c = z.GetCell(i, j);
           if (c != null) {
             if (c.GetCageID() > -1) {
@@ -251,7 +248,6 @@ class Driver {
           else {
             System.out.print("?");
           }
-        }
         System.out.print("|");
       }
       System.out.println();
@@ -348,7 +344,7 @@ class Driver {
       }
     }
     move = 0;
-    temp = (rand.nextInt() % (tc));
+    temp = Math.abs((rand.nextInt() % (tc)));
     i = tx[temp];
     j = ty[temp];
     while (c.GetCellID() != 211 && walk) {
@@ -440,7 +436,7 @@ class Driver {
         }
       }
       if (c_move > 0) {
-        move = t_move[(rand.nextInt() % c_move)];
+        move = t_move[Math.abs((rand.nextInt() % c_move))];
         if (move == 1) {
           j--;
         }
@@ -467,7 +463,7 @@ class Driver {
   }
 
   public static void main(String[] args){
-    Driver D = new Driver();
+    Driver D = new Driver("resource/map.txt");
 
     D.PrintMenu();
   }
