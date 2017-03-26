@@ -134,4 +134,69 @@ class Zoo {
     }
     return sum;
   }
+  public void PrintZoo(int x, int y) {//lebih pas dipindah ke zoo
+    int i, j;
+    Cell c;
+    Animal a;
+    for (i = 0; i < GetWidth(); i++) {
+      System.out.print("|");
+      for (j = 0; j < GetHeight(); j++) {
+        if (x == j && y == i) {
+          System.out.print("X");
+        }
+        else {
+          c = this.c[i][j];
+          if (c != null) {
+            if (c.GetCageID() > -1) {
+              a = GetCage(c.GetCageID()).IsSpaceOccupied(i, j);
+              if (a != null) {
+                a.Render();
+              }
+              else {
+                c.Render();
+              }
+            }
+            else {
+              c.Render();
+            }
+          }
+          else {
+            System.out.print("?");
+          }
+        }
+        System.out.print("|");
+      }
+      System.out.println("");
+    }
+  }
+  public void PrintZoo(int x1, int x2, int y1, int y2) {//lebih pas dipindah ke zoo
+    int i, j;
+    Cell c;
+    Animal a;
+    for (i = y1; i <= y2; i++) {
+      System.out.print("|");
+      for (j = x1; j <= x2; j++) {
+        c = this.c[i][j];
+        if (c != null) {
+          if (c.GetCageID() > -1) {
+            a = GetCage(c.GetCageID()).IsSpaceOccupied(i, j);
+            if (a != null) {
+              a.Render();
+            }
+            else {
+              c.Render();
+            }
+          }
+          else {
+            c.Render();
+          }
+        }
+        else {
+          System.out.print("?");
+        }
+        System.out.print("|");
+      }
+      System.out.println("");
+    }
+  }
 }
