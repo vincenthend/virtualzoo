@@ -1,16 +1,15 @@
-/*
-* @author Vincent Hendryanto H/13515089
-* Class Chameleon, mengatur konstruksi Chameleon
-*/
+/**
+ * @author Vincent Hendryanto H/13515089
+ * Class Chameleon, mengatur konstruksi Chameleon
+ */
 
-package animal.chameleon;
-import animal;
-import animal.landanimal;
+package animal.landanimal.chameleon;
+import animal.landanimal.LandAnimal;
 
 class Chameleon extends LandAnimal {
-  /*
-  * Mengatur konstruksi animal dengan spesifikasi yang sudah ditentukan
-  */
+  /**
+   * Mengatur konstruksi animal dengan spesifikasi yang sudah ditentukan
+   */
   Chameleon() {
     weight = 1;
     food_weight = 1;

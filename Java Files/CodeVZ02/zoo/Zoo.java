@@ -1,8 +1,12 @@
+package zoo;
+import cell.Cell;
+import cage.Cage;
+
 /**
  * @author Alif Ijlal W / 13515122
  *         Class Zoo, mengatur konstruksi zoo dan penambahan animal/cage
  */
-class Zoo {
+public class Zoo {
   private int width;
   private int height;
   private int n_cage;
@@ -24,7 +28,7 @@ class Zoo {
    * @param w Lebar zoo
    * @param h Tinggi zoo
    */
-  Zoo(int w, int h) {
+  public Zoo(int w, int h) {
     n_cage = 0;
     width = w;
     height = h;

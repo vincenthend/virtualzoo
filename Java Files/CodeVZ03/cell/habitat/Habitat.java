@@ -7,8 +7,8 @@ import cell.Cell;
  *         Class Habitat, baseclass dari Air, Land, dan Water Habitat
  */
 
-public class Habitat extends Cell{
-  public Habitat(){
+public abstract class Habitat extends Cell {
+  public Habitat() {
     loc_x = 0;
     loc_y = 0;
     cell_id = 1;

@@ -1,8 +1,10 @@
+package cell;
+
 /**
  * @author Vincent Hendryanto Halim / 13515089
  *         Class cell, melakukan pembuatan cell berdasarkan ID cell
  */
-class Cell {
+public class Cell {
   private int cell_id;
   private int loc_x;
   private int loc_y;

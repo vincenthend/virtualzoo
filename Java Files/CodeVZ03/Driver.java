@@ -5,6 +5,14 @@
 
 import animal.Animal;
 import cell.Cell;
+import cell.habitat.airhabitat.AirHabitat;
+import cell.habitat.landhabitat.LandHabitat;
+import cell.habitat.waterhabitat.WaterHabitat;
+
+import cell.facility.park.Park;
+import cell.facility.resto.Resto;
+import cell.facility.road.Road;
+
 import zoo.Zoo;
 
 import java.io.BufferedReader;
@@ -42,36 +50,36 @@ public class Driver {
       for (i = 0; i < z.GetHeight(); i++) {
         st = new StringBuffer(reader.readLine());
         for (j = 0; j < z.GetWidth(); j++) {
-          if ((st.substring(j,j+1)).equals("L")) {
-            c = new Cell(i, j, 11);
+          if ((st.substring(j, j + 1)).equals("L")) {
+            c = new LandHabitat(i, j);
           }
           else {
-            if ((st.substring(j, j+1)).equals("W")) {
-              c = new Cell(i, j, 12);
+            if ((st.substring(j, j + 1)).equals("W")) {
+              c = new WaterHabitat(i, j);
             }
             else {
-              if ((st.substring(j, j+1).equals("A"))) {
-                c = new Cell(i, j, 13);
+              if ((st.substring(j, j + 1).equals("A"))) {
+                c = new AirHabitat(i, j);
               }
               else {
-                if ((st.substring(j, j+1)).equals("S")) {
-                  c = new Cell(i, j, 210);
+                if ((st.substring(j, j + 1)).equals("S")) {
+                  c = new Road(i, j, true);
                 }
                 else {
-                  if ((st.substring(j, j+1)).equals("F")) {
-                    c = new Cell(i, j, 211);
+                  if ((st.substring(j, j + 1)).equals("F")) {
+                    c = new Road(i, j, false);
                   }
                   else {
-                    if ((st.substring(j, j+1)).equals("X")) {
-                      c = new Cell(i, j, 21);
+                    if ((st.substring(j, j + 1)).equals("X")) {
+                      c = new Road(i, j);
                     }
                     else {
-                      if ((st.substring(j, j+1)).equals("R")) {
-                        c = new Cell(i, j, 22);
+                      if ((st.substring(j, j + 1)).equals("R")) {
+                        c = new Resto(i, j);
                       }
                       else {
-                        if ((st.substring(j, j+1)).equals("P")) {
-                          c = new Cell(i, j, 23);
+                        if ((st.substring(j, j + 1)).equals("P")) {
+                          c = new Park(i, j);
                         }
                       }
                     }
@@ -117,12 +125,83 @@ public class Driver {
         //Get Animal ID and Animal Count from line
         j = st.indexOf(" ");
         k = st.length();
-        a_id = Integer.parseInt(st.substring(0,j));
-        a_count = Integer.parseInt(st.substring(j+1,k));
+        a_id = Integer.parseInt(st.substring(0, j));
+        a_count = Integer.parseInt(st.substring(j + 1, k));
 
         //Create a new animal and find a suitable cage
         for (j = 0; j < a_count; j++) {
-          a = new Animal(a_id);
+          if (a_id == 1) {
+            a = new Pelican;
+          }
+          else if (a_id == 2) {
+            a = new Owl;
+          }
+          else if (a_id == 3) {
+            a = new Pigeon;
+          }
+          else if (a_id == 4) {
+            a = new Canary;
+          }
+          else if (a_id == 5) {
+            a = new Bat;
+          }
+          else if (a_id == 6) {
+            a = new Eagle;
+          }
+          else if (a_id == 7) {
+            a = new Toucan;
+          }
+          else if (a_id == 8) {
+            a = new Chicken;
+          }
+          else if (a_id == 9) {
+            a = new Cat;
+          }
+          else if (a_id == 10) {
+            a = new Cow;
+          }
+          else if (a_id == 11) {
+            a = new Mouse;
+          }
+          else if (a_id == 12) {
+            a = new Goat;
+          }
+          else if (a_id == 13) {
+            a = new Llama;
+          }
+          else if (a_id == 14) {
+            a = new Snake;
+          }
+          else if (a_id == 15) {
+            a = new Sheep;
+          }
+          else if (a_id == 16) {
+            a = new Chameleon;
+          }
+          else if (a_id == 17) {
+            a = new Salmon;
+          }
+          else if (a_id == 18) {
+            a = new Whale;
+          }
+          else if (a_id == 19) {
+            a = new Squid;
+          }
+          else if (a_id == 20) {
+            a = new Goldfish;
+          }
+          else if (a_id == 21) {
+            a = new Turtle;
+          }
+          else if (a_id == 22) {
+            a = new Seal;
+          }
+          else if (a_id == 23) {
+            a = new Dolphin;
+          }
+          else if (a_id == 24) {
+            a = new Penguin;
+          }
           found = false;
           //Finding a suitable cage
           while ((!(found)) && (k < z.GetNCage())) {
@@ -145,11 +224,9 @@ public class Driver {
         }
       }
       reader.close();
-    }
-    catch(FileNotFoundException excp){
+    } catch (FileNotFoundException excp) {
       System.out.println("File not Found");
-    }
-    catch(IOException excp){
+    } catch (IOException excp) {
       System.out.println("Input Error");
     }
   }
@@ -215,7 +292,7 @@ public class Driver {
       }
     } while (choice != 9);
   }
-  public void PrintStatus() {//lebih pas dipindah ke zoo
+  public void PrintStatus() {
     System.out.println("========================================");
     System.out.println("		 	  - Food Count -");
     System.out.println("	 Herbivore : " + z.CountFoodHerbivore());
@@ -230,24 +307,24 @@ public class Driver {
     for (i = 0; i < z.GetWidth(); i++) {
       System.out.print("|");
       for (j = 0; j < z.GetHeight(); j++) {
-          c = z.GetCell(i, j);
-          if (c != null) {
-            if (c.GetCageID() > -1) {
-              a = z.GetCage(c.GetCageID()).IsSpaceOccupied(i, j);
-              if (a != null) {
-                a.Render();
-              }
-              else {
-                c.Render();
-              }
+        c = z.GetCell(i, j);
+        if (c != null) {
+          if (c.GetCageID() > -1) {
+            a = z.GetCage(c.GetCageID()).IsSpaceOccupied(i, j);
+            if (a != null) {
+              a.Render();
             }
             else {
               c.Render();
             }
           }
           else {
-            System.out.print("?");
+            c.Render();
           }
+        }
+        else {
+          System.out.print("?");
+        }
         System.out.print("|");
       }
       System.out.println();
@@ -462,7 +539,7 @@ public class Driver {
 
   }
 
-  public static void main(String[] args){
+  public static void main(String[] args) {
     Driver D = new Driver("resource/map.txt");
 
     D.PrintMenu();

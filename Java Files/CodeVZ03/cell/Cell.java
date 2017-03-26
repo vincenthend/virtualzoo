@@ -1,11 +1,13 @@
 /**
  * @author Vincent Hendryanto Halim / 13515089
- *         Class cell, melakukan pembuatan cell berdasarkan ID cell
+ * Class cell, melakukan pembuatan cell berdasarkan ID cell
  */
 
 package cell;
 
-public class Cell {
+import renderable.Renderable;
+
+public abstract class Cell implements Renderable{
   protected int cell_id;
   protected int loc_x;
   protected int loc_y;
@@ -24,8 +26,8 @@ public class Cell {
   /**
    * Melakukan Render (mencetak Code)
    */
-  public void Render(){
-      System.out.print(code);
+  public void Render() {
+    System.out.print(code);
   }
   /**
    * @param c Code yang diinginkan

@@ -1,3 +1,5 @@
+package animal;
+
 /**
  * @author Adrian Mulyana / 13515075
  *         Class animal, melakukan pembuatan pada animal
@@ -304,7 +306,6 @@ public class Animal {
    * @return Posisi absis hewan.
    */
   public int GetLocationX() {
-
     return loc_x;
   }
   /**
@@ -313,9 +314,7 @@ public class Animal {
    * @return Posisi ordinat hewan.
    */
   public int GetLocationY() {
-
     return loc_y;
-
   }
   /**
    * Mengatur nilai X hewan
