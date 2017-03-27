@@ -11,7 +11,7 @@ import java.util.Scanner;
 
 /**
  * @author Mikhael Artur Darmakesuma / 13515099
- * Class driver, main program dan inisialisasi isi awal zoo
+ *         Class driver, main program dan inisialisasi isi awal zoo
  */
 
 public class Driver {
@@ -24,54 +24,54 @@ public class Driver {
   public Driver(String input_file) {
     try {
       //Input File
-      FileReader infile = new FileReader(input_file);
-      BufferedReader reader = new BufferedReader(infile);
+      FileReader inFile = new FileReader(input_file);
+      BufferedReader reader = new BufferedReader(inFile);
 
-      Cell c;
-      StringBuffer st;
-      int i, j, k, l, w, h, temp, a_id, a_count;
+      Cell cellTemp;
+      StringBuffer stringBuffer;
+      int i, j, k, l, width, height, temp, animalId, animalCount;
       boolean found, enemy;
       Animal a;
 
-      c = null;
+      cellTemp = null;
 
-      h = Integer.parseInt(reader.readLine());
-      w = Integer.parseInt(reader.readLine());
+      height = Integer.parseInt(reader.readLine());
+      width = Integer.parseInt(reader.readLine());
 
-      z = new Zoo(w, h);
-      for (i = 0; i < z.GetHeight(); i++) {
-        st = new StringBuffer(reader.readLine());
-        for (j = 0; j < z.GetWidth(); j++) {
-          if ((st.substring(j,j+1)).equals("L")) {
-            c = new Cell(i, j, 11);
+      z = new Zoo(width, height);
+      for (i = 0; i < z.getHeight(); i++) {
+        stringBuffer = new StringBuffer(reader.readLine());
+        for (j = 0; j < z.getWidth(); j++) {
+          if ((stringBuffer.substring(j, j + 1)).equals("L")) {
+            cellTemp = new Cell(i, j, 11);
           }
           else {
-            if ((st.substring(j, j+1)).equals("W")) {
-              c = new Cell(i, j, 12);
+            if ((stringBuffer.substring(j, j + 1)).equals("W")) {
+              cellTemp = new Cell(i, j, 12);
             }
             else {
-              if ((st.substring(j, j+1).equals("A"))) {
-                c = new Cell(i, j, 13);
+              if ((stringBuffer.substring(j, j + 1).equals("A"))) {
+                cellTemp = new Cell(i, j, 13);
               }
               else {
-                if ((st.substring(j, j+1)).equals("S")) {
-                  c = new Cell(i, j, 210);
+                if ((stringBuffer.substring(j, j + 1)).equals("S")) {
+                  cellTemp = new Cell(i, j, 210);
                 }
                 else {
-                  if ((st.substring(j, j+1)).equals("F")) {
-                    c = new Cell(i, j, 211);
+                  if ((stringBuffer.substring(j, j + 1)).equals("F")) {
+                    cellTemp = new Cell(i, j, 211);
                   }
                   else {
-                    if ((st.substring(j, j+1)).equals("X")) {
-                      c = new Cell(i, j, 21);
+                    if ((stringBuffer.substring(j, j + 1)).equals("X")) {
+                      cellTemp = new Cell(i, j, 21);
                     }
                     else {
-                      if ((st.substring(j, j+1)).equals("R")) {
-                        c = new Cell(i, j, 22);
+                      if ((stringBuffer.substring(j, j + 1)).equals("R")) {
+                        cellTemp = new Cell(i, j, 22);
                       }
                       else {
-                        if ((st.substring(j, j+1)).equals("P")) {
-                          c = new Cell(i, j, 23);
+                        if ((stringBuffer.substring(j, j + 1)).equals("P")) {
+                          cellTemp = new Cell(i, j, 23);
                         }
                       }
                     }
@@ -80,30 +80,31 @@ public class Driver {
               }
             }
           }
-          z.AddCell(i, j, c);
+          z.addCell(i, j, cellTemp);
         }
       }
+
       //Add Cage
-      for (i = 0; i < z.GetHeight(); i++) {
-        for (j = 0; j < z.GetWidth(); j++) {
+      for (i = 0; i < z.getHeight(); i++) {
+        for (j = 0; j < z.getWidth(); j++) {
           found = false;
-          c = z.GetCell(i, j);
-          if ((c.GetCellID() >= 11) && (c.GetCellID() <= 13)) {
+          cellTemp = z.getCell(i, j);
+          if ((cellTemp.getCellId() >= 11) && (cellTemp.getCellId() <= 13)) {
             if (((j - 1) >= 0) && (!(found))) {
-              if (((z.GetCell(i, j).GetCellID()) == (z.GetCell(i, j - 1).GetCellID()))) {
-                z.GetCage(z.GetCell(i, j - 1).GetCageID()).AddHabitat(z.GetCell(i, j));
+              if (((z.getCell(i, j).getCellId()) == (z.getCell(i, j - 1).getCellId()))) {
+                z.getCage(z.getCell(i, j - 1).getCageId()).AddHabitat(z.getCell(i, j));
                 found = true;
               }
             }
             if (((i - 1) >= 0) && (!(found))) {
-              if (((z.GetCell(i, j).GetCellID()) == (z.GetCell(i - 1, j).GetCellID()))) {
-                z.GetCage(z.GetCell(i - 1, j).GetCageID()).AddHabitat(z.GetCell(i, j));
+              if (((z.getCell(i, j).getCellId()) == (z.getCell(i - 1, j).getCellId()))) {
+                z.getCage(z.getCell(i - 1, j).getCageId()).AddHabitat(z.getCell(i, j));
                 found = true;
               }
             }
             if (!(found)) {
-              z.AddCage();
-              z.GetCage(z.GetNCage() - 1).AddHabitat(z.GetCell(i, j));
+              z.addCage();
+              z.getCage(z.getNCage() - 1).AddHabitat(z.getCell(i, j));
             }
           }
         }
@@ -112,32 +113,32 @@ public class Driver {
       //Add animal
       temp = Integer.parseInt(reader.readLine());
       for (i = 0; i < temp; i++) {
-        st = new StringBuffer(reader.readLine());
+        stringBuffer = new StringBuffer(reader.readLine());
 
         //Get Animal ID and Animal Count from line
-        j = st.indexOf(" ");
-        k = st.length();
-        a_id = Integer.parseInt(st.substring(0,j));
-        a_count = Integer.parseInt(st.substring(j+1,k));
+        j = stringBuffer.indexOf(" ");
+        k = stringBuffer.length();
+        animalId = Integer.parseInt(stringBuffer.substring(0, j));
+        animalCount = Integer.parseInt(stringBuffer.substring(j + 1, k));
 
         //Create a new animal and find a suitable cage
-        for (j = 0; j < a_count; j++) {
-          a = new Animal(a_id);
+        for (j = 0; j < animalCount; j++) {
+          a = new Animal(animalId);
           found = false;
           //Finding a suitable cage
-          while ((!(found)) && (k < z.GetNCage())) {
-            if ((a.GetHabitat()[(((z.GetCage(k)).GetCageType()) % 10) - 1]) && !(z.GetCage(k).IsFull())) {
+          while ((!(found)) && (k < z.getNCage())) {
+            if ((a.getHabitat()[(((z.getCage(k)).GetCageType()) % 10) - 1]) && !(z.getCage(k).IsFull())) {
               l = 0;
               enemy = false;
-              while (l < a.GetCEnemy()) {
-                if (z.GetCage(k).IsExist(a.GetEnemyList()[l])) {
+              while (l < a.getCEnemy()) {
+                if (z.getCage(k).IsExist(a.getEnemyList()[l])) {
                   enemy = true;
                 }
                 l++;
               }
               if (!(enemy)) {
                 found = true;
-                (z.GetCage(k)).AddAnimal(a);
+                (z.getCage(k)).AddAnimal(a);
               }
             }
             k++;
@@ -145,16 +146,14 @@ public class Driver {
         }
       }
       reader.close();
-    }
-    catch(FileNotFoundException excp){
+    } catch (FileNotFoundException excp) {
       System.out.println("File not Found");
-    }
-    catch(IOException excp){
+    } catch (IOException excp) {
       System.out.println("Input Error");
     }
   }
 
-  public void PrintMenu() {
+  public void printMenu() {
     int choice, x1, y1, x2, y2;
     Scanner in = new Scanner(System.in);
     choice = 0;
@@ -184,13 +183,13 @@ public class Driver {
           in.nextLine();
 
           if (choice == 1) {
-            PrintZoo();
-            PrintStatus();
+            printZoo();
+            printStatus();
           }
           else if (choice == 2) {
             System.out.println("Masukkan ukuran");
-            System.out.println("X(0 - " + (z.GetWidth() - 1) + ")");
-            System.out.println("Y(0 - " + (z.GetHeight() - 1) + ")");
+            System.out.println("X(0 - " + (z.getWidth() - 1) + ")");
+            System.out.println("Y(0 - " + (z.getHeight() - 1) + ")");
             System.out.println("X1 :");
             x1 = in.nextInt();
             in.nextLine();
@@ -203,80 +202,80 @@ public class Driver {
             System.out.println("Y2 :");
             y2 = in.nextInt();
             in.nextLine();
-            PrintZoo(x1, y1, x2, y2);
+            printZoo(x1, y1, x2, y2);
             System.out.println("");
             choice = 0;
           }
         } while (choice != 9);
       }
       else if (choice == 2) {
-        StartTour();
+        startTour();
 
       }
     } while (choice != 9);
   }
-  public void PrintStatus() {//lebih pas dipindah ke zoo
+  public void printStatus() {//lebih pas dipindah ke zoo
     System.out.println("========================================");
     System.out.println("		 	  - Food Count -");
-    System.out.println("	 Herbivore : " + z.CountFoodHerbivore());
-    System.out.println("	 Carnivore : " + z.CountFoodCarnivore());
-    System.out.println("	 Omnivore	: " + z.CountFoodOmnivore());
+    System.out.println("	 Herbivore : " + z.countFoodHerbivore());
+    System.out.println("	 Carnivore : " + z.countFoodCarnivore());
+    System.out.println("	 Omnivore	: " + z.countFoodOmnivore());
     System.out.println("========================================");
   }
-  public void PrintZoo() {//lebih pas dipindah ke zoo
+  public void printZoo() {//lebih pas dipindah ke zoo
     int i, j;
     Cell c;
     Animal a;
-    for (i = 0; i < z.GetWidth(); i++) {
+    for (i = 0; i < z.getWidth(); i++) {
       System.out.print("|");
-      for (j = 0; j < z.GetHeight(); j++) {
-          c = z.GetCell(i, j);
-          if (c != null) {
-            if (c.GetCageID() > -1) {
-              a = z.GetCage(c.GetCageID()).IsSpaceOccupied(i, j);
-              if (a != null) {
-                a.Render();
-              }
-              else {
-                c.Render();
-              }
+      for (j = 0; j < z.getHeight(); j++) {
+        c = z.getCell(i, j);
+        if (c != null) {
+          if (c.getCageId() > -1) {
+            a = z.getCage(c.getCageId()).IsSpaceOccupied(i, j);
+            if (a != null) {
+              a.render();
             }
             else {
-              c.Render();
+              c.render();
             }
           }
           else {
-            System.out.print("?");
+            c.render();
           }
+        }
+        else {
+          System.out.print("?");
+        }
         System.out.print("|");
       }
       System.out.println();
     }
   }
-  public void PrintZoo(int x, int y) {//lebih pas dipindah ke zoo
+  public void printZoo(int x, int y) {//lebih pas dipindah ke zoo
     int i, j;
-    Cell c;
-    Animal a;
-    for (i = 0; i < z.GetWidth(); i++) {
+    Cell cellTemp;
+    Animal animalTemp;
+    for (i = 0; i < z.getWidth(); i++) {
       System.out.print("|");
-      for (j = 0; j < z.GetHeight(); j++) {
+      for (j = 0; j < z.getHeight(); j++) {
         if (x == j && y == i) {
           System.out.print("X");
         }
         else {
-          c = z.GetCell(i, j);
-          if (c != null) {
-            if (c.GetCageID() > -1) {
-              a = z.GetCage(c.GetCageID()).IsSpaceOccupied(i, j);
-              if (a != null) {
-                a.Render();
+          cellTemp = z.getCell(i, j);
+          if (cellTemp != null) {
+            if (cellTemp.getCageId() > -1) {
+              animalTemp = z.getCage(cellTemp.getCageId()).IsSpaceOccupied(i, j);
+              if (animalTemp != null) {
+                animalTemp.render();
               }
               else {
-                c.Render();
+                cellTemp.render();
               }
             }
             else {
-              c.Render();
+              cellTemp.render();
             }
           }
           else {
@@ -288,26 +287,26 @@ public class Driver {
       System.out.println("");
     }
   }
-  public void PrintZoo(int x1, int x2, int y1, int y2) {//lebih pas dipindah ke zoo
+  public void printZoo(int x1, int x2, int y1, int y2) {//lebih pas dipindah ke zoo
     int i, j;
-    Cell c;
-    Animal a;
+    Cell cellTemp;
+    Animal animalTemp;
     for (i = y1; i <= y2; i++) {
       System.out.print("|");
       for (j = x1; j <= x2; j++) {
-        c = z.GetCell(i, j);
-        if (c != null) {
-          if (c.GetCageID() > -1) {
-            a = z.GetCage(c.GetCageID()).IsSpaceOccupied(i, j);
-            if (a != null) {
-              a.Render();
+        cellTemp = z.getCell(i, j);
+        if (cellTemp != null) {
+          if (cellTemp.getCageId() > -1) {
+            animalTemp = z.getCage(cellTemp.getCageId()).IsSpaceOccupied(i, j);
+            if (animalTemp != null) {
+              animalTemp.render();
             }
             else {
-              c.Render();
+              cellTemp.render();
             }
           }
           else {
-            c.Render();
+            cellTemp.render();
           }
         }
         else {
@@ -318,9 +317,9 @@ public class Driver {
       System.out.println("");
     }
   }
-  public void StartTour() {
+  public void startTour() {
     Random rand = new Random(System.currentTimeMillis());
-    int i, j, tc, move, c_move;
+    int i, j, tc, move, cMove;
     int t_move[] = new int[4];
     int tx[] = new int[10];
     int ty[] = new int[10];
@@ -329,13 +328,13 @@ public class Driver {
     Animal a;
     boolean walk = true;
     tc = 0;
-    PrintZoo();
-    PrintStatus();
-    for (i = 0; i < z.GetWidth(); i++) {
-      for (j = 0; j < z.GetHeight(); j++) {
-        c = z.GetCell(i, j);
+    printZoo();
+    printStatus();
+    for (i = 0; i < z.getWidth(); i++) {
+      for (j = 0; j < z.getHeight(); j++) {
+        c = z.getCell(i, j);
         if (c != null) {
-          if (c.GetCellID() == 210) {
+          if (c.getCellId() == 210) {
             tx[tc] = i;
             ty[tc] = j;
             tc++;
@@ -347,96 +346,96 @@ public class Driver {
     temp = Math.abs((rand.nextInt() % (tc)));
     i = tx[temp];
     j = ty[temp];
-    while (c.GetCellID() != 211 && walk) {
+    while (c.getCellId() != 211 && walk) {
       //Print Zoo
-      PrintZoo(j, i);
-      PrintStatus();
-      System.out.println("(" + i + "," + j + ")" + c.GetCellID());
+      printZoo(j, i);
+      printStatus();
+      System.out.println("(" + i + "," + j + ")" + c.getCellId());
 
-      //Interact
+      //interact
       if (((j - 1) >= 0) && (move != 3)) {
-        c = z.GetCell(i, j - 1);
-        if ((c.GetCellID() >= 11) && (c.GetCellID() <= 13)) {
+        c = z.getCell(i, j - 1);
+        if ((c.getCellId() >= 11) && (c.getCellId() <= 13)) {
           if (c != null) {
-            if (c.GetCageID() > -1) {
-              a = z.GetCage(c.GetCageID()).IsSpaceOccupied(i, j - 1);
+            if (c.getCageId() > -1) {
+              a = z.getCage(c.getCageId()).IsSpaceOccupied(i, j - 1);
               if (a != null) {
-                a.Interact();
+                a.interact();
               }
             }
           }
         }
       }
-      if (((i + 1) < z.GetHeight()) && (move != 4)) {
-        c = z.GetCell(i + 1, j);
-        if ((c.GetCellID() >= 11) && (c.GetCellID() <= 13)) {
+      if (((i + 1) < z.getHeight()) && (move != 4)) {
+        c = z.getCell(i + 1, j);
+        if ((c.getCellId() >= 11) && (c.getCellId() <= 13)) {
           if (c != null) {
-            if (c.GetCageID() > -1) {
-              a = z.GetCage(c.GetCageID()).IsSpaceOccupied(i + 1, j);
+            if (c.getCageId() > -1) {
+              a = z.getCage(c.getCageId()).IsSpaceOccupied(i + 1, j);
               if (a != null) {
-                a.Interact();
+                a.interact();
               }
             }
           }
         }
       }
-      if (((j + 1) < z.GetWidth()) && (move != 1)) {
-        c = z.GetCell(i, j + 1);
-        if ((c.GetCellID() >= 11) && (c.GetCellID() <= 13)) {
+      if (((j + 1) < z.getWidth()) && (move != 1)) {
+        c = z.getCell(i, j + 1);
+        if ((c.getCellId() >= 11) && (c.getCellId() <= 13)) {
           if (c != null) {
-            if (c.GetCageID() > -1) {
-              a = z.GetCage(c.GetCageID()).IsSpaceOccupied(i, j + 1);
+            if (c.getCageId() > -1) {
+              a = z.getCage(c.getCageId()).IsSpaceOccupied(i, j + 1);
               if (a != null) {
-                a.Interact();
+                a.interact();
               }
             }
           }
         }
       }
       if (((i - 1) >= 0) && (move != 2)) {
-        c = z.GetCell(i - 1, j);
-        if ((c.GetCellID() >= 11) && (c.GetCellID() <= 13)) {
+        c = z.getCell(i - 1, j);
+        if ((c.getCellId() >= 11) && (c.getCellId() <= 13)) {
           if (c != null) {
-            if (c.GetCageID() > -1) {
-              a = z.GetCage(c.GetCageID()).IsSpaceOccupied(i - 1, j);
+            if (c.getCageId() > -1) {
+              a = z.getCage(c.getCageId()).IsSpaceOccupied(i - 1, j);
               if (a != null) {
-                a.Interact();
+                a.interact();
               }
             }
           }
         }
       }
-      c_move = 0;
+      cMove = 0;
       if (((j - 1) >= 0) && (move != 3)) {
-        c = z.GetCell(i, j - 1);
-        if (c.GetCellID() == 21 || c.GetCellID() == 211) {
-          t_move[c_move] = 1;
-          c_move++;
+        c = z.getCell(i, j - 1);
+        if (c.getCellId() == 21 || c.getCellId() == 211) {
+          t_move[cMove] = 1;
+          cMove++;
         }
       }
-      if (((i + 1) < z.GetHeight()) && (move != 4)) {
-        c = z.GetCell(i + 1, j);
-        if (c.GetCellID() == 21 || c.GetCellID() == 211) {
-          t_move[c_move] = 2;
-          c_move++;
+      if (((i + 1) < z.getHeight()) && (move != 4)) {
+        c = z.getCell(i + 1, j);
+        if (c.getCellId() == 21 || c.getCellId() == 211) {
+          t_move[cMove] = 2;
+          cMove++;
         }
       }
-      if (((j + 1) < z.GetWidth()) && (move != 1)) {
-        c = z.GetCell(i, j + 1);
-        if (c.GetCellID() == 21 || c.GetCellID() == 211) {
-          t_move[c_move] = 3;
-          c_move++;
+      if (((j + 1) < z.getWidth()) && (move != 1)) {
+        c = z.getCell(i, j + 1);
+        if (c.getCellId() == 21 || c.getCellId() == 211) {
+          t_move[cMove] = 3;
+          cMove++;
         }
       }
       if (((i - 1) >= 0) && (move != 2)) {
-        c = z.GetCell(i - 1, j);
-        if (c.GetCellID() == 21 || c.GetCellID() == 211) {
-          t_move[c_move] = 4;
-          c_move++;
+        c = z.getCell(i - 1, j);
+        if (c.getCellId() == 21 || c.getCellId() == 211) {
+          t_move[cMove] = 4;
+          cMove++;
         }
       }
-      if (c_move > 0) {
-        move = t_move[Math.abs((rand.nextInt() % c_move))];
+      if (cMove > 0) {
+        move = t_move[Math.abs((rand.nextInt() % cMove))];
         if (move == 1) {
           j--;
         }
@@ -457,14 +456,14 @@ public class Driver {
       else {
         walk = false;
       }
-      c = z.GetCell(i, j);
+      c = z.getCell(i, j);
     }
 
   }
 
-  public static void main(String[] args){
+  public static void main(String[] args) {
     Driver D = new Driver("resource/map.txt");
 
-    D.PrintMenu();
+    D.printMenu();
   }
 }

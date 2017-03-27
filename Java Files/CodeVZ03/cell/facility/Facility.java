@@ -10,8 +10,8 @@ public abstract class Facility extends Cell {
    * Melakukan konstruksi Facility dengan x dan y default
    */
   public Facility() {
-    loc_x = 0;
-    loc_y = 0;
-    cell_id = 2;
+    locX = 0;
+    locY = 0;
+    cellId = 2;
   }
 }

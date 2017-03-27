@@ -9,8 +9,8 @@ import cell.Cell;
 
 public abstract class Habitat extends Cell {
   public Habitat() {
-    loc_x = 0;
-    loc_y = 0;
-    cell_id = 1;
+    locX = 0;
+    locY = 0;
+    cellId = 1;
   }
 }

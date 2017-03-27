@@ -1,4 +1,5 @@
 package zoo;
+
 import cage.Cage;
 import cell.Cell;
 
@@ -10,12 +11,12 @@ public class Zoo {
   private int width;
   private int height;
   private int nCage;
-  private Cell[][] cellList;
-  private Cage[] cageList;
+  private Cell cellList[][];
+  private Cage cageList[];
   /**
    * Membuat Zoo dengan width 21 dan height 21
    */
-  Zoo() {
+  public Zoo() {
     nCage = 0;
     width = 21;
     height = 21;
@@ -40,7 +41,7 @@ public class Zoo {
    */
   public void addCage() {
     cageList[nCage] = new Cage();
-    cageList[nCage].SetCageID(nCage);
+    cageList[nCage].setCageID(nCage);
     nCage += 1;
   }
   /**
@@ -89,7 +90,7 @@ public class Zoo {
     return cageList[n];
   }
   /**
-   * Getter untuk cage ke-n
+   * Getter untuk jumlah cage
    *
    * @return jumlah cage pada saat ini
    */
@@ -103,10 +104,9 @@ public class Zoo {
    */
   public int countFoodHerbivore() {
     int i, sum;
-    i = 0;
     sum = 0;
     for (i = 0; i < nCage; i++) {
-      sum += cageList[i].CountFoodHerbivore();
+      sum += cageList[i].countFoodHerbivore();
     }
     return sum;
   }
@@ -117,10 +117,9 @@ public class Zoo {
    */
   public int countFoodCarnivore() {
     int i, sum;
-    i = 0;
     sum = 0;
     for (i = 0; i < nCage; i++) {
-      sum += cageList[i].CountFoodCarnivore();
+      sum += cageList[i].countFoodCarnivore();
     }
     return sum;
   }
@@ -131,10 +130,9 @@ public class Zoo {
    */
   public int countFoodOmnivore() {
     int i, sum;
-    i = 0;
     sum = 0;
     for (i = 0; i < nCage; i++) {
-      sum += cageList[i].CountFoodOmnivore();
+      sum += cageList[i].countFoodOmnivore();
     }
     return sum;
   }

@@ -5,98 +5,98 @@ package cell;
  *         Class cell, melakukan pembuatan cell berdasarkan ID cell
  */
 public class Cell {
-  private int cell_id;
-  private int loc_x;
-  private int loc_y;
-  private int cage_id;
+  private int cellId;
+  private int locX;
+  private int locY;
+  private int cageId;
   private char code;
   /**
-   * Membuat cell dengan loc_x 0, loc_y 0, cell_id 0 dan cage_id -1
+   * Membuat cell dengan locX 0, locY 0, cellId 0 dan cageId -1
    */
   public Cell() {
-    cell_id = 0;
-    loc_x = 0;
-    loc_y = 0;
+    cellId = 0;
+    locX = 0;
+    locY = 0;
     code = 0;
-    cage_id = -1;
+    cageId = -1;
   }
   /**
    * @param x  lokasi x
    * @param y  lokasi y
-   * @param ID nilai cell_id (tetap)
-   *           Membuat cell dengan loc_x = x, loc_y = y, cell_id ID dan cage_id -1
+   * @param ID nilai cellId (tetap)
+   *           Membuat cell dengan locX = x, locY = y, cellId ID dan cageId -1
    *           11 = LandHabitat; 12 = WaterHabitat; 13 = AirHabitat;
    *           21 = Road; 210 = Entrance; 211 = Exit; 22 = Resto; 23 = Park;
    */
   public Cell(int x, int y, int ID) {
-    cell_id = ID;
-    loc_x = x;
-    loc_y = y;
+    cellId = ID;
+    locX = x;
+    locY = y;
 
-    if (cell_id == 11) {
+    if (cellId == 11) {
       code = 'L'; //Code Land Habitat
     }
-    else if (cell_id == 12) {
+    else if (cellId == 12) {
       code = 'A'; //Code Air Habitat
     }
-    else if (cell_id == 13) {
+    else if (cellId == 13) {
       code = 'W'; //Code Water Habitat
     }
-    else if (cell_id == 21 || cell_id == 210 || cell_id == 211) {
+    else if (cellId == 21 || cellId == 210 || cellId == 211) {
       code = ' '; //Code Road
     }
-    else if (cell_id == 22) {
+    else if (cellId == 22) {
       code = 'R'; //Code Resto
     }
-    else if (cell_id == 23) {
+    else if (cellId == 23) {
       code = 'P'; //Code Park
     }
-    cage_id = -1;
+    cageId = -1;
   }
   /**
-   * Melakukan Render (mencetak Code)
+   * Melakukan render (mencetak Code)
    */
-  public void Render() {
+  public void render() {
     System.out.print(code);
   }
   /**
    * @param c Code yang diinginkan
    *          Mengatur code yang akan digunakan untuk render
    */
-  public void SetCode(char c) {
+  public void setCode(char c) {
     code = c;
   }
   /**
-   * @param n Nilai cage_id yang diinginkan
-   *          Mengatur nilai cage_id
+   * @param n Nilai cageId yang diinginkan
+   *          Mengatur nilai cageId
    */
-  public void SetCageID(int n) {
-    cage_id = n;
+  public void setCageId(int n) {
+    cageId = n;
   }
   /**
-   * Mengembalikan nilai cage_id
+   * Mengembalikan nilai cageId
    */
-  public int GetCageID() {
-    return cage_id;
+  public int getCageId() {
+    return cageId;
   }
   /**
-   * Mengembalikan nilai cell_id
+   * Mengembalikan nilai cellId
    */
-  public int GetCellID() {
-    return cell_id;
+  public int getCellId() {
+    return cellId;
   }
   /**
    * @return Posisi absis cell.
    * Mengembalikan posisi absis hewan.
    */
-  public int GetLocationX() {
-    return loc_x;
+  public int getLocationX() {
+    return locX;
   }
   /**
    * @return Posisi ordinat cell.
    * Mengembalikan posisi ordinat hewan.
    */
-  public int GetLocationY() {
-    return loc_y;
+  public int getLocationY() {
+    return locY;
   }
 }
