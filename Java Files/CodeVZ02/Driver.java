@@ -3,18 +3,14 @@
  * Class driver, main program dan inisialisasi isi awal zoo
  */
 
-import animal.Animal;
-import cell.Cell;
-import zoo.Zoo;
-
 import java.io.BufferedReader;
 import java.io.FileNotFoundException;
 import java.io.FileReader;
-import java.io.IOException;
-import java.util.Random;
 import java.util.Scanner;
+import java.util.Random;
+import java.io.IOException;
 
-public class Driver {
+class Driver {
   private Zoo z;
 
   public Driver() {
@@ -24,8 +20,12 @@ public class Driver {
   public Driver(String input_file) {
     try {
       //Input File
+      System.out.println(System.getProperty("user.dir"));
       FileReader infile = new FileReader(input_file);
       BufferedReader reader = new BufferedReader(infile);
+    /*DataInputS1tream in_stream = new DataInputStream(
+            new BufferedInputStream(
+                    new FileInputStream(input)));*/
 
       Cell c;
       StringBuffer st;
@@ -84,30 +84,7 @@ public class Driver {
         }
       }
       //Add Cage
-      for (i = 0; i < z.GetHeight(); i++) {
-        for (j = 0; j < z.GetWidth(); j++) {
-          found = false;
-          c = z.GetCell(i, j);
-          if ((c.GetCellID() >= 11) && (c.GetCellID() <= 13)) {
-            if (((j - 1) >= 0) && (!(found))) {
-              if (((z.GetCell(i, j).GetCellID()) == (z.GetCell(i, j - 1).GetCellID()))) {
-                z.GetCage(z.GetCell(i, j - 1).GetCageID()).AddHabitat(z.GetCell(i, j));
-                found = true;
-              }
-            }
-            if (((i - 1) >= 0) && (!(found))) {
-              if (((z.GetCell(i, j).GetCellID()) == (z.GetCell(i - 1, j).GetCellID()))) {
-                z.GetCage(z.GetCell(i - 1, j).GetCageID()).AddHabitat(z.GetCell(i, j));
-                found = true;
-              }
-            }
-            if (!(found)) {
-              z.AddCage();
-              z.GetCage(z.GetNCage() - 1).AddHabitat(z.GetCell(i, j));
-            }
-          }
-        }
-      }
+      z.AddCage();
 
       //Add animal
       temp = Integer.parseInt(reader.readLine());

@@ -1,5 +1,3 @@
-package animal;
-
 /**
  * @author Adrian Mulyana / 13515075
  *         Class animal, melakukan pembuatan pada animal
@@ -16,6 +14,7 @@ public class Animal {
   private String sound;
   private int[] enemy_id;
   private int c_enemy;
+  private int maxEnemy = 99;
   /**
    * Konstruktor animal dengan type = id.
    *
@@ -24,7 +23,7 @@ public class Animal {
   public Animal(int id) {
     loc_x = -99;
     loc_y = -99;
-    enemy_id = new int[99];
+    enemy_id = new int[maxEnemy];
     c_enemy = 0;
     if (id == 1) {
       type = 1;
@@ -330,9 +329,7 @@ public class Animal {
    * @param y lokasi Y hewan
    */
   public void SetLocationY(int y) {
-
     loc_y = y;
-
   }
   /**
    * Mengembalikan nilai type hewan.

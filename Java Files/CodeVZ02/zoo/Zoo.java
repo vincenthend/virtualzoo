@@ -1,17 +1,17 @@
-package zoo;
-import cell.Cell;
-import cage.Cage;
-
 /**
  * @author Alif Ijlal W / 13515122
  *         Class Zoo, mengatur konstruksi zoo dan penambahan animal/cage
  */
-public class Zoo {
+class Zoo {
   private int width;
   private int height;
   private int n_cage;
   private Cell c[][];
   private Cage cg[];
+  private char borderCode = '|';
+  private char nullCode = '?';
+  private char positionCode = 'X';
+  private char newLine = '\n';
   /**
    * Membuat Zoo dengan width 21 dan height 21
    */
@@ -20,7 +20,7 @@ public class Zoo {
     width = 21;
     height = 21;
     c = new Cell[width][height];
-    cg = new Cage[999];
+    cg = new Cage[width * height];
   }
   /**
    * Membuat Zoo dengan width w dan height h
@@ -28,20 +28,64 @@ public class Zoo {
    * @param w Lebar zoo
    * @param h Tinggi zoo
    */
-  public Zoo(int w, int h) {
+  Zoo(int w, int h) {
     n_cage = 0;
     width = w;
     height = h;
     c = new Cell[width][height];
-    cg = new Cage[999];
+    cg = new Cage[width * height];
   }
   /**
    * Melakukan penambahan cage,
    */
   public void AddCage() {
-    cg[n_cage] = new Cage();
-    cg[n_cage].SetCageID(n_cage);
-    n_cage += 1;
+    int i, j;
+    for (i = 0; i < height; i++) {
+      for (j = 0; j < width; j++) {
+        if ((c[i][j].GetCageID() == -1) && c[i][j].IsHabitat()) {
+          InitCage(i, j);
+        }
+      }
+    }
+  }
+  /** <TBD></TBD>
+   *
+   */
+  public void InitCage(int x, int y) {
+    AddToCage(x, y);
+    n_cage++;
+  }
+  /** <TBD></TBD>
+   *
+   */
+  public void AddToCage(int x, int y) {
+    cg[n_cage].AddHabitat(c[x][y]);
+    if (IsInRange(x - 1, y)) {
+      if (c[x][y].GetCellID() == c[x - 1][y].GetCellID()) {
+        AddToCage(x - 1, y);
+      }
+    }
+    if (IsInRange(x + 1, y)) {
+      if (c[x][y].GetCellID() == c[x + 1][y].GetCellID()) {
+        AddToCage(x + 1, y);
+      }
+    }
+    if (IsInRange(x, y - 1)) {
+      if (c[x][y].GetCellID() == c[x][y - 1].GetCellID()) {
+        AddToCage(x, y - 1);
+      }
+    }
+    if (IsInRange(x, y + 1)) {
+      if (c[x][y].GetCellID() == c[x][y + 1].GetCellID()) {
+        AddToCage(x, y + 1);
+      }
+    }
+  }
+  /** <TBD></TBD>
+   *
+   */
+  public boolean IsInRange(int x, int y) {
+    return (x >= 0 && x < height && y >= 0 && y < width);
   }
   /**
    * Melakukan penambahan cell dengan cell C yang sudah dictor di tempat lain
@@ -138,15 +182,15 @@ public class Zoo {
     }
     return sum;
   }
-  public void PrintZoo(int x, int y) {//lebih pas dipindah ke zoo
+  public void PrintZoo(int x, int y) {
     int i, j;
     Cell c;
     Animal a;
     for (i = 0; i < GetWidth(); i++) {
-      System.out.print("|");
+      System.out.print(borderCode);
       for (j = 0; j < GetHeight(); j++) {
         if (x == j && y == i) {
-          System.out.print("X");
+          System.out.print(positionCode);
         }
         else {
           c = this.c[i][j];
@@ -165,15 +209,15 @@ public class Zoo {
             }
           }
           else {
-            System.out.print("?");
+            System.out.print(nullCode);
           }
         }
-        System.out.print("|");
+        System.out.print(borderCode);
       }
-      System.out.println("");
+      System.out.println(newLine);
     }
   }
-  public void PrintZoo(int x1, int x2, int y1, int y2) {//lebih pas dipindah ke zoo
+  public void PrintZoo(int x1, int x2, int y1, int y2) {
     int i, j;
     Cell c;
     Animal a;
@@ -196,11 +240,11 @@ public class Zoo {
           }
         }
         else {
-          System.out.print("?");
+          System.out.print(nullCode);
         }
-        System.out.print("|");
+        System.out.print(borderCode);
       }
-      System.out.println("");
+      System.out.print(newLine);
     }
   }
 }

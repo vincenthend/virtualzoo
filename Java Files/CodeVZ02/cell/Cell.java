@@ -1,10 +1,8 @@
-package cell;
-
 /**
  * @author Vincent Hendryanto Halim / 13515089
  *         Class cell, melakukan pembuatan cell berdasarkan ID cell
  */
-public class Cell {
+class Cell {
   private int cell_id;
   private int loc_x;
   private int loc_y;
@@ -98,5 +96,11 @@ public class Cell {
    */
   public int GetLocationY() {
     return loc_y;
+  }
+  /**
+   * <TBD></TBD>
+   */
+  public boolean IsHabitat() {
+    return (cell_id >= 11 && cell_id <= 13);
   }
 }

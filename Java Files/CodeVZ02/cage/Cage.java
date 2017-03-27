@@ -1,20 +1,19 @@
-package cage;
-
-import animal.Animal;
-import cell.Cell;
 /**
  * @author Alif Ijlal Wafi / 13515122
  *         <p>
  *         Class cage, melakukan konstruksi dan penambahan animal dalam cage
  *         dan mengatur habitat dalam cage
  */
-public class Cage {
+class Cage {
   private int cage_id;
   private int n_animal;
   private int n_cell;
   private int cage_type;
   private Animal a[];
   private Cell c[];
+  private double fullCateg = 0.3;
+  private int maxAnimal = 99;
+  private int maxHabitat = 99;
   /**
    * Inisialisasi cage dengan n_animal 0 dan n_cell 0
    * membuat array a dan c sebanyak 999 buah
@@ -22,8 +21,8 @@ public class Cage {
   public Cage() {
     n_animal = 0;
     n_cell = 0;
-    a = new Animal[999];
-    c = new Cell[999];
+    a = new Animal[maxAnimal];
+    c = new Cell[maxHabitat];
     cage_id = -1;
     cage_type = 0;
   }
@@ -32,7 +31,7 @@ public class Cage {
    * Mengembalikan kondisi penuh cage
    */
   public boolean IsFull() {
-    return (n_animal >= ((n_cell / 10) * 3));
+    return (n_animal >= (n_cell * fullCateg));
   }
   /**
    * Menambahkan habitat ke dalam cage
@@ -98,6 +97,20 @@ public class Cage {
     return ret;
   }
   /**
+   * @return true jika ada dan false jika tidak ada
+   * Mengembalikan keberadaan animal dengan type = ID
+   */
+  public boolean IsExist(int ID) {
+    boolean found = false;
+    int i = 0;
+    while (i < n_animal) {
+      if (a[i].GetType() == ID)
+        found = true;
+      i++;
+    }
+    return found;
+  }
+  /**
    * @return nilai total makanan herbivore
    * Menghitung total jumlah makanan herbivore
    */
@@ -135,19 +148,5 @@ public class Cage {
         sum += a[i].GetFoodQuantity();
     }
     return sum;
-  }
-  /**
-   * @return true jika ada dan false jika tidak ada
-   * Mengembalikan keberadaan animal dengan type = ID
-   */
-  public boolean IsExist(int ID) {
-    boolean found = false;
-    int i = 0;
-    while (i < n_animal) {
-      if (a[i].GetType() == ID)
-        found = true;
-      i++;
-    }
-    return found;
   }
 }
