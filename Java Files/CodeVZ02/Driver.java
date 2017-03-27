@@ -184,7 +184,7 @@ public class Driver {
           in.nextLine();
 
           if (choice == 1) {
-            PrintZoo();
+            z.PrintZoo(0,z.GetWidth(),0,z.GetHeight());
             PrintStatus();
           }
           else if (choice == 2) {
@@ -203,7 +203,7 @@ public class Driver {
             System.out.println("Y2 :");
             y2 = in.nextInt();
             in.nextLine();
-            PrintZoo(x1, y1, x2, y2);
+            z.PrintZoo(x1, x2, y1, y2);
             System.out.println("");
             choice = 0;
           }
@@ -223,101 +223,6 @@ public class Driver {
     System.out.println("	 Omnivore	: " + z.CountFoodOmnivore());
     System.out.println("========================================");
   }
-  public void PrintZoo() {//lebih pas dipindah ke zoo
-    int i, j;
-    Cell c;
-    Animal a;
-    for (i = 0; i < z.GetWidth(); i++) {
-      System.out.print("|");
-      for (j = 0; j < z.GetHeight(); j++) {
-          c = z.GetCell(i, j);
-          if (c != null) {
-            if (c.GetCageID() > -1) {
-              a = z.GetCage(c.GetCageID()).IsSpaceOccupied(i, j);
-              if (a != null) {
-                a.Render();
-              }
-              else {
-                c.Render();
-              }
-            }
-            else {
-              c.Render();
-            }
-          }
-          else {
-            System.out.print("?");
-          }
-        System.out.print("|");
-      }
-      System.out.println();
-    }
-  }
-  public void PrintZoo(int x, int y) {//lebih pas dipindah ke zoo
-    int i, j;
-    Cell c;
-    Animal a;
-    for (i = 0; i < z.GetWidth(); i++) {
-      System.out.print("|");
-      for (j = 0; j < z.GetHeight(); j++) {
-        if (x == j && y == i) {
-          System.out.print("X");
-        }
-        else {
-          c = z.GetCell(i, j);
-          if (c != null) {
-            if (c.GetCageID() > -1) {
-              a = z.GetCage(c.GetCageID()).IsSpaceOccupied(i, j);
-              if (a != null) {
-                a.Render();
-              }
-              else {
-                c.Render();
-              }
-            }
-            else {
-              c.Render();
-            }
-          }
-          else {
-            System.out.print("?");
-          }
-        }
-        System.out.print("|");
-      }
-      System.out.println("");
-    }
-  }
-  public void PrintZoo(int x1, int x2, int y1, int y2) {//lebih pas dipindah ke zoo
-    int i, j;
-    Cell c;
-    Animal a;
-    for (i = y1; i <= y2; i++) {
-      System.out.print("|");
-      for (j = x1; j <= x2; j++) {
-        c = z.GetCell(i, j);
-        if (c != null) {
-          if (c.GetCageID() > -1) {
-            a = z.GetCage(c.GetCageID()).IsSpaceOccupied(i, j);
-            if (a != null) {
-              a.Render();
-            }
-            else {
-              c.Render();
-            }
-          }
-          else {
-            c.Render();
-          }
-        }
-        else {
-          System.out.print("?");
-        }
-        System.out.print("|");
-      }
-      System.out.println("");
-    }
-  }
   public void StartTour() {
     Random rand = new Random(System.currentTimeMillis());
     int i, j, tc, move, c_move;
@@ -329,8 +234,6 @@ public class Driver {
     Animal a;
     boolean walk = true;
     tc = 0;
-    PrintZoo();
-    PrintStatus();
     for (i = 0; i < z.GetWidth(); i++) {
       for (j = 0; j < z.GetHeight(); j++) {
         c = z.GetCell(i, j);
@@ -349,7 +252,7 @@ public class Driver {
     j = ty[temp];
     while (c.GetCellID() != 211 && walk) {
       //Print Zoo
-      PrintZoo(j, i);
+      z.PrintZoo(j, i);
       PrintStatus();
       System.out.println("(" + i + "," + j + ")" + c.GetCellID());
 
