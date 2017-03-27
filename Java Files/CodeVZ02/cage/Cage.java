@@ -1,10 +1,14 @@
+package cage;
+
+import animal.Animal;
+import cell.Cell;
 /**
  * @author Alif Ijlal Wafi / 13515122
  *         <p>
  *         Class cage, melakukan konstruksi dan penambahan animal dalam cage
  *         dan mengatur habitat dalam cage
  */
-class Cage {
+public class Cage {
   private int cage_id;
   private int n_animal;
   private int n_cell;
