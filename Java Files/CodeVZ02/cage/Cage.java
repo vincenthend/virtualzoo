@@ -13,8 +13,8 @@ public class Cage {
   private int n_animal;
   private int n_cell;
   private int cage_type;
-  private Animal a[];
-  private Cell c[];
+  private Animal[] a;
+  private Cell[] c;
   /**
    * Inisialisasi cage dengan n_animal 0 dan n_cell 0
    * membuat array a dan c sebanyak 999 buah

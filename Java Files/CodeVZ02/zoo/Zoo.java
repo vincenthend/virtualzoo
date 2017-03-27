@@ -10,8 +10,8 @@ public class Zoo {
   private int width;
   private int height;
   private int n_cage;
-  private Cell c[][];
-  private Cage cg[];
+  private Cell[][] c;
+  private Cage[] cg;
   /**
    * Membuat Zoo dengan width 21 dan height 21
    */

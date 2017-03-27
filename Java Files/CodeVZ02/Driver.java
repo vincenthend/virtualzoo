@@ -1,8 +1,3 @@
-/**
- * @author Mikhael Artur Darmakesuma / 13515099
- * Class driver, main program dan inisialisasi isi awal zoo
- */
-
 import animal.Animal;
 import cell.Cell;
 import zoo.Zoo;
@@ -13,6 +8,11 @@ import java.io.FileReader;
 import java.io.IOException;
 import java.util.Random;
 import java.util.Scanner;
+
+/**
+ * @author Mikhael Artur Darmakesuma / 13515099
+ * Class driver, main program dan inisialisasi isi awal zoo
+ */
 
 public class Driver {
   private Zoo z;
