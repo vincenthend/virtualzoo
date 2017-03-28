@@ -1,11 +1,19 @@
 import animal.Animal;
 import cell.Cell;
+import java.awt.Button;
+import java.awt.GridBagConstraints;
+import java.awt.GridBagLayout;
+import java.awt.GridLayout;
 import java.io.BufferedReader;
 import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.io.IOException;
 import java.util.Random;
 import java.util.Scanner;
+import javax.swing.BorderFactory;
+import javax.swing.JFrame;
+import javax.swing.JLabel;
+import javax.swing.JPanel;
 import zoo.Zoo;
 
 /**
@@ -14,9 +22,14 @@ import zoo.Zoo;
  *
  * @author Mikhael Artur Darmakesuma / 13515099
  */
-public class Driver {
+public class GUIDriver {
 
   private Zoo zoo;
+  private JFrame mainWindow;
+  private JPanel zooMap;
+  private JPanel buttonPane;
+  private JLabel[][] mapLabel;
+
 
   /**
    * Inisialisasi driver dengan membaca dari file inputFile
@@ -24,7 +37,7 @@ public class Driver {
    *
    * @param inputFile Nama file input
    */
-  public Driver(String inputFile) {
+  public GUIDriver(String inputFile) {
     try {
       //Input File
       FileReader inFile = new FileReader(inputFile);
@@ -117,8 +130,29 @@ public class Driver {
    * @param args Parameter saat eksekusi program
    */
   public static void main(String[] args) {
-    Driver d = new Driver("resource/map.txt");
-    d.printMenu();
+    GUIDriver d = new GUIDriver("resource/map.txt");
+    d.printInitial();
+  }
+
+  public void printInitial() {
+    mainWindow = new JFrame("VirtualZoo");
+    mainWindow.setSize((zoo.getWidth() * 25 * 3) / 2, zoo.getHeight() * 25);
+    mainWindow.setLayout(new GridLayout(0, 2));
+
+    //Print Map
+    printZoo();
+    mainWindow.add(zooMap);
+
+    //Button Pane
+    buttonPane = new JPanel();
+    buttonPane.setLayout(new GridLayout(4,0));
+
+    Button startTour = new Button("Start Tour");
+    buttonPane.add(startTour);
+
+    mainWindow.add(buttonPane);
+    mainWindow.setVisible(true);
+
   }
 
   /**
@@ -205,31 +239,43 @@ public class Driver {
    * F. S.: Peta kebun binatang tertulis di layar
    */
   public void printZoo() {
+    //Print Map
+    zooMap = new JPanel();
+    zooMap.setLayout(new GridBagLayout());
+    zooMap.setBorder(BorderFactory.createEmptyBorder(2,2,2,2));
+
+    GridBagConstraints c = new GridBagConstraints();
+    c.ipadx = 5;
+    c.ipady = 5;
+
+    //Print Zoo Map
     int i;
     int j;
-    Cell c;
-    Animal a;
-    for (i = 0; i < zoo.getWidth(); i++) {
-      System.out.print("|");
-      for (j = 0; j < zoo.getHeight(); j++) {
-        c = zoo.getCell(i, j);
-        if (c != null) {
-          if (c.getCageId() > -1) {
-            a = zoo.getCage(c.getCageId()).isSpaceOccupied(i, j);
-            if (a != null) {
-              a.render();
+    String symbol = "";
+    Cell cell;
+    Animal animal;
+    mapLabel = new JLabel[zoo.getHeight()][zoo.getWidth()];
+    for (i = 0; i < zoo.getHeight(); i++) {
+      for (j = 0; j < zoo.getWidth(); j++) {
+        c.gridx = j;
+        c.gridy = i;
+
+        cell = zoo.getCell(i, j);
+        if (cell != null) {
+          if (cell.getCageId() > -1) {
+            animal = zoo.getCage(cell.getCageId()).isSpaceOccupied(i, j);
+            if (animal != null) {
+              symbol = animal.render();
             } else {
-              c.render();
+              symbol = cell.render();
             }
           } else {
-            c.render();
+            symbol = cell.render();
           }
-        } else {
-          System.out.print("?");
         }
-        System.out.print("|");
+        mapLabel[i][j] = new JLabel(symbol);
+        zooMap.add(mapLabel[i][j], c);
       }
-      System.out.println();
     }
   }
 
@@ -242,35 +288,47 @@ public class Driver {
    * @param y Posisi ordinat tour
    */
   public void printZoo(int x, int y) {
+    //Print Map
+    zooMap = new JPanel();
+    zooMap.setLayout(new GridBagLayout());
+    zooMap.setBorder(BorderFactory.createEmptyBorder(2,2,2,2));
+
+    GridBagConstraints c = new GridBagConstraints();
+    c.ipadx = 5;
+    c.ipady = 5;
+
+    //Print Zoo Map
     int i;
     int j;
-    Cell cellTemp;
-    Animal animalTemp;
-    for (i = 0; i < zoo.getWidth(); i++) {
-      System.out.print("|");
-      for (j = 0; j < zoo.getHeight(); j++) {
-        if (x == j && y == i) {
-          System.out.print("X");
-        } else {
-          cellTemp = zoo.getCell(i, j);
-          if (cellTemp != null) {
-            if (cellTemp.getCageId() > -1) {
-              animalTemp = zoo.getCage(cellTemp.getCageId()).isSpaceOccupied(i, j);
-              if (animalTemp != null) {
-                animalTemp.render();
+    String symbol = "";
+    Cell cell;
+    Animal animal;
+    mapLabel = new JLabel[zoo.getHeight()][zoo.getWidth()];
+    for (i = 0; i < zoo.getHeight(); i++) {
+      for (j = 0; j < zoo.getWidth(); j++) {
+        c.gridx = j;
+        c.gridy = i;
+        if(j==x && i==y){
+          mapLabel[i][j] = new JLabel("X");
+        }
+        else {
+          cell = zoo.getCell(i, j);
+          if (cell != null) {
+            if (cell.getCageId() > -1) {
+              animal = zoo.getCage(cell.getCageId()).isSpaceOccupied(i, j);
+              if (animal != null) {
+                symbol = animal.render();
               } else {
-                cellTemp.render();
+                symbol = cell.render();
               }
             } else {
-              cellTemp.render();
+              symbol = cell.render();
             }
-          } else {
-            System.out.print("?");
           }
         }
-        System.out.print("|");
+        mapLabel[i][j] = new JLabel(symbol);
+        zooMap.add(mapLabel[i][j], c);
       }
-      System.out.println("");
     }
   }
 
@@ -285,31 +343,43 @@ public class Driver {
    * @param y2 Titik akhir y
    */
   public void printZoo(int x1, int x2, int y1, int y2) {
+    //Print Map
+    zooMap = new JPanel();
+    zooMap.setLayout(new GridBagLayout());
+    zooMap.setBorder(BorderFactory.createEmptyBorder(2,2,2,2));
+
+    GridBagConstraints c = new GridBagConstraints();
+    c.ipadx = 5;
+    c.ipady = 5;
+
+    //Print Zoo Map
     int i;
     int j;
-    Cell cellTemp;
-    Animal animalTemp;
-    for (i = y1; i <= y2; i++) {
-      System.out.print("|");
-      for (j = x1; j <= x2; j++) {
-        cellTemp = zoo.getCell(i, j);
-        if (cellTemp != null) {
-          if (cellTemp.getCageId() > -1) {
-            animalTemp = zoo.getCage(cellTemp.getCageId()).isSpaceOccupied(i, j);
-            if (animalTemp != null) {
-              animalTemp.render();
+    String symbol = "";
+    Cell cell;
+    Animal animal;
+    mapLabel = new JLabel[zoo.getHeight()][zoo.getWidth()];
+    for (i = y1; i < y2; i++) {
+      for (j = x1; j < x2; j++) {
+        c.gridx = j;
+        c.gridy = i;
+          cell = zoo.getCell(i, j);
+          if (cell != null) {
+            if (cell.getCageId() > -1) {
+              animal = zoo.getCage(cell.getCageId()).isSpaceOccupied(i, j);
+              if (animal != null) {
+                symbol = animal.render();
+              } else {
+                symbol = cell.render();
+              }
             } else {
-              cellTemp.render();
+              symbol = cell.render();
             }
-          } else {
-            cellTemp.render();
           }
-        } else {
-          System.out.print("?");
-        }
-        System.out.print("|");
+
+        mapLabel[i][j] = new JLabel(symbol);
+        zooMap.add(mapLabel[i][j], c);
       }
-      System.out.println("");
     }
   }
 
