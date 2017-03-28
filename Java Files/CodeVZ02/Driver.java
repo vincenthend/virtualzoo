@@ -15,9 +15,6 @@ import java.util.Scanner;
  */
 public class Driver {
   private Zoo z;
-  public Driver() {
-    //TBD
-  }
   public Driver(String input_file) {
     try {
       //Input File
@@ -252,7 +249,7 @@ public class Driver {
       System.out.println();
     }
   }
-  public void printZoo(int x, int y) {//lebih pas dipindah ke zoo
+  public void printZoo(int x, int y) {
     int i, j;
     Cell cellTemp;
     Animal animalTemp;
@@ -287,7 +284,7 @@ public class Driver {
       System.out.println("");
     }
   }
-  public void printZoo(int x1, int x2, int y1, int y2) {//lebih pas dipindah ke zoo
+  public void printZoo(int x1, int x2, int y1, int y2) {
     int i, j;
     Cell cellTemp;
     Animal animalTemp;

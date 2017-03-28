@@ -2,7 +2,6 @@
  * @author Vincent Hendryanto H/13515089
  * Class Chameleon, mengatur konstruksi Chameleon
  */
-
 package animal;
 public class Chameleon extends LandAnimal {
   /**

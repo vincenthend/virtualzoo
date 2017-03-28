@@ -2,7 +2,6 @@
  * @author Vincent Hendryanto H/13515089
  * Class Canary, mengatur konstruksi Canary
  */
-
 package animal;
 public class Canary extends AirAnimal {
   /**

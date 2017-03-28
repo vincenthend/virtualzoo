@@ -1,5 +1,4 @@
 package animal;
-
 import renderable.Renderable;
 
 /**
@@ -9,8 +8,6 @@ import renderable.Renderable;
 public abstract class Animal implements Renderable {
   protected boolean[] habitat;
   protected int type;
-  private int locX;
-  private int locY;
   protected int weight;
   protected int foodWeight;
   protected int foodType;
@@ -18,7 +15,8 @@ public abstract class Animal implements Renderable {
   protected String sound;
   protected int[] enemyId;
   protected int cEnemy;
-
+  private int locX;
+  private int locY;
   /**
    * Konstruktor Animal
    */
@@ -59,20 +57,20 @@ public abstract class Animal implements Renderable {
     return locX;
   }
   /**
-   * Mengembalikan posisi ordinat hewan.
-   *
-   * @return Posisi ordinat hewan.
-   */
-  public int getLocationY() {
-    return locY;
-  }
-  /**
    * Mengatur nilai X hewan
    *
    * @param x lokasi X hewan
    */
   public void setLocationX(int x) {
     locX = x;
+  }
+  /**
+   * Mengembalikan posisi ordinat hewan.
+   *
+   * @return Posisi ordinat hewan.
+   */
+  public int getLocationY() {
+    return locY;
   }
   /**
    * Mengatur nilai y hewan

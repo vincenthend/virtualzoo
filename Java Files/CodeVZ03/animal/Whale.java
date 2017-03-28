@@ -2,7 +2,6 @@
  * @author Vincent Hendryanto H/13515089
  * Class Whale, mengatur konstruksi Whale
  */
-
 package animal;
 public class Whale extends WaterAnimal {
   /**

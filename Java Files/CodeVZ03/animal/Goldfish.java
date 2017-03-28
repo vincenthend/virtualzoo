@@ -2,7 +2,6 @@
  * @author Vincent Hendryanto H/13515089
  * Class Goldfish, mengatur konstruksi Goldfish
  */
-
 package animal;
 public class Goldfish extends WaterAnimal {
   /**

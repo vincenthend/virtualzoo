@@ -2,7 +2,6 @@
  * @author Vincent Hendryanto Halim / 13515089
  * Class LandHabitat, melakukan pembuatan LandHabitat untuk menampung binatang
  */
-
 package cell.habitat;
 public class LandHabitat extends Habitat {
   private final char defaultCode = 'L';

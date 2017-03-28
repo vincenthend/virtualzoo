@@ -68,22 +68,25 @@ public class Cage {
     return cageId;
   }
   /**
+   * cageId diubah menjadi n
+   *
    * @param n Nilai untuk cageId
-   *          cageId diubah menjadi n
    */
   public void setCageID(int n) {
     cageId = n;
   }
   /**
-   * @return nilai cageType
    * Mengembalikan nilai cageType
+   *
+   * @return nilai cageType
    */
   public int getCageType() {
     return cageType;
   }
   /**
-   * @return pointer menuju animal
    * Mengembalikan nilai alamat animal apakah x dan y dipakai, jika tidak maka null
+   *
+   * @return pointer menuju animal
    */
   public Animal isSpaceOccupied(int x, int y) {
     Animal ret;
@@ -97,8 +100,9 @@ public class Cage {
     return ret;
   }
   /**
-   * @return nilai total makanan herbivore
    * Menghitung total jumlah makanan herbivore
+   *
+   * @return nilai total makanan herbivore
    */
   public int countFoodHerbivore() {
     int i;
@@ -110,8 +114,9 @@ public class Cage {
     return sum;
   }
   /**
-   * @return nilai total makanan carnivore
    * Menghitung total jumlah makanan carnivore
+   *
+   * @return nilai total makanan carnivore
    */
   public int countFoodCarnivore() {
     int i;
@@ -123,8 +128,9 @@ public class Cage {
     return sum;
   }
   /**
-   * @return nilai total makanan omnivore
    * Menghitung total jumlah makanan omnivore
+   *
+   * @return nilai total makanan omnivore
    */
   public int countFoodOmnivore() {
     int i;
@@ -136,8 +142,9 @@ public class Cage {
     return sum;
   }
   /**
-   * @return true jika ada dan false jika tidak ada
    * Mengembalikan keberadaan animal dengan type = ID
+   *
+   * @return true jika ada dan false jika tidak ada
    */
   public boolean isExist(int ID) {
     boolean found = false;

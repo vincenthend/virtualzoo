@@ -2,7 +2,6 @@
  * @author Mikhael Artur Darmakesuma / 13515099
  * Class driver, main program dan inisialisasi isi awal zoo
  */
-
 import animal.*;
 import cell.Cell;
 import cell.facility.Park;
@@ -22,7 +21,6 @@ import java.util.Scanner;
 
 public class Driver {
   private Zoo z;
-
   public Driver() {
     //TBD
   }
@@ -229,6 +227,14 @@ public class Driver {
     }
   }
   /**
+   * Main Program
+   */
+  public static void main(String[] args) {
+    Driver D = new Driver("resource/map.txt");
+
+    D.printMenu();
+  }
+  /**
    * Menuliskan menu ke layar, menerima pilihan menu dan mengeksekusi pilihan
    * I. S.: Sembarang
    * F. S.: Menu tertulis di layar, pilihan diterima dan dieksekusi
@@ -307,7 +313,8 @@ public class Driver {
     System.out.println("	 Omnivore	: " + z.countFoodOmnivore());
     System.out.println("========================================");
   }
-  /**Menuliskan peta kebun binatang
+  /**
+   * Menuliskan peta kebun binatang
    * I. S.: Sembarang
    * F. S.: Peta kebun binatang tertulis di layar
    */
@@ -341,7 +348,8 @@ public class Driver {
       System.out.println();
     }
   }
-  /**Menuliskan peta kebun binatang dengan posisi tour di x, y
+  /**
+   * Menuliskan peta kebun binatang dengan posisi tour di x, y
    * I. S.: Sembarang
    * F. S.: Peta kebun binatang tertulis di layar
    */
@@ -380,7 +388,8 @@ public class Driver {
       System.out.println("");
     }
   }
-  /**Menuliskan peta kebun binatang dari range x1-x2,y1-y2
+  /**
+   * Menuliskan peta kebun binatang dari range x1-x2,y1-y2
    * I. S.: x1 <= x2, y1 <= y2
    * F. S.: Peta kebun binatang tertulis di layar
    */
@@ -414,7 +423,8 @@ public class Driver {
       System.out.println("");
     }
   }
-  /**Menjalankan tour kebun binatang dari pintu masuk ke pintu keluar
+  /**
+   * Menjalankan tour kebun binatang dari pintu masuk ke pintu keluar
    * I. S.: Sembarang
    * F. S.: Perjalanan tour kebun binatang tertulis di layar
    */
@@ -560,12 +570,5 @@ public class Driver {
       c = z.getCell(i, j);
     }
 
-  }
-  /**Main Program
-   */
-  public static void main(String[] args) {
-    Driver D = new Driver("resource/map.txt");
-
-    D.printMenu();
   }
 }

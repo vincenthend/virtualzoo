@@ -60,8 +60,9 @@ public class Cell {
     System.out.print(code);
   }
   /**
+   * Mengatur code yang akan digunakan untuk render
+   *
    * @param c Code yang diinginkan
-   *          Mengatur code yang akan digunakan untuk render
    */
   public void setCode(char c) {
     code = c;

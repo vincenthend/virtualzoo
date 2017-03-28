@@ -2,7 +2,6 @@
  * @author Vincent Hendryanto H/13515089
  * Class Bat, mengatur konstruksi Bat
  */
-
 package animal;
 public class Bat extends AirAnimal {
   /**
