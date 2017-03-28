@@ -40,7 +40,7 @@ public class Zoo {
    */
   public void addCage() {
     cageList[nCage] = new Cage();
-    cageList[nCage].SetCageID(nCage);
+    cageList[nCage].setCageID(nCage);
     nCage += 1;
   }
   /**
@@ -106,7 +106,7 @@ public class Zoo {
     i = 0;
     sum = 0;
     for (i = 0; i < nCage; i++) {
-      sum += cageList[i].CountFoodHerbivore();
+      sum += cageList[i].countFoodHerbivore();
     }
     return sum;
   }
@@ -120,7 +120,7 @@ public class Zoo {
     i = 0;
     sum = 0;
     for (i = 0; i < nCage; i++) {
-      sum += cageList[i].CountFoodCarnivore();
+      sum += cageList[i].countFoodCarnivore();
     }
     return sum;
   }
@@ -134,7 +134,7 @@ public class Zoo {
     i = 0;
     sum = 0;
     for (i = 0; i < nCage; i++) {
-      sum += cageList[i].CountFoodOmnivore();
+      sum += cageList[i].countFoodOmnivore();
     }
     return sum;
   }
