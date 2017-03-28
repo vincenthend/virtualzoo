@@ -79,30 +79,7 @@ public class Driver {
       }
 
       //Add Cage
-      for (i = 0; i < z.getHeight(); i++) {
-        for (j = 0; j < z.getWidth(); j++) {
-          found = false;
-          cellTemp = z.getCell(i, j);
-          if ((cellTemp.getCellId() >= 11) && (cellTemp.getCellId() <= 13)) {
-            if (((j - 1) >= 0) && (!(found))) {
-              if (((z.getCell(i, j).getCellId()) == (z.getCell(i, j - 1).getCellId()))) {
-                z.getCage(z.getCell(i, j - 1).getCageId()).addHabitat(z.getCell(i, j));
-                found = true;
-              }
-            }
-            if (((i - 1) >= 0) && (!(found))) {
-              if (((z.getCell(i, j).getCellId()) == (z.getCell(i - 1, j).getCellId()))) {
-                z.getCage(z.getCell(i - 1, j).getCageId()).addHabitat(z.getCell(i, j));
-                found = true;
-              }
-            }
-            if (!(found)) {
-              z.addCage();
-              z.getCage(z.getNCage() - 1).addHabitat(z.getCell(i, j));
-            }
-          }
-        }
-      }
+      z.addCage();
 
       //Add animal
       temp = Integer.parseInt(reader.readLine());

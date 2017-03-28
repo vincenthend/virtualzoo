@@ -103,4 +103,10 @@ public class Cell {
   public int getLocationY() {
     return locY;
   }
+  /**
+   * <TBD></TBD>
+   */
+  public boolean isHabitat() {
+    return (cellId >= 11 && cellId <= 13);
+  }
 }
