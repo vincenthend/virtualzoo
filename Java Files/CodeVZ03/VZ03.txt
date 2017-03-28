@@ -1,0 +1,312 @@
+
+--------------------------------------------------
+- Package: Default
+--------------------------------------------------
+
+Stats:
+    Total Classes: 1
+    Concrete Classes: 1
+    Abstract Classes: 0
+
+    Ca: 0
+    Ce: 9
+
+    A: 0
+    I: 1
+    D: 0
+
+Abstract Classes:
+
+Concrete Classes:
+    Driver
+
+Depends Upon:
+    animal
+    cage
+    cell
+    cell.facility
+    cell.habitat
+    java.io
+    java.lang
+    java.util
+    zoo
+
+Used By:
+    Not used by any packages.
+
+--------------------------------------------------
+- Package: animal
+--------------------------------------------------
+
+Stats:
+    Total Classes: 29
+    Concrete Classes: 24
+    Abstract Classes: 5
+
+    Ca: 2
+    Ce: 3
+
+    A: 0,17
+    I: 0,6
+    D: 0,23
+
+Abstract Classes:
+    animal.AirAnimal
+    animal.Amphibian
+    animal.Animal
+    animal.LandAnimal
+    animal.WaterAnimal
+
+Concrete Classes:
+    animal.Bat
+    animal.Canary
+    animal.Cat
+    animal.Chameleon
+    animal.Chicken
+    animal.Cow
+    animal.Dolphin
+    animal.Eagle
+    animal.Goat
+    animal.Goldfish
+    animal.Llama
+    animal.Mouse
+    animal.Owl
+    animal.Pelican
+    animal.Penguin
+    animal.Pigeon
+    animal.Salmon
+    animal.Seal
+    animal.Sheep
+    animal.Snake
+    animal.Squid
+    animal.Toucan
+    animal.Turtle
+    animal.Whale
+
+Depends Upon:
+    java.io
+    java.lang
+    renderable
+
+Used By:
+    Default
+    cage
+
+--------------------------------------------------
+- Package: cage
+--------------------------------------------------
+
+Stats:
+    Total Classes: 1
+    Concrete Classes: 1
+    Abstract Classes: 0
+
+    Ca: 2
+    Ce: 3
+
+    A: 0
+    I: 0,6
+    D: 0,4
+
+Abstract Classes:
+
+Concrete Classes:
+    cage.Cage
+
+Depends Upon:
+    animal
+    cell
+    java.lang
+
+Used By:
+    Default
+    zoo
+
+--------------------------------------------------
+- Package: cell
+--------------------------------------------------
+
+Stats:
+    Total Classes: 1
+    Concrete Classes: 0
+    Abstract Classes: 1
+
+    Ca: 5
+    Ce: 3
+
+    A: 1
+    I: 0,38
+    D: 0,38
+
+Abstract Classes:
+    cell.Cell
+
+Concrete Classes:
+
+Depends Upon:
+    java.io
+    java.lang
+    renderable
+
+Used By:
+    Default
+    cage
+    cell.facility
+    cell.habitat
+    zoo
+
+--------------------------------------------------
+- Package: cell.facility
+--------------------------------------------------
+
+Stats:
+    Total Classes: 4
+    Concrete Classes: 3
+    Abstract Classes: 1
+
+    Ca: 1
+    Ce: 1
+
+    A: 0,25
+    I: 0,5
+    D: 0,25
+
+Abstract Classes:
+    cell.facility.Facility
+
+Concrete Classes:
+    cell.facility.Park
+    cell.facility.Resto
+    cell.facility.Road
+
+Depends Upon:
+    cell
+
+Used By:
+    Default
+
+--------------------------------------------------
+- Package: cell.habitat
+--------------------------------------------------
+
+Stats:
+    Total Classes: 4
+    Concrete Classes: 3
+    Abstract Classes: 1
+
+    Ca: 1
+    Ce: 1
+
+    A: 0,25
+    I: 0,5
+    D: 0,25
+
+Abstract Classes:
+    cell.habitat.Habitat
+
+Concrete Classes:
+    cell.habitat.AirHabitat
+    cell.habitat.LandHabitat
+    cell.habitat.WaterHabitat
+
+Depends Upon:
+    cell
+
+Used By:
+    Default
+
+--------------------------------------------------
+- Package: java.io
+--------------------------------------------------
+No stats available: package referenced, but not analyzed.
+
+--------------------------------------------------
+- Package: java.lang
+--------------------------------------------------
+No stats available: package referenced, but not analyzed.
+
+--------------------------------------------------
+- Package: java.util
+--------------------------------------------------
+No stats available: package referenced, but not analyzed.
+
+--------------------------------------------------
+- Package: renderable
+--------------------------------------------------
+
+Stats:
+    Total Classes: 1
+    Concrete Classes: 0
+    Abstract Classes: 1
+
+    Ca: 2
+    Ce: 1
+
+    A: 1
+    I: 0,33
+    D: 0,33
+
+Abstract Classes:
+    renderable.Renderable
+
+Concrete Classes:
+
+Depends Upon:
+    java.lang
+
+Used By:
+    animal
+    cell
+
+--------------------------------------------------
+- Package: zoo
+--------------------------------------------------
+
+Stats:
+    Total Classes: 1
+    Concrete Classes: 1
+    Abstract Classes: 0
+
+    Ca: 1
+    Ce: 3
+
+    A: 0
+    I: 0,75
+    D: 0,25
+
+Abstract Classes:
+
+Concrete Classes:
+    zoo.Zoo
+
+Depends Upon:
+    cage
+    cell
+    java.lang
+
+Used By:
+    Default
+
+
+--------------------------------------------------
+- Package Dependency Cycles:
+--------------------------------------------------
+
+
+--------------------------------------------------
+- Summary:
+--------------------------------------------------
+
+Name, Class Count, Abstract Class Count, Ca, Ce, A, I, D, V:
+
+Default,1,0,0,9,0,1,0,1
+animal,29,5,2,3,0,17,0,6,0,23,1
+cage,1,0,2,3,0,0,6,0,4,1
+cell,1,1,5,3,1,0,38,0,38,1
+cell.facility,4,1,1,1,0,25,0,5,0,25,1
+cell.habitat,4,1,1,1,0,25,0,5,0,25,1
+java.io,0,0,3,0,0,0,1,1
+java.lang,0,0,6,0,0,0,1,1
+java.util,0,0,1,0,0,0,1,1
+renderable,1,1,2,1,1,0,33,0,33,1
+zoo,1,0,1,3,0,0,75,0,25,1
