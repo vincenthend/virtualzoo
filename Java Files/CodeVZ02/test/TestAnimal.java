@@ -1,8 +1,8 @@
-package animal;
-
-import java.io.*;
+package test;
+import animal.Animal;
 import org.junit.Test;
-import static org.junit.Assert.*;
+
+import static org.junit.Assert.assertEquals;
 
 public class TestAnimal
 {
@@ -17,7 +17,7 @@ public class TestAnimal
 		assertEquals("1.Lokasi initial Y salah!",-99,animaltest.getLocationY());
 		assertEquals("1.Habitat salah!",false,animaltest.getHabitat()[0]);
 		assertEquals("1.Habitat salah!",true,animaltest.getHabitat()[1]);
-		assertEquals("1.Habitat salah!",false,animaltest.getHabitat()[2]);		
+		assertEquals("1.Habitat salah!",false,animaltest.getHabitat()[2]);
 		assertEquals("1.Initial jumlah musuh salah!",0,animaltest.getCEnemy());
 		assertEquals("1.Array Enemy awal tidak kosong!",0,animaltest.getEnemyList()[0]);
 	}
@@ -32,7 +32,7 @@ public class TestAnimal
 		assertEquals("2.Lokasi initial Y salah!",-99,animaltest.getLocationY());
 		assertEquals("2.Habitat salah!",false,animaltest.getHabitat()[0]);
 		assertEquals("2.Habitat salah!",true,animaltest.getHabitat()[1]);
-		assertEquals("2.Habitat salah!",false,animaltest.getHabitat()[2]);		
+		assertEquals("2.Habitat salah!",false,animaltest.getHabitat()[2]);
 		assertEquals("2.Initial jumlah musuh salah!",0,animaltest.getCEnemy());
 		assertEquals("2.Array Enemy awal tidak kosong!",0,animaltest.getEnemyList()[0]);
 	}
@@ -47,7 +47,7 @@ public class TestAnimal
 		assertEquals("3.Lokasi initial Y salah!",-99,animaltest.getLocationY());
 		assertEquals("3.Habitat salah!",false,animaltest.getHabitat()[0]);
 		assertEquals("3.Habitat salah!",true,animaltest.getHabitat()[1]);
-		assertEquals("3.Habitat salah!",false,animaltest.getHabitat()[2]);		
+		assertEquals("3.Habitat salah!",false,animaltest.getHabitat()[2]);
 		assertEquals("3.Initial jumlah musuh salah!",0,animaltest.getCEnemy());
 		assertEquals("3.Array Enemy awal tidak kosong!",0,animaltest.getEnemyList()[0]);
 	}
@@ -62,7 +62,7 @@ public class TestAnimal
 		assertEquals("4.Lokasi initial Y salah!",-99,animaltest.getLocationY());
 		assertEquals("4.Habitat salah!",false,animaltest.getHabitat()[0]);
 		assertEquals("4.Habitat salah!",true,animaltest.getHabitat()[1]);
-		assertEquals("4.Habitat salah!",false,animaltest.getHabitat()[2]);		
+		assertEquals("4.Habitat salah!",false,animaltest.getHabitat()[2]);
 		assertEquals("4.Initial jumlah musuh salah!",0,animaltest.getCEnemy());
 		assertEquals("4.Array Enemy awal tidak kosong!",0,animaltest.getEnemyList()[0]);
 	}
@@ -77,7 +77,7 @@ public class TestAnimal
 		assertEquals("5.Lokasi initial Y salah!",-99,animaltest.getLocationY());
 		assertEquals("5.Habitat salah!",false,animaltest.getHabitat()[0]);
 		assertEquals("5.Habitat salah!",true,animaltest.getHabitat()[1]);
-		assertEquals("5.Habitat salah!",false,animaltest.getHabitat()[2]);		
+		assertEquals("5.Habitat salah!",false,animaltest.getHabitat()[2]);
 		assertEquals("5.Initial jumlah musuh salah!",2,animaltest.getCEnemy());
 		assertEquals("5.Array Enemy salah!",2,animaltest.getEnemyList()[0]);
 		assertEquals("5.Array Enemy salah!",4,animaltest.getEnemyList()[1]);
@@ -93,7 +93,7 @@ public class TestAnimal
 		assertEquals("6.Lokasi initial Y salah!",-99,animaltest.getLocationY());
 		assertEquals("6.Habitat salah!",false,animaltest.getHabitat()[0]);
 		assertEquals("6.Habitat salah!",true,animaltest.getHabitat()[1]);
-		assertEquals("6.Habitat salah!",false,animaltest.getHabitat()[2]);		
+		assertEquals("6.Habitat salah!",false,animaltest.getHabitat()[2]);
 		assertEquals("6.Initial jumlah musuh salah!",0,animaltest.getCEnemy());
 		assertEquals("6.Array Enemy awal tidak kosong!",0,animaltest.getEnemyList()[0]);
 	}
@@ -108,7 +108,7 @@ public class TestAnimal
 		assertEquals("7.Lokasi initial Y salah!",-99,animaltest.getLocationY());
 		assertEquals("7.Habitat salah!",false,animaltest.getHabitat()[0]);
 		assertEquals("7.Habitat salah!",true,animaltest.getHabitat()[1]);
-		assertEquals("7.Habitat salah!",false,animaltest.getHabitat()[2]);		
+		assertEquals("7.Habitat salah!",false,animaltest.getHabitat()[2]);
 		assertEquals("7.Initial jumlah musuh salah!",0,animaltest.getCEnemy());
 		assertEquals("7.Array Enemy awal tidak kosong!",0,animaltest.getEnemyList()[0]);
 	}
@@ -123,7 +123,7 @@ public class TestAnimal
 		assertEquals("8.Lokasi initial Y salah!",-99,animaltest.getLocationY());
 		assertEquals("8.Habitat salah!",true,animaltest.getHabitat()[0]);
 		assertEquals("8.Habitat salah!",false,animaltest.getHabitat()[1]);
-		assertEquals("8.Habitat salah!",false,animaltest.getHabitat()[2]);		
+		assertEquals("8.Habitat salah!",false,animaltest.getHabitat()[2]);
 		assertEquals("8.Initial jumlah musuh salah!",0,animaltest.getCEnemy());
 		assertEquals("8.Array Enemy awal tidak kosong!",0,animaltest.getEnemyList()[0]);
 	}
@@ -138,7 +138,7 @@ public class TestAnimal
 		assertEquals("9.Lokasi initial Y salah!",-99,animaltest.getLocationY());
 		assertEquals("9.Habitat salah!",true,animaltest.getHabitat()[0]);
 		assertEquals("9.Habitat salah!",false,animaltest.getHabitat()[1]);
-		assertEquals("9.Habitat salah!",false,animaltest.getHabitat()[2]);		
+		assertEquals("9.Habitat salah!",false,animaltest.getHabitat()[2]);
 		assertEquals("9.Initial jumlah musuh salah!",0,animaltest.getCEnemy());
 		assertEquals("9.Array Enemy awal tidak kosong!",0,animaltest.getEnemyList()[0]);
 	}
@@ -153,7 +153,7 @@ public class TestAnimal
 		assertEquals("10.Lokasi initial Y salah!",-99,animaltest.getLocationY());
 		assertEquals("10.Habitat salah!",true,animaltest.getHabitat()[0]);
 		assertEquals("10.Habitat salah!",false,animaltest.getHabitat()[1]);
-		assertEquals("10.Habitat salah!",false,animaltest.getHabitat()[2]);		
+		assertEquals("10.Habitat salah!",false,animaltest.getHabitat()[2]);
 		assertEquals("10.Initial jumlah musuh salah!",0,animaltest.getCEnemy());
 		assertEquals("10.Array Enemy awal tidak kosong!",0,animaltest.getEnemyList()[0]);
 	}
@@ -168,7 +168,7 @@ public class TestAnimal
 		assertEquals("11.Lokasi initial Y salah!",-99,animaltest.getLocationY());
 		assertEquals("11.Habitat salah!",true,animaltest.getHabitat()[0]);
 		assertEquals("11.Habitat salah!",false,animaltest.getHabitat()[1]);
-		assertEquals("11.Habitat salah!",false,animaltest.getHabitat()[2]);		
+		assertEquals("11.Habitat salah!",false,animaltest.getHabitat()[2]);
 		assertEquals("11.Initial jumlah musuh salah!",1,animaltest.getCEnemy());
 		assertEquals("11.Array Enemy awal kosong!",9,animaltest.getEnemyList()[0]);
 	}
@@ -183,7 +183,7 @@ public class TestAnimal
 		assertEquals("12.Lokasi initial Y salah!",-99,animaltest.getLocationY());
 		assertEquals("12.Habitat salah!",true,animaltest.getHabitat()[0]);
 		assertEquals("12.Habitat salah!",false,animaltest.getHabitat()[1]);
-		assertEquals("12.Habitat salah!",false,animaltest.getHabitat()[2]);		
+		assertEquals("12.Habitat salah!",false,animaltest.getHabitat()[2]);
 		assertEquals("12.Initial jumlah musuh salah!",0,animaltest.getCEnemy());
 		assertEquals("12.Array Enemy awal tidak kosong!",0,animaltest.getEnemyList()[0]);
 	}
@@ -198,7 +198,7 @@ public class TestAnimal
 		assertEquals("13.Lokasi initial Y salah!",-99,animaltest.getLocationY());
 		assertEquals("13.Habitat salah!",true,animaltest.getHabitat()[0]);
 		assertEquals("13.Habitat salah!",false,animaltest.getHabitat()[1]);
-		assertEquals("13.Habitat salah!",false,animaltest.getHabitat()[2]);		
+		assertEquals("13.Habitat salah!",false,animaltest.getHabitat()[2]);
 		assertEquals("13.Initial jumlah musuh salah!",0,animaltest.getCEnemy());
 		assertEquals("13.Array Enemy awal tidak kosong!",0,animaltest.getEnemyList()[0]);
 	}
@@ -213,7 +213,7 @@ public class TestAnimal
 		assertEquals("14.Lokasi initial Y salah!",-99,animaltest.getLocationY());
 		assertEquals("14.Habitat salah!",true,animaltest.getHabitat()[0]);
 		assertEquals("14.Habitat salah!",false,animaltest.getHabitat()[1]);
-		assertEquals("14.Habitat salah!",false,animaltest.getHabitat()[2]);		
+		assertEquals("14.Habitat salah!",false,animaltest.getHabitat()[2]);
 		assertEquals("14.Initial jumlah musuh salah!",0,animaltest.getCEnemy());
 		assertEquals("14.Array Enemy awal tidak kosong!",0,animaltest.getEnemyList()[0]);
 	}
@@ -228,7 +228,7 @@ public class TestAnimal
 		assertEquals("15.Lokasi initial Y salah!",-99,animaltest.getLocationY());
 		assertEquals("15.Habitat salah!",true,animaltest.getHabitat()[0]);
 		assertEquals("15.Habitat salah!",false,animaltest.getHabitat()[1]);
-		assertEquals("15.Habitat salah!",false,animaltest.getHabitat()[2]);		
+		assertEquals("15.Habitat salah!",false,animaltest.getHabitat()[2]);
 		assertEquals("15.Initial jumlah musuh salah!",0,animaltest.getCEnemy());
 		assertEquals("15.Array Enemy awal tidak kosong!",0,animaltest.getEnemyList()[0]);
 	}
@@ -243,7 +243,7 @@ public class TestAnimal
 		assertEquals("16.Lokasi initial Y salah!",-99,animaltest.getLocationY());
 		assertEquals("16.Habitat salah!",true,animaltest.getHabitat()[0]);
 		assertEquals("16.Habitat salah!",false,animaltest.getHabitat()[1]);
-		assertEquals("16.Habitat salah!",false,animaltest.getHabitat()[2]);		
+		assertEquals("16.Habitat salah!",false,animaltest.getHabitat()[2]);
 		assertEquals("16.Initial jumlah musuh salah!",0,animaltest.getCEnemy());
 		assertEquals("16.Array Enemy awal tidak kosong!",0,animaltest.getEnemyList()[0]);
 	}
@@ -258,7 +258,7 @@ public class TestAnimal
 		assertEquals("17.Lokasi initial Y salah!",-99,animaltest.getLocationY());
 		assertEquals("17.Habitat salah!",false,animaltest.getHabitat()[0]);
 		assertEquals("17.Habitat salah!",false,animaltest.getHabitat()[1]);
-		assertEquals("17.Habitat salah!",true,animaltest.getHabitat()[2]);		
+		assertEquals("17.Habitat salah!",true,animaltest.getHabitat()[2]);
 		assertEquals("17.Initial jumlah musuh salah!",2,animaltest.getCEnemy());
 		assertEquals("17.Array Enemy awal kosong!",19,animaltest.getEnemyList()[0]);
 		assertEquals("17.Array Enemy awal salah!",21,animaltest.getEnemyList()[1]);
@@ -274,7 +274,7 @@ public class TestAnimal
 		assertEquals("18.Lokasi initial Y salah!",-99,animaltest.getLocationY());
 		assertEquals("18.Habitat salah!",false,animaltest.getHabitat()[0]);
 		assertEquals("18.Habitat salah!",false,animaltest.getHabitat()[1]);
-		assertEquals("18.Habitat salah!",true,animaltest.getHabitat()[2]);		
+		assertEquals("18.Habitat salah!",true,animaltest.getHabitat()[2]);
 		assertEquals("18.Initial jumlah musuh salah!",0,animaltest.getCEnemy());
 		assertEquals("18.Array Enemy awal tidak kosong!",0,animaltest.getEnemyList()[0]);
 	}
@@ -289,7 +289,7 @@ public class TestAnimal
 		assertEquals("19.Lokasi initial Y salah!",-99,animaltest.getLocationY());
 		assertEquals("19.Habitat salah!",false,animaltest.getHabitat()[0]);
 		assertEquals("19.Habitat salah!",false,animaltest.getHabitat()[1]);
-		assertEquals("19.Habitat salah!",true,animaltest.getHabitat()[2]);		
+		assertEquals("19.Habitat salah!",true,animaltest.getHabitat()[2]);
 		assertEquals("19.Initial jumlah musuh salah!",0,animaltest.getCEnemy());
 		assertEquals("19.Array Enemy awal tidak kosong!",0,animaltest.getEnemyList()[0]);
 	}
@@ -304,7 +304,7 @@ public class TestAnimal
 		assertEquals("20.Lokasi initial Y salah!",-99,animaltest.getLocationY());
 		assertEquals("20.Habitat salah!",false,animaltest.getHabitat()[0]);
 		assertEquals("20.Habitat salah!",false,animaltest.getHabitat()[1]);
-		assertEquals("20.Habitat salah!",true,animaltest.getHabitat()[2]);		
+		assertEquals("20.Habitat salah!",true,animaltest.getHabitat()[2]);
 		assertEquals("20.Initial jumlah musuh salah!",0,animaltest.getCEnemy());
 		assertEquals("20.Array Enemy awal tidak kosong!",0,animaltest.getEnemyList()[0]);
 	}
@@ -319,7 +319,7 @@ public class TestAnimal
 		assertEquals("21.Lokasi initial Y salah!",-99,animaltest.getLocationY());
 		assertEquals("21.Habitat salah!",false,animaltest.getHabitat()[0]);
 		assertEquals("21.Habitat salah!",false,animaltest.getHabitat()[1]);
-		assertEquals("21.Habitat salah!",true,animaltest.getHabitat()[2]);		
+		assertEquals("21.Habitat salah!",true,animaltest.getHabitat()[2]);
 		assertEquals("21.Initial jumlah musuh salah!",0,animaltest.getCEnemy());
 		assertEquals("21.Array Enemy awal tidak kosong!",0,animaltest.getEnemyList()[0]);
 	}
@@ -334,7 +334,7 @@ public class TestAnimal
 		assertEquals("22.Lokasi initial Y salah!",-99,animaltest.getLocationY());
 		assertEquals("22.Habitat salah!",false,animaltest.getHabitat()[0]);
 		assertEquals("22.Habitat salah!",false,animaltest.getHabitat()[1]);
-		assertEquals("22.Habitat salah!",true,animaltest.getHabitat()[2]);		
+		assertEquals("22.Habitat salah!",true,animaltest.getHabitat()[2]);
 		assertEquals("22.Initial jumlah musuh salah!",0,animaltest.getCEnemy());
 		assertEquals("22.Array Enemy awal tidak kosong!",0,animaltest.getEnemyList()[0]);
 	}
@@ -349,7 +349,7 @@ public class TestAnimal
 		assertEquals("23.Lokasi initial Y salah!",-99,animaltest.getLocationY());
 		assertEquals("23.Habitat salah!",false,animaltest.getHabitat()[0]);
 		assertEquals("23.Habitat salah!",false,animaltest.getHabitat()[1]);
-		assertEquals("23.Habitat salah!",true,animaltest.getHabitat()[2]);		
+		assertEquals("23.Habitat salah!",true,animaltest.getHabitat()[2]);
 		assertEquals("23.Initial jumlah musuh salah!",0,animaltest.getCEnemy());
 		assertEquals("23.Array Enemy awal tidak kosong!",0,animaltest.getEnemyList()[0]);
 	}
@@ -364,7 +364,7 @@ public class TestAnimal
 		assertEquals("20.Lokasi initial Y salah!",-99,animaltest.getLocationY());
 		assertEquals("20.Habitat salah!",true,animaltest.getHabitat()[0]);
 		assertEquals("20.Habitat salah!",false,animaltest.getHabitat()[1]);
-		assertEquals("20.Habitat salah!",true,animaltest.getHabitat()[2]);		
+		assertEquals("20.Habitat salah!",true,animaltest.getHabitat()[2]);
 		assertEquals("20.Initial jumlah musuh salah!",0,animaltest.getCEnemy());
 		assertEquals("20.Array Enemy awal tidak kosong!",0,animaltest.getEnemyList()[0]);
 	}
@@ -379,6 +379,6 @@ public class TestAnimal
 		animaltest.move(3,5);
 		assertEquals("Move X gagal!",3,animaltest.getLocationX());
 		assertEquals("Move Y gagal!",5,animaltest.getLocationY());
-		
+
 	}
 }
