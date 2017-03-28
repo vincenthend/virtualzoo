@@ -20,7 +20,7 @@ public class Zoo {
     width = 21;
     height = 21;
     cellList = new Cell[width][height];
-    cageList = new Cage[999];
+    cageList = new Cage[width * height];
   }
   /**
    * Membuat Zoo dengan width w dan height h
@@ -33,15 +33,73 @@ public class Zoo {
     width = w;
     height = h;
     cellList = new Cell[width][height];
-    cageList = new Cage[999];
+    cageList = new Cage[width * height];
   }
   /**
-   * Melakukan penambahan cage,
+   * Melakukan penambahan cage untuk seluruh zoo
+   * I. S.: Sembarang
+   * F. S.: Seluruh cage dalam zoo dibuat dari habitat sejenis yang bersebelahan
+   *
    */
   public void addCage() {
-    cageList[nCage] = new Cage();
-    cageList[nCage].setCageID(nCage);
-    nCage += 1;
+    int i, j;
+    for (i = 0; i < height; i++) {
+      for (j = 0; j < width; j++) {
+        if ((cellList[i][j].getCageId() == -1) && cellList[i][j].isHabitat()) {
+          initCage(i, j);
+        }
+      }
+    }
+  }
+  /** Membuat sebuah cage baru
+   * I. S.: Sembarang
+   * F. S.: Sebuah cage dibuat dari habitat sejenis yang bersebelahan, jumlah cage bertambah 1
+   *
+   * @param x Posisi absis habitat di mana cage akan dibuat
+   * @param y Posisi ordinat habitat di mana cage akan dibuat
+   */
+  public void initCage(int x, int y) {
+    addToCage(x, y);
+    nCage++;
+  }
+  /** Memasukkan habitat yang bersebelahan ke cage
+   * I. S.: Cage sudah dibuat
+   * F. S.: Sebuah habitat dan habitat sejenis yang bersebelahan dengan habitat tersebut dimasukkan ke dalam cage
+   *
+   * @param x Posisi absis habitat yang akan dimasukkan
+   * @param y Posisi ordinat habitat yang akan dimasukkan
+   */
+  public void addToCage(int x, int y) {
+    cageList[nCage].addHabitat(cellList[x][y]);
+    if (isInRange(x - 1, y)) {
+      if (cellList[x][y].getCellId() == cellList[x - 1][y].getCellId()) {
+        addToCage(x - 1, y);
+      }
+    }
+    if (isInRange(x + 1, y)) {
+      if (cellList[x][y].getCellId() == cellList[x + 1][y].getCellId()) {
+        addToCage(x + 1, y);
+      }
+    }
+    if (isInRange(x, y - 1)) {
+      if (cellList[x][y].getCellId() == cellList[x][y - 1].getCellId()) {
+        addToCage(x, y - 1);
+      }
+    }
+    if (isInRange(x, y + 1)) {
+      if (cellList[x][y].getCellId() == cellList[x][y + 1].getCellId()) {
+        addToCage(x, y + 1);
+      }
+    }
+  }
+  /** Mengembalikan ada tidaknya cell x, y di dalam zoo
+   *
+   * @return true jika cell x, y ada di dalam range zoo, false jika tidak
+   * @param x Lokasi x cell
+   * @param y Lokasi y cell
+   */
+  public boolean isInRange(int x, int y) {
+    return (x >= 0 && x < height && y >= 0 && y < width);
   }
   /**
    * Melakukan penambahan cell dengan cell C yang sudah dictor di tempat lain
