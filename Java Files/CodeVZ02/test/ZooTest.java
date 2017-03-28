@@ -41,6 +41,8 @@ public class ZooTest {
   @org.junit.Test
   public void getCage() throws Exception {
     Zoo Z = new Zoo();
+    Cell C = new Cell(0, 0, 12);
+    Z.addCell(0, 0, C);
     System.out.println("Testing addCage - getCage");
     assertTrue(Z.getCage(0) == null);
     Z.addCage();
@@ -49,6 +51,8 @@ public class ZooTest {
   @org.junit.Test
   public void getNCage() throws Exception {
     Zoo Z = new Zoo();
+    Cell C = new Cell(1, 1, 12);
+    Z.addCell(1, 1, C);
     System.out.println("Testing getNCage");
     assertTrue(Z.getNCage() == 0);
     Z.addCage();
@@ -73,19 +77,19 @@ public class ZooTest {
 
     System.out.println("Testing countFoodHerbivore");
     assertTrue(Z.countFoodHerbivore() == 0);
+    Z.addCell(1, 1, cell1);
     Z.addCage();
     Cg = Z.getCage(0);
-    Cg.addHabitat(cell1);
     Cg.addAnimal(a);
 
+    Z.addCell(1, 2, cell2);
     Z.addCage();
     Cg = Z.getCage(1);
-    Cg.addHabitat(cell2);
     Cg.addAnimal(b);
 
+    Z.addCell(1, 3, cell3);
     Z.addCage();
     Cg = Z.getCage(2);
-    Cg.addHabitat(cell3);
     Cg.addAnimal(c);
     assertTrue(Z.countFoodHerbivore() == 1);
   }
@@ -108,19 +112,19 @@ public class ZooTest {
 
     System.out.println("Testing countFoodCarnivore");
     assertTrue(Z.countFoodCarnivore() == 0);
+    Z.addCell(1, 1, cell1);
     Z.addCage();
     Cg = Z.getCage(0);
-    Cg.addHabitat(cell1);
     Cg.addAnimal(a);
 
+    Z.addCell(1, 2, cell2);
     Z.addCage();
     Cg = Z.getCage(1);
-    Cg.addHabitat(cell2);
     Cg.addAnimal(b);
 
+    Z.addCell(1, 3, cell3);
     Z.addCage();
     Cg = Z.getCage(2);
-    Cg.addHabitat(cell3);
     Cg.addAnimal(c);
     assertTrue(Z.countFoodCarnivore() == 4);
   }
@@ -143,21 +147,20 @@ public class ZooTest {
 
     System.out.println("Testing countFoodCarnivore");
     assertTrue(Z.countFoodOmnivore() == 0);
+    Z.addCell(1, 1, cell1);
     Z.addCage();
     Cg = Z.getCage(0);
-    Cg.addHabitat(cell1);
     Cg.addAnimal(a);
 
+    Z.addCell(1, 2, cell2);
     Z.addCage();
     Cg = Z.getCage(1);
-    Cg.addHabitat(cell2);
     Cg.addAnimal(b);
 
+    Z.addCell(1, 3, cell3);
     Z.addCage();
     Cg = Z.getCage(2);
-    Cg.addHabitat(cell3);
     Cg.addAnimal(c);
-
     assertTrue(Z.countFoodOmnivore() == 2);
   }
 

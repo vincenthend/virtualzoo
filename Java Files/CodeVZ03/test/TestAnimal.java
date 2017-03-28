@@ -20,7 +20,6 @@ public class TestAnimal
 		assertEquals("1.Habitat salah!",true,animaltest.getHabitat()[1]);
 		assertEquals("1.Habitat salah!",false,animaltest.getHabitat()[2]);
 		assertEquals("1.Initial jumlah musuh salah!",0,animaltest.getCEnemy());
-		assertEquals("1.Array Enemy awal tidak kosong!",0,animaltest.getEnemyList()[0]);
 	}
 	@Test
 	public void InitialAssertTest2()
@@ -35,7 +34,6 @@ public class TestAnimal
 		assertEquals("2.Habitat salah!",true,animaltest.getHabitat()[1]);
 		assertEquals("2.Habitat salah!",false,animaltest.getHabitat()[2]);
 		assertEquals("2.Initial jumlah musuh salah!",0,animaltest.getCEnemy());
-		assertEquals("2.Array Enemy awal tidak kosong!",0,animaltest.getEnemyList()[0]);
 	}
 	@Test
 	public void InitialAssertTest3()
@@ -50,7 +48,6 @@ public class TestAnimal
 		assertEquals("3.Habitat salah!",true,animaltest.getHabitat()[1]);
 		assertEquals("3.Habitat salah!",false,animaltest.getHabitat()[2]);
 		assertEquals("3.Initial jumlah musuh salah!",0,animaltest.getCEnemy());
-		assertEquals("3.Array Enemy awal tidak kosong!",0,animaltest.getEnemyList()[0]);
 	}
 	@Test
 	public void InitialAssertTest4()
@@ -65,7 +62,6 @@ public class TestAnimal
 		assertEquals("4.Habitat salah!",true,animaltest.getHabitat()[1]);
 		assertEquals("4.Habitat salah!",false,animaltest.getHabitat()[2]);
 		assertEquals("4.Initial jumlah musuh salah!",0,animaltest.getCEnemy());
-		assertEquals("4.Array Enemy awal tidak kosong!",0,animaltest.getEnemyList()[0]);
 	}
 	@Test
 	public void InitialAssertTest5()
@@ -96,7 +92,6 @@ public class TestAnimal
 		assertEquals("6.Habitat salah!",true,animaltest.getHabitat()[1]);
 		assertEquals("6.Habitat salah!",false,animaltest.getHabitat()[2]);
 		assertEquals("6.Initial jumlah musuh salah!",0,animaltest.getCEnemy());
-		assertEquals("6.Array Enemy awal tidak kosong!",0,animaltest.getEnemyList()[0]);
 	}
 	@Test
 	public void InitialAssertTest7()
@@ -111,7 +106,6 @@ public class TestAnimal
 		assertEquals("7.Habitat salah!",true,animaltest.getHabitat()[1]);
 		assertEquals("7.Habitat salah!",false,animaltest.getHabitat()[2]);
 		assertEquals("7.Initial jumlah musuh salah!",0,animaltest.getCEnemy());
-		assertEquals("7.Array Enemy awal tidak kosong!",0,animaltest.getEnemyList()[0]);
 	}
 	@Test
 	public void InitialAssertTest8()
@@ -126,7 +120,6 @@ public class TestAnimal
 		assertEquals("8.Habitat salah!",false,animaltest.getHabitat()[1]);
 		assertEquals("8.Habitat salah!",false,animaltest.getHabitat()[2]);
 		assertEquals("8.Initial jumlah musuh salah!",0,animaltest.getCEnemy());
-		assertEquals("8.Array Enemy awal tidak kosong!",0,animaltest.getEnemyList()[0]);
 	}
 	@Test
 	public void InitialAssertTest9()
@@ -141,7 +134,6 @@ public class TestAnimal
 		assertEquals("9.Habitat salah!",false,animaltest.getHabitat()[1]);
 		assertEquals("9.Habitat salah!",false,animaltest.getHabitat()[2]);
 		assertEquals("9.Initial jumlah musuh salah!",0,animaltest.getCEnemy());
-		assertEquals("9.Array Enemy awal tidak kosong!",0,animaltest.getEnemyList()[0]);
 	}
 	@Test
 	public void InitialAssertTest10()
@@ -156,7 +148,6 @@ public class TestAnimal
 		assertEquals("10.Habitat salah!",false,animaltest.getHabitat()[1]);
 		assertEquals("10.Habitat salah!",false,animaltest.getHabitat()[2]);
 		assertEquals("10.Initial jumlah musuh salah!",0,animaltest.getCEnemy());
-		assertEquals("10.Array Enemy awal tidak kosong!",0,animaltest.getEnemyList()[0]);
 	}
 	@Test
 	public void InitialAssertTest11()
@@ -186,7 +177,6 @@ public class TestAnimal
 		assertEquals("12.Habitat salah!",false,animaltest.getHabitat()[1]);
 		assertEquals("12.Habitat salah!",false,animaltest.getHabitat()[2]);
 		assertEquals("12.Initial jumlah musuh salah!",0,animaltest.getCEnemy());
-		assertEquals("12.Array Enemy awal tidak kosong!",0,animaltest.getEnemyList()[0]);
 	}
 	@Test
 	public void InitialAssertTest13()
@@ -201,7 +191,6 @@ public class TestAnimal
 		assertEquals("13.Habitat salah!",false,animaltest.getHabitat()[1]);
 		assertEquals("13.Habitat salah!",false,animaltest.getHabitat()[2]);
 		assertEquals("13.Initial jumlah musuh salah!",0,animaltest.getCEnemy());
-		assertEquals("13.Array Enemy awal tidak kosong!",0,animaltest.getEnemyList()[0]);
 	}
 	@Test
 	public void InitialAssertTest14()
@@ -216,7 +205,6 @@ public class TestAnimal
 		assertEquals("14.Habitat salah!",false,animaltest.getHabitat()[1]);
 		assertEquals("14.Habitat salah!",false,animaltest.getHabitat()[2]);
 		assertEquals("14.Initial jumlah musuh salah!",0,animaltest.getCEnemy());
-		assertEquals("14.Array Enemy awal tidak kosong!",0,animaltest.getEnemyList()[0]);
 	}
 	@Test
 	public void InitialAssertTest15()
@@ -231,7 +219,6 @@ public class TestAnimal
 		assertEquals("15.Habitat salah!",false,animaltest.getHabitat()[1]);
 		assertEquals("15.Habitat salah!",false,animaltest.getHabitat()[2]);
 		assertEquals("15.Initial jumlah musuh salah!",0,animaltest.getCEnemy());
-		assertEquals("15.Array Enemy awal tidak kosong!",0,animaltest.getEnemyList()[0]);
 	}
 	@Test
 	public void InitialAssertTest16()
@@ -246,7 +233,6 @@ public class TestAnimal
 		assertEquals("16.Habitat salah!",false,animaltest.getHabitat()[1]);
 		assertEquals("16.Habitat salah!",false,animaltest.getHabitat()[2]);
 		assertEquals("16.Initial jumlah musuh salah!",0,animaltest.getCEnemy());
-		assertEquals("16.Array Enemy awal tidak kosong!",0,animaltest.getEnemyList()[0]);
 	}
 	@Test
 	public void InitialAssertTest17()
@@ -277,7 +263,6 @@ public class TestAnimal
 		assertEquals("18.Habitat salah!",false,animaltest.getHabitat()[1]);
 		assertEquals("18.Habitat salah!",true,animaltest.getHabitat()[2]);
 		assertEquals("18.Initial jumlah musuh salah!",0,animaltest.getCEnemy());
-		assertEquals("18.Array Enemy awal tidak kosong!",0,animaltest.getEnemyList()[0]);
 	}
 	@Test
 	public void InitialAssertTest19()
@@ -292,7 +277,6 @@ public class TestAnimal
 		assertEquals("19.Habitat salah!",false,animaltest.getHabitat()[1]);
 		assertEquals("19.Habitat salah!",true,animaltest.getHabitat()[2]);
 		assertEquals("19.Initial jumlah musuh salah!",0,animaltest.getCEnemy());
-		assertEquals("19.Array Enemy awal tidak kosong!",0,animaltest.getEnemyList()[0]);
 	}
 	@Test
 	public void InitialAssertTest20()
@@ -307,7 +291,6 @@ public class TestAnimal
 		assertEquals("20.Habitat salah!",false,animaltest.getHabitat()[1]);
 		assertEquals("20.Habitat salah!",true,animaltest.getHabitat()[2]);
 		assertEquals("20.Initial jumlah musuh salah!",0,animaltest.getCEnemy());
-		assertEquals("20.Array Enemy awal tidak kosong!",0,animaltest.getEnemyList()[0]);
 	}
 	@Test
 	public void InitialAssertTest21()
@@ -322,7 +305,6 @@ public class TestAnimal
 		assertEquals("21.Habitat salah!",false,animaltest.getHabitat()[1]);
 		assertEquals("21.Habitat salah!",true,animaltest.getHabitat()[2]);
 		assertEquals("21.Initial jumlah musuh salah!",0,animaltest.getCEnemy());
-		assertEquals("21.Array Enemy awal tidak kosong!",0,animaltest.getEnemyList()[0]);
 	}
 	@Test
 	public void InitialAssertTest22()
@@ -337,7 +319,6 @@ public class TestAnimal
 		assertEquals("22.Habitat salah!",false,animaltest.getHabitat()[1]);
 		assertEquals("22.Habitat salah!",true,animaltest.getHabitat()[2]);
 		assertEquals("22.Initial jumlah musuh salah!",0,animaltest.getCEnemy());
-		assertEquals("22.Array Enemy awal tidak kosong!",0,animaltest.getEnemyList()[0]);
 	}
 	@Test
 	public void InitialAssertTest23()
@@ -352,7 +333,6 @@ public class TestAnimal
 		assertEquals("23.Habitat salah!",false,animaltest.getHabitat()[1]);
 		assertEquals("23.Habitat salah!",true,animaltest.getHabitat()[2]);
 		assertEquals("23.Initial jumlah musuh salah!",0,animaltest.getCEnemy());
-		assertEquals("23.Array Enemy awal tidak kosong!",0,animaltest.getEnemyList()[0]);
 	}
 	@Test
 	public void InitialAssertTest24()
@@ -367,7 +347,6 @@ public class TestAnimal
 		assertEquals("24.Habitat salah!",false,animaltest.getHabitat()[1]);
 		assertEquals("24.Habitat salah!",true,animaltest.getHabitat()[2]);
 		assertEquals("24.Initial jumlah musuh salah!",0,animaltest.getCEnemy());
-		assertEquals("24.Array Enemy awal tidak kosong!",0,animaltest.getEnemyList()[0]);
 	}
 	@Test
 	public void SetterTest()

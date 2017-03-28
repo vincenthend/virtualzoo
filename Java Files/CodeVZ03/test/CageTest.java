@@ -1,7 +1,7 @@
 package test;
 import animal.Animal;
-import animal.Chicken;
 import animal.Cat;
+import animal.Chicken;
 import animal.Cow;
 import cage.Cage;
 import cell.Cell;

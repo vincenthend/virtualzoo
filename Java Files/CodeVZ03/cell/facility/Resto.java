@@ -11,7 +11,7 @@ public class Resto extends Facility {
   public Resto() {
     locX = 0;
     locY = 0;
-    cellId = 22;
+    cellId = 23;
     code = default_code;
   }
   /**
@@ -23,7 +23,7 @@ public class Resto extends Facility {
   public Resto(int x, int y) {
     locX = x;
     locY = y;
-    cellId = 22;
+    cellId = 23;
     code = default_code;
   }
 }
