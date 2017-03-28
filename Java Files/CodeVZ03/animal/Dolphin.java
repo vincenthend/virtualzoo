@@ -2,7 +2,6 @@
  * @author Vincent Hendryanto H/13515089
  * Class Dolphin, mengatur konstruksi Dolphin
  */
-
 package animal;
 public class Dolphin extends WaterAnimal {
   /**

@@ -2,7 +2,6 @@
  * @author Vincent Hendryanto H/13515089
  * Class Goat, mengatur konstruksi Goat
  */
-
 package animal;
 public class Goat extends LandAnimal {
   /**

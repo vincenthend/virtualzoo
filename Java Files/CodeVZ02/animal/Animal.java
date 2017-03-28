@@ -1,5 +1,4 @@
 package animal;
-
 /**
  * @author Adrian Mulyana / 13515075
  *         Class animal, melakukan pembuatan pada animal
@@ -310,20 +309,20 @@ public class Animal {
     return locX;
   }
   /**
-   * Mengembalikan posisi ordinat hewan.
-   *
-   * @return Posisi ordinat hewan.
-   */
-  public int getLocationY() {
-    return locY;
-  }
-  /**
    * Mengatur nilai X hewan
    *
    * @param x lokasi X hewan
    */
   public void setLocationX(int x) {
     locX = x;
+  }
+  /**
+   * Mengembalikan posisi ordinat hewan.
+   *
+   * @return Posisi ordinat hewan.
+   */
+  public int getLocationY() {
+    return locY;
   }
   /**
    * Mengatur nilai y hewan

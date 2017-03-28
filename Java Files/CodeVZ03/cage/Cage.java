@@ -1,11 +1,9 @@
 package cage;
-
 import animal.Animal;
 import cell.Cell;
 
 /**
  * @author Alif Ijlal Wafi / 13515122
- *         <p>
  *         Class cage, melakukan konstruksi dan penambahan animal dalam cage
  *         dan mengatur habitat dalam cage
  */
@@ -29,14 +27,17 @@ public class Cage {
     cageType = 0;
   }
   /**
+   * Mengembalikan kondisi penuh cage jika ditambahkan 1 ekor binatang
+   *
    * @return true jika penuh dan false jika belum penuh
-   * Mengembalikan kondisi penuh cage
    */
   public boolean isFull() {
-    return (nAnimal >= ((nCell / 10) * 3));
+    return (nAnimal + 1 > ((nCell / 10) * 3));
   }
   /**
    * Menambahkan habitat ke dalam cage
+   * I. S.: H terdefinisi, merupakan habitat yang valid
+   * F. S.: Jumlah habitat dalam cage bertambah 1, habitat dimasukkan ke cage
    */
   public void addHabitat(Cell H) {
     if (nCell == 0) {
@@ -55,6 +56,8 @@ public class Cage {
   }
   /**
    * Menambahkan animal ke dalam cage
+   * I. S.: H terdefinisi, merupakan animal yang valid, cage tidak penuh
+   * F. S.: Jumlah animal dalam cage bertambah 1, animal dimasukkan ke habitat yang ada di cage
    */
   public void addAnimal(Animal A) {
     A.setLocationX(cellList[nAnimal].getLocationX());
@@ -63,29 +66,35 @@ public class Cage {
     nAnimal += 1;
   }
   /**
-   * @param n Nilai untuk cageId
-   *          cageId diubah menjadi n
-   */
-  public void setCageID(int n) {
-    cageId = n;
-  }
-  /**
-   * @return nilai cageId
    * Mengembalikan nilai cageId
+   *
+   * @return nilai cageId
    */
   public int getCageID() {
     return cageId;
   }
   /**
-   * @return nilai cageType
+   * Mengubah cageId menjadi n
+   * I. S.: n terdefinisi
+   * F. S.: cageId diubah menjadi n
+   *
+   * @param n Nilai untuk cageId
+   */
+  public void setCageID(int n) {
+    cageId = n;
+  }
+  /**
    * Mengembalikan nilai cageType
+   *
+   * @return nilai cageType
    */
   public int getCageType() {
     return cageType;
   }
   /**
-   * @return pointer menuju animal
    * Mengembalikan nilai alamat animal apakah x dan y dipakai, jika tidak maka null
+   *
+   * @return pointer menuju animal
    */
   public Animal isSpaceOccupied(int x, int y) {
     Animal returnValue = null;
@@ -98,8 +107,9 @@ public class Cage {
     return returnValue;
   }
   /**
-   * @return nilai total makanan herbivore
    * Menghitung total jumlah makanan herbivore
+   *
+   * @return nilai total makanan herbivore
    */
   public int countFoodHerbivore() {
     int i;
@@ -111,8 +121,9 @@ public class Cage {
     return sum;
   }
   /**
-   * @return nilai total makanan carnivore
    * Menghitung total jumlah makanan carnivore
+   *
+   * @return nilai total makanan carnivore
    */
   public int countFoodCarnivore() {
     int i;
@@ -124,8 +135,9 @@ public class Cage {
     return sum;
   }
   /**
-   * @return nilai total makanan omnivore
    * Menghitung total jumlah makanan omnivore
+   *
+   * @return nilai total makanan omnivore
    */
   public int countFoodOmnivore() {
     int i;
@@ -137,8 +149,9 @@ public class Cage {
     return sum;
   }
   /**
-   * @return true jika ada dan false jika tidak ada
    * Mengembalikan keberadaan animal dengan type = ID
+   *
+   * @return true jika ada dan false jika tidak ada
    */
   public boolean isExist(int ID) {
     boolean found = false;

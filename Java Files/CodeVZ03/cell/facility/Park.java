@@ -1,10 +1,8 @@
 package cell.facility;
-
 /**
  * @author Vincent Hendryanto Halim / 13515089
  *         Class Resto, melakukan pembuatan Resto pada x y terkait
  */
-
 public class Park extends Facility {
   private final char default_code = 'P';
   /**

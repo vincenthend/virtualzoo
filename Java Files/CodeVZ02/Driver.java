@@ -13,14 +13,8 @@ import java.util.Scanner;
  * @author Mikhael Artur Darmakesuma / 13515099
  *         Class driver, main program dan inisialisasi isi awal zoo
  */
-
 public class Driver {
   private Zoo z;
-
-  public Driver() {
-    //TBD
-  }
-
   public Driver(String input_file) {
     try {
       //Input File
@@ -92,19 +86,19 @@ public class Driver {
           if ((cellTemp.getCellId() >= 11) && (cellTemp.getCellId() <= 13)) {
             if (((j - 1) >= 0) && (!(found))) {
               if (((z.getCell(i, j).getCellId()) == (z.getCell(i, j - 1).getCellId()))) {
-                z.getCage(z.getCell(i, j - 1).getCageId()).AddHabitat(z.getCell(i, j));
+                z.getCage(z.getCell(i, j - 1).getCageId()).addHabitat(z.getCell(i, j));
                 found = true;
               }
             }
             if (((i - 1) >= 0) && (!(found))) {
               if (((z.getCell(i, j).getCellId()) == (z.getCell(i - 1, j).getCellId()))) {
-                z.getCage(z.getCell(i - 1, j).getCageId()).AddHabitat(z.getCell(i, j));
+                z.getCage(z.getCell(i - 1, j).getCageId()).addHabitat(z.getCell(i, j));
                 found = true;
               }
             }
             if (!(found)) {
               z.addCage();
-              z.getCage(z.getNCage() - 1).AddHabitat(z.getCell(i, j));
+              z.getCage(z.getNCage() - 1).addHabitat(z.getCell(i, j));
             }
           }
         }
@@ -127,18 +121,18 @@ public class Driver {
           found = false;
           //Finding a suitable cage
           while ((!(found)) && (k < z.getNCage())) {
-            if ((a.getHabitat()[(((z.getCage(k)).GetCageType()) % 10) - 1]) && !(z.getCage(k).IsFull())) {
+            if ((a.getHabitat()[(((z.getCage(k)).getCageType()) % 10) - 1]) && !(z.getCage(k).isFull())) {
               l = 0;
               enemy = false;
               while (l < a.getCEnemy()) {
-                if (z.getCage(k).IsExist(a.getEnemyList()[l])) {
+                if (z.getCage(k).isExist(a.getEnemyList()[l])) {
                   enemy = true;
                 }
                 l++;
               }
               if (!(enemy)) {
                 found = true;
-                (z.getCage(k)).AddAnimal(a);
+                (z.getCage(k)).addAnimal(a);
               }
             }
             k++;
@@ -152,11 +146,13 @@ public class Driver {
       System.out.println("Input Error");
     }
   }
-
+  public static void main(String[] args) {
+    Driver D = new Driver("resource/map.txt");
+    D.printMenu();
+  }
   public void printMenu() {
     int choice, x1, y1, x2, y2;
     Scanner in = new Scanner(System.in);
-    choice = 0;
     do {
       System.out.println("=========================================");
       System.out.println("|		          VIRTUAL ZOO		      |");
@@ -202,7 +198,7 @@ public class Driver {
             System.out.println("Y2 :");
             y2 = in.nextInt();
             in.nextLine();
-            printZoo(x1, y1, x2, y2);
+            printZoo(x1, x2, y1, y2);
             System.out.println("");
             choice = 0;
           }
@@ -232,7 +228,7 @@ public class Driver {
         c = z.getCell(i, j);
         if (c != null) {
           if (c.getCageId() > -1) {
-            a = z.getCage(c.getCageId()).IsSpaceOccupied(i, j);
+            a = z.getCage(c.getCageId()).isSpaceOccupied(i, j);
             if (a != null) {
               a.render();
             }
@@ -252,7 +248,7 @@ public class Driver {
       System.out.println();
     }
   }
-  public void printZoo(int x, int y) {//lebih pas dipindah ke zoo
+  public void printZoo(int x, int y) {
     int i, j;
     Cell cellTemp;
     Animal animalTemp;
@@ -266,7 +262,7 @@ public class Driver {
           cellTemp = z.getCell(i, j);
           if (cellTemp != null) {
             if (cellTemp.getCageId() > -1) {
-              animalTemp = z.getCage(cellTemp.getCageId()).IsSpaceOccupied(i, j);
+              animalTemp = z.getCage(cellTemp.getCageId()).isSpaceOccupied(i, j);
               if (animalTemp != null) {
                 animalTemp.render();
               }
@@ -287,7 +283,7 @@ public class Driver {
       System.out.println("");
     }
   }
-  public void printZoo(int x1, int x2, int y1, int y2) {//lebih pas dipindah ke zoo
+  public void printZoo(int x1, int x2, int y1, int y2) {
     int i, j;
     Cell cellTemp;
     Animal animalTemp;
@@ -297,7 +293,7 @@ public class Driver {
         cellTemp = z.getCell(i, j);
         if (cellTemp != null) {
           if (cellTemp.getCageId() > -1) {
-            animalTemp = z.getCage(cellTemp.getCageId()).IsSpaceOccupied(i, j);
+            animalTemp = z.getCage(cellTemp.getCageId()).isSpaceOccupied(i, j);
             if (animalTemp != null) {
               animalTemp.render();
             }
@@ -355,10 +351,10 @@ public class Driver {
       //interact
       if (((j - 1) >= 0) && (move != 3)) {
         c = z.getCell(i, j - 1);
-        if ((c.getCellId() >= 11) && (c.getCellId() <= 13)) {
-          if (c != null) {
+        if (c != null) {
+          if ((c.getCellId() >= 11) && (c.getCellId() <= 13)) {
             if (c.getCageId() > -1) {
-              a = z.getCage(c.getCageId()).IsSpaceOccupied(i, j - 1);
+              a = z.getCage(c.getCageId()).isSpaceOccupied(i, j - 1);
               if (a != null) {
                 a.interact();
               }
@@ -368,10 +364,10 @@ public class Driver {
       }
       if (((i + 1) < z.getHeight()) && (move != 4)) {
         c = z.getCell(i + 1, j);
-        if ((c.getCellId() >= 11) && (c.getCellId() <= 13)) {
-          if (c != null) {
+        if (c != null) {
+          if ((c.getCellId() >= 11) && (c.getCellId() <= 13)) {
             if (c.getCageId() > -1) {
-              a = z.getCage(c.getCageId()).IsSpaceOccupied(i + 1, j);
+              a = z.getCage(c.getCageId()).isSpaceOccupied(i + 1, j);
               if (a != null) {
                 a.interact();
               }
@@ -381,10 +377,10 @@ public class Driver {
       }
       if (((j + 1) < z.getWidth()) && (move != 1)) {
         c = z.getCell(i, j + 1);
-        if ((c.getCellId() >= 11) && (c.getCellId() <= 13)) {
-          if (c != null) {
+        if (c != null) {
+          if ((c.getCellId() >= 11) && (c.getCellId() <= 13)) {
             if (c.getCageId() > -1) {
-              a = z.getCage(c.getCageId()).IsSpaceOccupied(i, j + 1);
+              a = z.getCage(c.getCageId()).isSpaceOccupied(i, j + 1);
               if (a != null) {
                 a.interact();
               }
@@ -394,10 +390,10 @@ public class Driver {
       }
       if (((i - 1) >= 0) && (move != 2)) {
         c = z.getCell(i - 1, j);
-        if ((c.getCellId() >= 11) && (c.getCellId() <= 13)) {
-          if (c != null) {
+        if (c != null) {
+          if ((c.getCellId() >= 11) && (c.getCellId() <= 13)) {
             if (c.getCageId() > -1) {
-              a = z.getCage(c.getCageId()).IsSpaceOccupied(i - 1, j);
+              a = z.getCage(c.getCageId()).isSpaceOccupied(i - 1, j);
               if (a != null) {
                 a.interact();
               }
@@ -459,11 +455,5 @@ public class Driver {
       c = z.getCell(i, j);
     }
 
-  }
-
-  public static void main(String[] args) {
-    Driver D = new Driver("resource/map.txt");
-
-    D.printMenu();
   }
 }

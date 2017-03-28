@@ -2,7 +2,6 @@
  * @author Vincent Hendryanto H/13515089
  * Class Owl, mengatur konstruksi Owl
  */
-
 package animal;
 public class Owl extends AirAnimal {
   /**

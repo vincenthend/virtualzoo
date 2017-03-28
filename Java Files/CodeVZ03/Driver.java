@@ -1,7 +1,3 @@
-/**
- * @author Mikhael Artur Darmakesuma / 13515099
- * Class driver, main program dan inisialisasi isi awal zoo
- */
 
 import animal.*;
 import cell.Cell;
@@ -19,14 +15,16 @@ import java.io.FileReader;
 import java.io.IOException;
 import java.util.Random;
 import java.util.Scanner;
-
+/**
+ * @author Mikhael Artur Darmakesuma / 13515099
+ * Class driver, main program dan inisialisasi isi awal zoo
+ */
 public class Driver {
   private Zoo z;
-
-  public Driver() {
-    //TBD
-  }
-
+  /**
+   * Inisialisasi driver dengan membaca dari file inputFile
+   * Memasukkan data animal, habitat dari inputFile ke z dan menginisiasi cage
+   */
   public Driver(String inputFile) {
     try {
       //Input File
@@ -225,11 +223,22 @@ public class Driver {
       System.out.println("Input Error");
     }
   }
+  /**
+   * Main Program
+   */
+  public static void main(String[] args) {
+    Driver D = new Driver("resource/map.txt");
 
+    D.printMenu();
+  }
+  /**
+   * Menuliskan menu ke layar, menerima pilihan menu dan mengeksekusi pilihan
+   * I. S.: Sembarang
+   * F. S.: Menu tertulis di layar, pilihan diterima dan dieksekusi
+   */
   public void printMenu() {
     int choice, x1, y1, x2, y2;
     Scanner in = new Scanner(System.in);
-    choice = 0;
     do {
       System.out.println("=========================================");
       System.out.println("|		          VIRTUAL ZOO		      |");
@@ -275,7 +284,7 @@ public class Driver {
             System.out.println("Y2 :");
             y2 = in.nextInt();
             in.nextLine();
-            printZoo(x1, y1, x2, y2);
+            printZoo(x1, x2, y1, y2);
             System.out.println("");
             choice = 0;
           }
@@ -287,6 +296,11 @@ public class Driver {
       }
     } while (choice != 9);
   }
+  /**
+   * Menuliskan status kebun binatang ke layar berkaitan dengan jumlah makanan
+   * I. S.: Sembarang
+   * F. S.: Status kebun binatang tertulis di layar
+   */
   public void printStatus() {
     System.out.println("========================================");
     System.out.println("		 	  - Food Count -");
@@ -295,7 +309,12 @@ public class Driver {
     System.out.println("	 Omnivore	: " + z.countFoodOmnivore());
     System.out.println("========================================");
   }
-  public void printZoo() {//lebih pas dipindah ke zoo
+  /**
+   * Menuliskan peta kebun binatang
+   * I. S.: Sembarang
+   * F. S.: Peta kebun binatang tertulis di layar
+   */
+  public void printZoo() {
     int i, j;
     Cell cellTemp;
     Animal animalTemp;
@@ -325,7 +344,12 @@ public class Driver {
       System.out.println();
     }
   }
-  public void printZoo(int x, int y) {//lebih pas dipindah ke zoo
+  /**
+   * Menuliskan peta kebun binatang dengan posisi tour di x, y
+   * I. S.: Sembarang
+   * F. S.: Peta kebun binatang tertulis di layar
+   */
+  public void printZoo(int x, int y) {
     int i, j;
     Cell cellTemp;
     Animal animalTemp;
@@ -360,7 +384,12 @@ public class Driver {
       System.out.println("");
     }
   }
-  public void printZoo(int x1, int x2, int y1, int y2) {//lebih pas dipindah ke zoo
+  /**
+   * Menuliskan peta kebun binatang dari range x1-x2,y1-y2
+   * I. S.: x1 <= x2, y1 <= y2
+   * F. S.: Peta kebun binatang tertulis di layar
+   */
+  public void printZoo(int x1, int x2, int y1, int y2) {
     int i, j;
     Cell cellTemp;
     Animal animalTemp;
@@ -390,6 +419,11 @@ public class Driver {
       System.out.println("");
     }
   }
+  /**
+   * Menjalankan tour kebun binatang dari pintu masuk ke pintu keluar
+   * I. S.: Sembarang
+   * F. S.: Perjalanan tour kebun binatang tertulis di layar
+   */
   public void startTour() {
     Random rand = new Random(System.currentTimeMillis());
     int i, j, tc, move, countMove;
@@ -532,11 +566,5 @@ public class Driver {
       c = z.getCell(i, j);
     }
 
-  }
-
-  public static void main(String[] args) {
-    Driver D = new Driver("resource/map.txt");
-
-    D.printMenu();
   }
 }

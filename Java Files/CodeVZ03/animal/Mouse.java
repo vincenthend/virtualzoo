@@ -2,7 +2,6 @@
  * @author Vincent Hendryanto H/13515089
  * Class Mouse, mengatur konstruksi Mouse
  */
-
 package animal;
 public class Mouse extends LandAnimal {
   /**

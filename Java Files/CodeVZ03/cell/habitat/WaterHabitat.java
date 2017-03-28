@@ -2,11 +2,9 @@
  * @author Vincent Hendryanto Halim / 13515089
  * Class WaterHabitat, melakukan pembuatan WaterHabitat berdasarkan X dan Y
  */
-
 package cell.habitat;
 public class WaterHabitat extends Habitat {
   private final char defaultCode = 'W';
-
   /**
    * Konstruktor class WaterHabitat
    */

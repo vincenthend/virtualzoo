@@ -1,5 +1,4 @@
 package zoo;
-
 import cage.Cage;
 import cell.Cell;
 
@@ -37,7 +36,9 @@ public class Zoo {
     cageList = new Cage[999];
   }
   /**
-   * Melakukan penambahan cage,
+   * Melakukan penambahan cage
+   * I. S.: Sembarang
+   * F. S.: Cage baru dibuat, jumlah cage bertambah 1
    */
   public void addCage() {
     cageList[nCage] = new Cage();
@@ -46,6 +47,8 @@ public class Zoo {
   }
   /**
    * Melakukan penambahan cell dengan cell C yang sudah dictor di tempat lain
+   * I. S.: C terdefinisi, merupakan cell yang valid
+   * F. S.: C dimasukkan ke zoo
    *
    * @param x Lokasi x Cell
    * @param y Lokasi y Cell
