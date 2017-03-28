@@ -1,13 +1,11 @@
 package animal;
-
 /**
- * Class Bat, mengatur konstruksi Bat.
  * @author Vincent Hendryanto H/13515089
+ * Class Bat, mengatur konstruksi Bat
  */
 public class Bat extends AirAnimal {
-
   /**
-   * Mengatur konstruksi animal dengan spesifikasi yang sudah ditentukan.
+   * Mengatur konstruksi animal dengan spesifikasi yang sudah ditentukan
    */
   public Bat() {
     super();
@@ -15,10 +13,10 @@ public class Bat extends AirAnimal {
     foodWeight = 1;
     foodType = 1;
     type = 5;
-    countEnemy = 2;
+    cEnemy = 2;
     sound = "shriekkkkkk";
     code = '%';
-    enemyId = new int[countEnemy];
+    enemyId = new int[cEnemy];
     enemyId[0] = 2;
     enemyId[1] = 4;
   }

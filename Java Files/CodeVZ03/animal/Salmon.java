@@ -1,13 +1,11 @@
 package animal;
-
 /**
- * Class Salmon, mengatur konstruksi Salmon.
  * @author Vincent Hendryanto H/13515089
+ * Class Salmon, mengatur konstruksi Salmon
  */
 public class Salmon extends WaterAnimal {
-
   /**
-   * Mengatur konstruksi animal dengan spesifikasi yang sudah ditentukan.
+   * Mengatur konstruksi animal dengan spesifikasi yang sudah ditentukan
    */
   public Salmon() {
     super();
@@ -15,10 +13,10 @@ public class Salmon extends WaterAnimal {
     foodWeight = 1;
     foodType = 2;
     type = 17;
-    countEnemy = 2;
+    cEnemy = 2;
     sound = "blub blub";
     code = ':';
-    enemyId = new int[countEnemy];
+    enemyId = new int[cEnemy];
     enemyId[0] = 19;
     enemyId[1] = 21;
   }

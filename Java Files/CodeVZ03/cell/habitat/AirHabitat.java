@@ -1,15 +1,12 @@
 package cell.habitat;
-
 /**
- * Class AirHabitat, melakukan pembuatan AirHabitat untuk menampung binatang.
  * @author Vincent Hendryanto Halim / 13515089
+ * Class AirHabitat, melakukan pembuatan AirHabitat untuk menampung binatang
  */
 public class AirHabitat extends Habitat {
-
   private final char defaultCode = 'A';
-
   /**
-   * Konstruktor class AirHabitat.
+   * Konstruktor class AirHabitat
    */
   public AirHabitat() {
     locX = 0;
@@ -17,9 +14,8 @@ public class AirHabitat extends Habitat {
     cellId = 12;
     code = defaultCode;
   }
-
   /**
-   * Konstruktor class AirHabitat dengan X dan Y terkait.
+   * Konstruktor class AirHabitat dengan X dan Y terkait
    *
    * @param x Posisi absis habitat
    * @param y Posisi ordinat habitat

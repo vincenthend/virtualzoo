@@ -1,13 +1,11 @@
 package animal;
-
 /**
- * Class Mouse, mengatur konstruksi Mouse.
  * @author Vincent Hendryanto H/13515089
+ * Class Mouse, mengatur konstruksi Mouse
  */
 public class Mouse extends LandAnimal {
-
   /**
-   * Mengatur konstruksi animal dengan spesifikasi yang sudah ditentukan.
+   * Mengatur konstruksi animal dengan spesifikasi yang sudah ditentukan
    */
   public Mouse() {
     super();
@@ -15,11 +13,11 @@ public class Mouse extends LandAnimal {
     foodWeight = 1;
     foodType = 1;
     type = 11;
-    countEnemy = 1;
+    cEnemy = 1;
     sound = "Squeak-squeak";
     code = '~';
-    countEnemy = 1;
-    enemyId = new int[countEnemy];
+    cEnemy = 1;
+    enemyId = new int[cEnemy];
     enemyId[0] = 9;
   }
 }
