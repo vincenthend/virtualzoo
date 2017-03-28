@@ -13,14 +13,11 @@ import java.util.Scanner;
  * @author Mikhael Artur Darmakesuma / 13515099
  *         Class driver, main program dan inisialisasi isi awal zoo
  */
-
 public class Driver {
   private Zoo z;
-
   public Driver() {
     //TBD
   }
-
   public Driver(String input_file) {
     try {
       //Input File
@@ -152,7 +149,10 @@ public class Driver {
       System.out.println("Input Error");
     }
   }
-
+  public static void main(String[] args) {
+    Driver D = new Driver("resource/map.txt");
+    D.printMenu();
+  }
   public void printMenu() {
     int choice, x1, y1, x2, y2;
     Scanner in = new Scanner(System.in);
@@ -459,10 +459,5 @@ public class Driver {
       c = z.getCell(i, j);
     }
 
-  }
-
-  public static void main(String[] args) {
-    Driver D = new Driver("resource/map.txt");
-    D.printMenu();
   }
 }

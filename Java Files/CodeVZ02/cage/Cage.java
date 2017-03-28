@@ -1,5 +1,4 @@
 package cage;
-
 import animal.Animal;
 import cell.Cell;
 
@@ -31,7 +30,6 @@ public class Cage {
    * @return true jika penuh dan false jika belum penuh
    * Mengembalikan kondisi penuh cage
    */
-
   public boolean isFull() {
     return (nAnimal >= ((nCell / 10) * 3));
   }
@@ -63,18 +61,18 @@ public class Cage {
     nAnimal += 1;
   }
   /**
-   * @param n Nilai untuk cageId
-   *          cageId diubah menjadi n
-   */
-  public void setCageID(int n) {
-    cageId = n;
-  }
-  /**
    * @return nilai cageId
    * Mengembalikan nilai cageId
    */
   public int getCageID() {
     return cageId;
+  }
+  /**
+   * @param n Nilai untuk cageId
+   *          cageId diubah menjadi n
+   */
+  public void setCageID(int n) {
+    cageId = n;
   }
   /**
    * @return nilai cageType

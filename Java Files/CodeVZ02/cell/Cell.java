@@ -1,5 +1,4 @@
 package cell;
-
 /**
  * @author Vincent Hendryanto Halim / 13515089
  *         Class cell, melakukan pembuatan cell berdasarkan ID cell
@@ -21,12 +20,13 @@ public class Cell {
     cageId = -1;
   }
   /**
+   * Membuat cell dengan locX = x, locY = y, cellId ID dan cageId -1
+   * 11 = LandHabitat; 12 = WaterHabitat; 13 = AirHabitat;
+   * 21 = Road; 210 = Entrance; 211 = Exit; 22 = Resto; 23 = Park;
+   *
    * @param x  lokasi x
    * @param y  lokasi y
    * @param ID nilai cellId (tetap)
-   *           Membuat cell dengan locX = x, locY = y, cellId ID dan cageId -1
-   *           11 = LandHabitat; 12 = WaterHabitat; 13 = AirHabitat;
-   *           21 = Road; 210 = Entrance; 211 = Exit; 22 = Resto; 23 = Park;
    */
   public Cell(int x, int y, int ID) {
     cellId = ID;
@@ -67,17 +67,18 @@ public class Cell {
     code = c;
   }
   /**
-   * @param n Nilai cageId yang diinginkan
-   *          Mengatur nilai cageId
-   */
-  public void setCageId(int n) {
-    cageId = n;
-  }
-  /**
    * Mengembalikan nilai cageId
    */
   public int getCageId() {
     return cageId;
+  }
+  /**
+   * Mengatur nilai cageId
+   *
+   * @param n Nilai cageId yang diinginkan
+   */
+  public void setCageId(int n) {
+    cageId = n;
   }
   /**
    * Mengembalikan nilai cellId
@@ -86,15 +87,17 @@ public class Cell {
     return cellId;
   }
   /**
-   * @return Posisi absis cell.
    * Mengembalikan posisi absis hewan.
+   *
+   * @return Posisi absis cell.
    */
   public int getLocationX() {
     return locX;
   }
   /**
-   * @return Posisi ordinat cell.
    * Mengembalikan posisi ordinat hewan.
+   *
+   * @return Posisi ordinat cell.
    */
   public int getLocationY() {
     return locY;

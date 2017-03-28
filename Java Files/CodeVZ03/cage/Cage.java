@@ -5,7 +5,6 @@ import cell.Cell;
 
 /**
  * @author Alif Ijlal Wafi / 13515122
- *         <p>
  *         Class cage, melakukan konstruksi dan penambahan animal dalam cage
  *         dan mengatur habitat dalam cage
  */
@@ -30,13 +29,15 @@ public class Cage {
   }
   /**
    * @return true jika penuh dan false jika belum penuh
-   * Mengembalikan kondisi penuh cage
+   * Mengembalikan kondisi penuh cage jika ditambahkan 1 ekor binatang
    */
   public boolean isFull() {
-    return (nAnimal >= ((nCell / 10) * 3));
+    return (nAnimal + 1 > ((nCell / 10) * 3));
   }
   /**
    * Menambahkan habitat ke dalam cage
+   * I. S.: H terdefinisi, merupakan habitat yang valid
+   * F. S.: Jumlah habitat dalam cage bertambah 1, habitat dimasukkan ke cage
    */
   public void addHabitat(Cell H) {
     if (nCell == 0) {
@@ -55,6 +56,8 @@ public class Cage {
   }
   /**
    * Menambahkan animal ke dalam cage
+   * I. S.: H terdefinisi, merupakan animal yang valid, cage tidak penuh
+   * F. S.: Jumlah animal dalam cage bertambah 1, animal dimasukkan ke habitat yang ada di cage
    */
   public void addAnimal(Animal A) {
     A.setLocationX(cellList[nAnimal].getLocationX());
@@ -64,7 +67,9 @@ public class Cage {
   }
   /**
    * @param n Nilai untuk cageId
-   *          cageId diubah menjadi n
+   * Mengubah cageId menjadi n
+   * I. S.: n terdefinisi
+   * F. S.: cageId diubah menjadi n
    */
   public void setCageID(int n) {
     cageId = n;
