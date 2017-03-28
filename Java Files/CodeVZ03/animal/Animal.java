@@ -1,14 +1,11 @@
 package animal;
-
 import renderable.Renderable;
 
 /**
- * Class animal, melakukan pembuatan pada animal.
- *
  * @author Adrian Mulyana / 13515075
+ *         Class animal, melakukan pembuatan pada animal
  */
 public abstract class Animal implements Renderable {
-
   protected boolean[] habitat;
   protected int type;
   protected int weight;
@@ -17,12 +14,11 @@ public abstract class Animal implements Renderable {
   protected char code;
   protected String sound;
   protected int[] enemyId;
-  protected int countEnemy;
+  protected int cEnemy;
   private int locX;
   private int locY;
-
   /**
-   * Konstruktor untuk Animal.
+   * Konstruktor Animal
    */
   public Animal() {
     habitat = new boolean[3];
@@ -30,14 +26,12 @@ public abstract class Animal implements Renderable {
     habitat[1] = false;
     habitat[2] = false;
   }
-
   /**
    * Menuliskan interaksi dengan hewan ke layar.
    */
   public void interact() {
     System.out.println(sound);
   }
-
   /**
    * Menghitung jumlah makanan yang dibutuhkan hewan setiap harinya.
    *
@@ -46,17 +40,14 @@ public abstract class Animal implements Renderable {
   public int getFoodQuantity() {
     return (foodWeight * weight);
   }
-
   /**
    * Mengembalikan jenis makanan yang dibutuhkan hewan.
    *
-   * @return Kode makanan yang dibutuhkan hewan, 1 untuk herbivora, 2 untuk karnivora dan 3 untuk
-   *         omnivora.
+   * @return Kode makanan yang dibutuhkan hewan, 1 untuk herbivora, 2 untuk karnivora dan 3 untuk omnivora.
    */
   public int getFoodType() {
     return foodType;
   }
-
   /**
    * Mengembalikan posisi absis hewan.
    *
@@ -65,16 +56,14 @@ public abstract class Animal implements Renderable {
   public int getLocationX() {
     return locX;
   }
-
   /**
-   * Mengatur nilai X hewan.
+   * Mengatur nilai X hewan
    *
    * @param x lokasi X hewan
    */
   public void setLocationX(int x) {
     locX = x;
   }
-
   /**
    * Mengembalikan posisi ordinat hewan.
    *
@@ -83,16 +72,14 @@ public abstract class Animal implements Renderable {
   public int getLocationY() {
     return locY;
   }
-
   /**
-   * Mengatur nilai y hewan.
+   * Mengatur nilai y hewan
    *
    * @param y lokasi Y hewan
    */
   public void setLocationY(int y) {
     locY = y;
   }
-
   /**
    * Mengembalikan nilai habitat hewan.
    *
@@ -101,18 +88,8 @@ public abstract class Animal implements Renderable {
   public boolean[] getHabitat() {
     return habitat;
   }
-
   /**
-   * Mengambil nilai type hewan.
-   *
-   * @return nilai type hewan
-   */
-  public int getType() {
-    return type;
-  }
-
-  /**
-   * Memindahkan hewan sejauh x, y.
+   * Memindahkan hewan sejauh x, y
    *
    * @param x Jarak absis
    * @param y Jarak ordinat
@@ -121,25 +98,22 @@ public abstract class Animal implements Renderable {
     locX += x;
     locY += y;
   }
-
   /**
-   * Melakukan pencetakan terhadap code.
+   * Melakukan pencetakan terhadap code
    */
   public void render() {
     System.out.print(code);
   }
-
   /**
-   * Mengambil jumlah musuh hewan.
+   * Mengambil jumlah musuh hewan
    *
    * @return Jumlah musuh hewan
    */
   public int getCEnemy() {
-    return countEnemy;
+    return cEnemy;
   }
-
   /**
-   * Mengambil list musuh hewan.
+   * Mengambil list musuh hewan
    *
    * @return List musuh hewan
    */

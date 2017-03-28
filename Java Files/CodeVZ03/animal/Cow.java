@@ -1,13 +1,11 @@
 package animal;
-
 /**
- * Class Cow, mengatur konstruksi Cow.
  * @author Vincent Hendryanto H/13515089
+ *         Class Cow, mengatur konstruksi Cow
  */
 public class Cow extends LandAnimal {
-
   /**
-   * Mengatur konstruksi animal dengan spesifikasi yang sudah ditentukan.
+   * Mengatur konstruksi animal dengan spesifikasi yang sudah ditentukan
    */
   public Cow() {
     super();
@@ -15,7 +13,7 @@ public class Cow extends LandAnimal {
     foodWeight = 2;
     foodType = 1;
     type = 10;
-    countEnemy = 0;
+    cEnemy = 0;
     sound = "Mooo...";
     code = '+';
   }

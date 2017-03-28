@@ -1,13 +1,11 @@
 package animal;
-
 /**
- * Class Toucan, mengatur konstruksi Toucan.
  * @author Vincent Hendryanto H/13515089
+ *         Class Toucan, mengatur konstruksi Toucan
  */
 public class Toucan extends AirAnimal {
-
   /**
-   * Mengatur konstruksi animal dengan spesifikasi yang sudah ditentukan.
+   * Mengatur konstruksi animal dengan spesifikasi yang sudah ditentukan
    */
   public Toucan() {
     super();
@@ -15,7 +13,7 @@ public class Toucan extends AirAnimal {
     foodWeight = 1;
     foodType = 1;
     type = 7;
-    countEnemy = 0;
+    cEnemy = 0;
     sound = "*flies away*";
     code = '&';
   }
