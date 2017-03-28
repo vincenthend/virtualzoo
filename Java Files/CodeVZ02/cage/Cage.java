@@ -27,14 +27,19 @@ public class Cage {
     cageType = 0;
   }
   /**
+   * Mengembalikan kondisi penuh cage jika ditambahkan 1 ekor binatang
+   *
    * @return true jika penuh dan false jika belum penuh
-   * Mengembalikan kondisi penuh cage
    */
   public boolean isFull() {
-    return (nAnimal >= ((nCell / 10) * 3));
+    return (nAnimal + 1 >= ((nCell / 10) * 3));
   }
   /**
    * Menambahkan habitat ke dalam cage
+   * I. S.: H terdefinisi, merupakan habitat yang valid
+   * F. S.: Jumlah habitat dalam cage bertambah 1, habitat dimasukkan ke cage
+   *
+   * @param H Habitat yang akan dimasukkan
    */
   public void addHabitat(Cell H) {
     if (nCell == 0) {
@@ -53,6 +58,10 @@ public class Cage {
   }
   /**
    * Menambahkan animal ke dalam cage
+   * I. S.: A terdefinisi, merupakan animal yang valid, cage tidak penuh
+   * F. S.: Jumlah animal dalam cage bertambah 1, animal dimasukkan ke habitat yang ada di cage
+   *
+   * @param A Animal yang akan dimasukkan
    */
   public void addAnimal(Animal A) {
     A.setLocationX(c[nAnimal].getLocationX());
@@ -61,8 +70,9 @@ public class Cage {
     nAnimal += 1;
   }
   /**
-   * @return nilai cageId
    * Mengembalikan nilai cageId
+   *
+   * @return nilai cageId
    */
   public int getCageId() {
     return cageId;
@@ -87,6 +97,8 @@ public class Cage {
    * Mengembalikan nilai alamat animal apakah x dan y dipakai, jika tidak maka null
    *
    * @return pointer menuju animal
+   * @param x Posisi absis Cell yang akan dicek
+   * @param y Posisi ordinat Cell yang akan dicek
    */
   public Animal isSpaceOccupied(int x, int y) {
     Animal ret;
@@ -145,6 +157,7 @@ public class Cage {
    * Mengembalikan keberadaan animal dengan type = ID
    *
    * @return true jika ada dan false jika tidak ada
+   * @param Id ID Animal yang akan dicari
    */
   public boolean isExist(int Id) {
     boolean found = false;

@@ -8,7 +8,8 @@ import static org.junit.Assert.assertFalse;
 import static org.junit.Assert.assertTrue;
 
 /**
- * Created by user on 28-Mar-17.
+ * @author Mikhael Artur Darmakesuma / 13515099
+ * Testclass for Cage
  */
 public class CageTest {
   @Test

@@ -5,7 +5,7 @@ import org.junit.runner.notification.Failure;
 
 public class TestAnimalRunner {
   public static void main(String[] args) {
-    Result result = JUnitCore.runClasses(TestAnimal.class);
+    Result result = JUnitCore.runClasses(AnimalTest.class);
 
     for (Failure failure : result.getFailures()) {
       System.out.println(failure.toString());

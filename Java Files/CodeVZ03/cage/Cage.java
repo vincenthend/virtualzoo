@@ -38,6 +38,8 @@ public class Cage {
    * Menambahkan habitat ke dalam cage
    * I. S.: H terdefinisi, merupakan habitat yang valid
    * F. S.: Jumlah habitat dalam cage bertambah 1, habitat dimasukkan ke cage
+   *
+   * @param H Habitat yang akan dimasukkan
    */
   public void addHabitat(Cell H) {
     if (nCell == 0) {
@@ -56,8 +58,9 @@ public class Cage {
   }
   /**
    * Menambahkan animal ke dalam cage
-   * I. S.: H terdefinisi, merupakan animal yang valid, cage tidak penuh
+   * I. S.: A terdefinisi, merupakan animal yang valid, cage tidak penuh
    * F. S.: Jumlah animal dalam cage bertambah 1, animal dimasukkan ke habitat yang ada di cage
+   * @param A Animal yang akan dimasukkan
    */
   public void addAnimal(Animal A) {
     A.setLocationX(cellList[nAnimal].getLocationX());
@@ -95,6 +98,8 @@ public class Cage {
    * Mengembalikan nilai alamat animal apakah x dan y dipakai, jika tidak maka null
    *
    * @return pointer menuju animal
+   * @param x Posisi absis Cell yang akan dicek
+   * @param y Posisi ordinat Cell yang akan dicek
    */
   public Animal isSpaceOccupied(int x, int y) {
     Animal returnValue = null;
@@ -149,15 +154,16 @@ public class Cage {
     return sum;
   }
   /**
-   * Mengembalikan keberadaan animal dengan type = ID
+   * Mengembalikan keberadaan animal dengan type = Id
    *
    * @return true jika ada dan false jika tidak ada
+   * @param Id Id Animal yang akan dicari
    */
-  public boolean isExist(int ID) {
+  public boolean isExist(int Id) {
     boolean found = false;
     int i = 0;
     while (i < nAnimal) {
-      if (animalList[i].getType() == ID)
+      if (animalList[i].getType() == Id)
         found = true;
       i++;
     }

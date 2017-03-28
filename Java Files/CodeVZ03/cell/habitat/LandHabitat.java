@@ -1,12 +1,12 @@
+package cell.habitat;
 /**
  * @author Vincent Hendryanto Halim / 13515089
  * Class LandHabitat, melakukan pembuatan LandHabitat untuk menampung binatang
  */
-package cell.habitat;
 public class LandHabitat extends Habitat {
   private final char defaultCode = 'L';
   /**
-   * Konstruktor class LandHabitat dengan X dan Y terkait
+   * Konstruktor class LandHabitat
    */
   public LandHabitat() {
     locX = 0;
@@ -16,6 +16,9 @@ public class LandHabitat extends Habitat {
   }
   /**
    * Konstruktor class LandHabitat dengan X dan Y terkait
+   *
+   * @param x Posisi absis habitat
+   * @param y Posisi ordinat habitat
    */
   public LandHabitat(int x, int y) {
     locX = x;

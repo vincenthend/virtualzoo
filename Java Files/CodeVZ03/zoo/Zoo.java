@@ -25,14 +25,14 @@ public class Zoo {
   /**
    * Membuat Zoo dengan width w dan height h
    *
-   * @param w Lebar zoo
-   * @param h Tinggi zoo
+   * @param width Lebar zoo
+   * @param height Tinggi zoo
    */
-  public Zoo(int w, int h) {
+  public Zoo(int width, int height) {
     nCage = 0;
-    width = w;
-    height = h;
-    cellList = new Cell[width][height];
+    this.width = width;
+    this.height = height;
+    cellList = new Cell[width][this.height];
     cageList = new Cage[999];
   }
   /**

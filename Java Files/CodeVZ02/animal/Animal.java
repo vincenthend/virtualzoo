@@ -350,6 +350,9 @@ public class Animal {
   }
   /**
    * Memindahkan hewan sejauh x, y
+   *
+   * @param x Jarak absis
+   * @param y Jarak ordinat
    */
   public void move(int x, int y) {
     locX += x;
@@ -363,12 +366,16 @@ public class Animal {
   }
   /**
    * Mengambil jumlah musuh hewan
+   *
+   * @return Jumlah musuh hewan
    */
   public int getCEnemy() {
     return nEnemy;
   }
   /**
    * Mengambil list musuh hewan
+   *
+   * @return List musuh hewan
    */
   public int[] getEnemyList() {
     return enemyId;

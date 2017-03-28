@@ -13,7 +13,7 @@ import zoo.Zoo;
 import static org.junit.Assert.assertTrue;
 
 /**
- * @Author Vincent Hendryanto H / 13515089
+ * @author Vincent Hendryanto H / 13515089
  * Testclass for Zoo
  */
 public class ZooTest {

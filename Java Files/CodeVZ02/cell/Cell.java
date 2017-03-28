@@ -60,15 +60,9 @@ public class Cell {
     System.out.print(code);
   }
   /**
-   * Mengatur code yang akan digunakan untuk render
-   *
-   * @param c Code yang diinginkan
-   */
-  public void setCode(char c) {
-    code = c;
-  }
-  /**
    * Mengembalikan nilai cageId
+   *
+   * @return Nilai cageId
    */
   public int getCageId() {
     return cageId;
@@ -83,6 +77,8 @@ public class Cell {
   }
   /**
    * Mengembalikan nilai cellId
+   *
+   * @return Nilai cellId
    */
   public int getCellId() {
     return cellId;

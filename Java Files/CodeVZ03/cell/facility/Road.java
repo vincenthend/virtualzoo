@@ -1,8 +1,8 @@
+package cell.facility;
 /**
  * @author Vincent Hendryanto H/13515089
  * Class Road, mengatur konstruksi Road
  */
-package cell.facility;
 public class Road extends Facility {
   private final char default_code = ' ';
   /**

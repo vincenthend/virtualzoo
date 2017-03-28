@@ -1,8 +1,8 @@
+package animal;
 /**
  * @author Vincent Hendryanto H/13515089
  * Class Salmon, mengatur konstruksi Salmon
  */
-package animal;
 public class Salmon extends WaterAnimal {
   /**
    * Mengatur konstruksi animal dengan spesifikasi yang sudah ditentukan

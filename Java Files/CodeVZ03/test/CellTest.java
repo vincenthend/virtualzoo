@@ -10,7 +10,7 @@ import static org.junit.Assert.assertTrue;
 
 /**
  * @author Adrian Mulyana N. / 13515075
- * Testclass for Cell dkk
+ * Testclass for Cell etc
  */
 public class CellTest {
   @org.junit.Test

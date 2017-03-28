@@ -15,23 +15,25 @@ import java.util.Scanner;
  */
 public class Driver {
   private Zoo z;
-  public Driver(String input_file) {
+  /**
+   * Inisialisasi driver dengan membaca dari file inputFile
+   * Memasukkan data animal, habitat dari inputFile ke z dan menginisiasi cage
+   *
+   * @param inputFile Nama file input
+   */
+  public Driver(String inputFile) {
     try {
       //Input File
-      FileReader inFile = new FileReader(input_file);
+      FileReader inFile = new FileReader(inputFile);
       BufferedReader reader = new BufferedReader(inFile);
-
       Cell cellTemp;
       StringBuffer stringBuffer;
       int i, j, k, l, width, height, temp, animalId, animalCount;
       boolean found, enemy;
       Animal a;
-
       cellTemp = null;
-
       height = Integer.parseInt(reader.readLine());
       width = Integer.parseInt(reader.readLine());
-
       z = new Zoo(width, height);
       for (i = 0; i < z.getHeight(); i++) {
         stringBuffer = new StringBuffer(reader.readLine());
@@ -39,59 +41,40 @@ public class Driver {
           if ((stringBuffer.substring(j, j + 1)).equals("L")) {
             cellTemp = new Cell(i, j, 11);
           }
-          else {
-            if ((stringBuffer.substring(j, j + 1)).equals("W")) {
-              cellTemp = new Cell(i, j, 12);
-            }
-            else {
-              if ((stringBuffer.substring(j, j + 1).equals("A"))) {
-                cellTemp = new Cell(i, j, 13);
-              }
-              else {
-                if ((stringBuffer.substring(j, j + 1)).equals("S")) {
-                  cellTemp = new Cell(i, j, 210);
-                }
-                else {
-                  if ((stringBuffer.substring(j, j + 1)).equals("F")) {
-                    cellTemp = new Cell(i, j, 211);
-                  }
-                  else {
-                    if ((stringBuffer.substring(j, j + 1)).equals("X")) {
-                      cellTemp = new Cell(i, j, 21);
-                    }
-                    else {
-                      if ((stringBuffer.substring(j, j + 1)).equals("R")) {
-                        cellTemp = new Cell(i, j, 22);
-                      }
-                      else {
-                        if ((stringBuffer.substring(j, j + 1)).equals("P")) {
-                          cellTemp = new Cell(i, j, 23);
-                        }
-                      }
-                    }
-                  }
-                }
-              }
-            }
+          else if ((stringBuffer.substring(j, j + 1)).equals("W")) {
+            cellTemp = new Cell(i, j, 12);
           }
-          z.addCell(i, j, cellTemp);
+          else if ((stringBuffer.substring(j, j + 1).equals("A"))) {
+            cellTemp = new Cell(i, j, 13);
+          }
+          else if ((stringBuffer.substring(j, j + 1)).equals("S")) {
+            cellTemp = new Cell(i, j, 210);
+          }
+          else if ((stringBuffer.substring(j, j + 1)).equals("F")) {
+            cellTemp = new Cell(i, j, 211);
+          }
+          else if ((stringBuffer.substring(j, j + 1)).equals("X")) {
+            cellTemp = new Cell(i, j, 21);
+          }
+          else if ((stringBuffer.substring(j, j + 1)).equals("R")) {
+            cellTemp = new Cell(i, j, 22);
+          }
+          else if ((stringBuffer.substring(j, j + 1)).equals("P")) {
+            cellTemp = new Cell(i, j, 23);
+          }
         }
+        z.addCell(i, j, cellTemp);
       }
-
-      //Add Cage
       z.addCage();
-
       //Add animal
       temp = Integer.parseInt(reader.readLine());
       for (i = 0; i < temp; i++) {
         stringBuffer = new StringBuffer(reader.readLine());
-
         //Get Animal ID and Animal Count from line
         j = stringBuffer.indexOf(" ");
         k = stringBuffer.length();
         animalId = Integer.parseInt(stringBuffer.substring(0, j));
         animalCount = Integer.parseInt(stringBuffer.substring(j + 1, k));
-
         //Create a new animal and find a suitable cage
         for (j = 0; j < animalCount; j++) {
           a = new Animal(animalId);
@@ -123,10 +106,20 @@ public class Driver {
       System.out.println("Input Error");
     }
   }
+  /**
+   * Main Program
+   *
+   * @param args Parameter saat eksekusi program
+   */
   public static void main(String[] args) {
     Driver D = new Driver("resource/map.txt");
     D.printMenu();
   }
+  /**
+   * Menuliskan menu ke layar, menerima pilihan menu dan mengeksekusi pilihan
+   * I. S.: Sembarang
+   * F. S.: Menu tertulis di layar, pilihan diterima dan dieksekusi
+   */
   public void printMenu() {
     int choice, x1, y1, x2, y2;
     Scanner in = new Scanner(System.in);
@@ -139,10 +132,8 @@ public class Driver {
       System.out.println("2. Mulai Tour");
       System.out.println("9. Keluar");
       System.out.println("Pilihan : ");
-
       choice = in.nextInt();
       in.nextLine();
-
       if (choice == 1) {
         do {
           System.out.println("=========================================");
@@ -154,7 +145,6 @@ public class Driver {
           System.out.println("Pilihan : ");
           choice = in.nextInt();
           in.nextLine();
-
           if (choice == 1) {
             printZoo();
             printStatus();
@@ -183,11 +173,15 @@ public class Driver {
       }
       else if (choice == 2) {
         startTour();
-
       }
     } while (choice != 9);
   }
-  public void printStatus() {//lebih pas dipindah ke zoo
+  /**
+   * Menuliskan status kebun binatang ke layar berkaitan dengan jumlah makanan
+   * I. S.: Sembarang
+   * F. S.: Status kebun binatang tertulis di layar
+   */
+  public void printStatus() {
     System.out.println("========================================");
     System.out.println("		 	  - Food Count -");
     System.out.println("	 Herbivore : " + z.countFoodHerbivore());
@@ -195,7 +189,12 @@ public class Driver {
     System.out.println("	 Omnivore	: " + z.countFoodOmnivore());
     System.out.println("========================================");
   }
-  public void printZoo() {//lebih pas dipindah ke zoo
+  /**
+   * Menuliskan peta kebun binatang
+   * I. S.: Sembarang
+   * F. S.: Peta kebun binatang tertulis di layar
+   */
+  public void printZoo() {
     int i, j;
     Cell c;
     Animal a;
@@ -225,6 +224,14 @@ public class Driver {
       System.out.println();
     }
   }
+  /**
+   * Menuliskan peta kebun binatang dengan posisi tour di x, y
+   * I. S.: Sembarang
+   * F. S.: Peta kebun binatang tertulis di layar
+   *
+   * @param x Posisi absis tour
+   * @param y Posisi ordinat tour
+   */
   public void printZoo(int x, int y) {
     int i, j;
     Cell cellTemp;
@@ -260,6 +267,16 @@ public class Driver {
       System.out.println("");
     }
   }
+  /**
+   * Menuliskan peta kebun binatang dari range x1-x2,y1-y2
+   * I. S.: x1 lebih kecil dari x2, y1 lebih kecil dari y2
+   * F. S.: Peta kebun binatang tertulis di layar
+   *
+   * @param x1 Titik mulai x
+   * @param x2 Titik akhir x
+   * @param y1 Titik mulai y
+   * @param y2 Titik akhir y
+   */
   public void printZoo(int x1, int x2, int y1, int y2) {
     int i, j;
     Cell cellTemp;
@@ -290,6 +307,11 @@ public class Driver {
       System.out.println("");
     }
   }
+  /**
+   * Menjalankan tour kebun binatang dari pintu masuk ke pintu keluar
+   * I. S.: Sembarang
+   * F. S.: Perjalanan tour kebun binatang tertulis di layar
+   */
   public void startTour() {
     Random rand = new Random(System.currentTimeMillis());
     int i, j, tc, move, cMove;
@@ -324,7 +346,6 @@ public class Driver {
       printZoo(j, i);
       printStatus();
       System.out.println("(" + i + "," + j + ")" + c.getCellId());
-
       //interact
       if (((j - 1) >= 0) && (move != 3)) {
         c = z.getCell(i, j - 1);
@@ -431,6 +452,5 @@ public class Driver {
       }
       c = z.getCell(i, j);
     }
-
   }
 }

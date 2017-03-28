@@ -30,16 +30,6 @@ public abstract class Cell implements Renderable {
     System.out.print(code);
   }
   /**
-   * Mengatur code yang akan digunakan untuk render
-   * I. S.: Sembarang
-   * F. S.: Code diubah menjadi karakter yang disimpan di c
-   *
-   * @param c Code yang diinginkan
-   */
-  public void setCode(char c) {
-    code = c;
-  }
-  /**
    * Mengembalikan nilai cageId
    *
    * @return Nilai cageId
