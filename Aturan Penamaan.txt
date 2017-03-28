@@ -1,3 +1,9 @@
+Package 	: lowercase
+Class		: UpperCamelCase
+Method		: lowerCamelCase
+Constant	: UPPERCASE, words separated by underscore
+
+______________________________________________________________
 5 Naming
 
 5.1 Rules common to all identifiers
