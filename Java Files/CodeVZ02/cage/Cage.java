@@ -64,7 +64,7 @@ public class Cage {
    * @return nilai cageId
    * Mengembalikan nilai cageId
    */
-  public int getCageID() {
+  public int getCageId() {
     return cageId;
   }
   /**
@@ -72,7 +72,7 @@ public class Cage {
    *
    * @param n Nilai untuk cageId
    */
-  public void setCageID(int n) {
+  public void setCageId(int n) {
     cageId = n;
   }
   /**
@@ -146,11 +146,11 @@ public class Cage {
    *
    * @return true jika ada dan false jika tidak ada
    */
-  public boolean isExist(int ID) {
+  public boolean isExist(int Id) {
     boolean found = false;
     int i = 0;
     while (i < nAnimal) {
-      if (a[i].getType() == ID)
+      if (a[i].getType() == Id)
         found = true;
       i++;
     }

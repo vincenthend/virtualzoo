@@ -1,7 +1,13 @@
 package test;
 import animal.Animal;
+import animal.Cat;
+import animal.Chicken;
+import animal.Pigeon;
 import cage.Cage;
 import cell.Cell;
+import cell.habitat.AirHabitat;
+import cell.habitat.LandHabitat;
+import cell.habitat.WaterHabitat;
 import zoo.Zoo;
 
 import static org.junit.Assert.assertTrue;
@@ -14,7 +20,7 @@ public class ZooTest {
   @org.junit.Test
   public void addCell() throws Exception {
     Zoo Z = new Zoo();
-    Cell C = new Cell();
+    Cell C = new AirHabitat();
     System.out.println("Testing addCell - getCell");
     assertTrue(Z.getCell(1, 1) == null);
     Z.addCell(1, 1, C);
@@ -41,9 +47,8 @@ public class ZooTest {
   @org.junit.Test
   public void getCage() throws Exception {
     Zoo Z = new Zoo();
-    Cell C = new Cell(0, 0, 12);
-    Z.addCell(0, 0, C);
     System.out.println("Testing addCage - getCage");
+    Z.addCell(1,1,new AirHabitat(1,1));
     assertTrue(Z.getCage(0) == null);
     Z.addCage();
     assertTrue(Z.getCage(0) != null);
@@ -51,9 +56,8 @@ public class ZooTest {
   @org.junit.Test
   public void getNCage() throws Exception {
     Zoo Z = new Zoo();
-    Cell C = new Cell(1, 1, 12);
-    Z.addCell(1, 1, C);
     System.out.println("Testing getNCage");
+    Z.addCell(1,1,new AirHabitat(1,1));
     assertTrue(Z.getNCage() == 0);
     Z.addCage();
     assertTrue(Z.getNCage() == 1);
@@ -63,16 +67,16 @@ public class ZooTest {
     Zoo Z = new Zoo();
 
     //Creates a new cat (food_weight = 1, weight = 4)
-    Animal a = new Animal(9);
+    Animal a = new Cat();
     //Creates a new pigeon (food_weight = 1, weight = 1)
-    Animal b = new Animal(3);
+    Animal b = new Pigeon();
     //Creates a new chicken (food_weight = 1, weight = 2)
-    Animal c = new Animal(8);
+    Animal c = new Chicken();
 
     //Creates habitats for animals
-    Cell cell1 = new Cell(1, 1, 11);
-    Cell cell2 = new Cell(1, 2, 12);
-    Cell cell3 = new Cell(1, 3, 13);
+    Cell cell1 = new AirHabitat();
+    Cell cell2 = new LandHabitat();
+    Cell cell3 = new WaterHabitat();
     Cage Cg;
 
     System.out.println("Testing countFoodHerbivore");
@@ -98,19 +102,19 @@ public class ZooTest {
     Zoo Z = new Zoo();
 
     //Creates a new cat (food_weight = 1, weight = 4)
-    Animal a = new Animal(9);
+    Animal a = new Cat();
     //Creates a new pigeon (food_weight = 1, weight = 1)
-    Animal b = new Animal(3);
+    Animal b = new Pigeon();
     //Creates a new chicken (food_weight = 1, weight = 2)
-    Animal c = new Animal(8);
+    Animal c = new Chicken();
 
     //Creates habitats for animals
-    Cell cell1 = new Cell(1, 1, 11);
-    Cell cell2 = new Cell(1, 2, 12);
-    Cell cell3 = new Cell(1, 3, 13);
+    Cell cell1 = new AirHabitat();
+    Cell cell2 = new LandHabitat();
+    Cell cell3 = new WaterHabitat();
     Cage Cg;
 
-    System.out.println("Testing countFoodCarnivore");
+    System.out.println("Testing countFoodHerbivore");
     assertTrue(Z.countFoodCarnivore() == 0);
     Z.addCell(1, 1, cell1);
     Z.addCage();
@@ -133,19 +137,19 @@ public class ZooTest {
     Zoo Z = new Zoo();
 
     //Creates a new cat (food_weight = 1, weight = 4)
-    Animal a = new Animal(9);
+    Animal a = new Cat();
     //Creates a new pigeon (food_weight = 1, weight = 1)
-    Animal b = new Animal(3);
+    Animal b = new Pigeon();
     //Creates a new chicken (food_weight = 1, weight = 2)
-    Animal c = new Animal(8);
+    Animal c = new Chicken();
 
     //Creates habitats for animals
-    Cell cell1 = new Cell(1, 1, 11);
-    Cell cell2 = new Cell(1, 2, 12);
-    Cell cell3 = new Cell(1, 3, 13);
+    Cell cell1 = new AirHabitat();
+    Cell cell2 = new LandHabitat();
+    Cell cell3 = new WaterHabitat();
     Cage Cg;
 
-    System.out.println("Testing countFoodCarnivore");
+    System.out.println("Testing countFoodHerbivore");
     assertTrue(Z.countFoodOmnivore() == 0);
     Z.addCell(1, 1, cell1);
     Z.addCage();
