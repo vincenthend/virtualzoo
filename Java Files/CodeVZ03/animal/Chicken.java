@@ -2,7 +2,6 @@
  * @author Vincent Hendryanto H/13515089
  * Class Chicken, mengatur konstruksi Chicken
  */
-
 package animal;
 public class Chicken extends LandAnimal {
   /**

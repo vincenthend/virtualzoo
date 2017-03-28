@@ -1,17 +1,16 @@
 package cell;
-
 import renderable.Renderable;
 
 /**
  * @author Vincent Hendryanto Halim / 13515089
- * Class cell, melakukan pembuatan cell berdasarkan ID cell
+ *         Class cell, melakukan pembuatan cell berdasarkan ID cell
  */
 public abstract class Cell implements Renderable {
-  private int cageId;
   protected int cellId;
   protected int locX;
   protected int locY;
   protected char code;
+  private int cageId;
   /**
    * Membuat cell dengan locX 0, locY 0, cellId 0 dan cageId -1
    */
@@ -31,47 +30,53 @@ public abstract class Cell implements Renderable {
     System.out.print(code);
   }
   /**
-   * @param c Code yang diinginkan
    * Mengatur code yang akan digunakan untuk render
    * I. S.: Sembarang
    * F. S.: Code diubah menjadi karakter yang disimpan di c
+   *
+   * @param c Code yang diinginkan
    */
   public void setCode(char c) {
     code = c;
   }
   /**
-   * @param n Nilai cageId yang diinginkan
-   * Mengatur nilai cageId
-   * I. S.: Sembarang
-   * F. S.: cageId berubah menjadi n
-   */
-  public void setCageId(int n) {
-    cageId = n;
-  }
-  /**
-   * @return Nilai cageId
    * Mengembalikan nilai cageId
+   *
+   * @return Nilai cageId
    */
   public int getCageId() {
     return cageId;
   }
   /**
-   * @return Nilai cellId
+   * Mengatur nilai cageId
+   * I. S.: Sembarang
+   * F. S.: cageId berubah menjadi n
+   *
+   * @param n Nilai cageId yang diinginkan
+   */
+  public void setCageId(int n) {
+    cageId = n;
+  }
+  /**
    * Mengembalikan nilai cellId
+   *
+   * @return Nilai cellId
    */
   public int getCellId() {
     return cellId;
   }
   /**
-   * @return Posisi absis cell.
    * Mengembalikan posisi absis hewan.
+   *
+   * @return Posisi absis cell.
    */
   public int getLocationX() {
     return locX;
   }
   /**
-   * @return Posisi ordinat cell.
    * Mengembalikan posisi ordinat hewan.
+   *
+   * @return Posisi ordinat cell.
    */
   public int getLocationY() {
     return locY;

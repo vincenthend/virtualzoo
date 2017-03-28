@@ -1,8 +1,11 @@
-package cage;
-import static org.junit.Assert.*;
+package test;
 import animal.Animal;
+import cage.Cage;
 import cell.Cell;
 import org.testng.annotations.Test;
+
+import static org.junit.Assert.assertFalse;
+import static org.junit.Assert.assertTrue;
 
 /**
  * Created by user on 28-Mar-17.
@@ -49,15 +52,15 @@ public class CageTest {
     H = new Cell(9, 0, 11);
     C.addHabitat(H);
     assertTrue(C.getCageType() == 11);
-    Animal A = new Animal (8);
+    Animal A = new Animal(8);
     C.addAnimal(A);
     assertFalse(C.isFull());
     assertTrue(C.isExist(8));
-    A = new Animal (9);
+    A = new Animal(9);
     C.addAnimal(A);
     assertFalse(C.isFull());
     assertTrue(C.isExist(9));
-    A = new Animal (10);
+    A = new Animal(10);
     C.addAnimal(A);
     assertTrue(C.isFull());
     assertTrue(C.isExist(10));

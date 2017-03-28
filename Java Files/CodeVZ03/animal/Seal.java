@@ -2,7 +2,6 @@
  * @author Vincent Hendryanto H/13515089
  * Class Seal, mengatur konstruksi Seal
  */
-
 package animal;
 public class Seal extends WaterAnimal {
   /**

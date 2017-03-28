@@ -15,7 +15,7 @@ public class Zoo {
   /**
    * Membuat Zoo dengan width 21 dan height 21
    */
-  Zoo() {
+  public Zoo() {
     nCage = 0;
     width = 21;
     height = 21;

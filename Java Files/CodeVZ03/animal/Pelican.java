@@ -2,7 +2,6 @@
  * @author Vincent Hendryanto H/13515089
  * Class Pelican, mengatur konstruksi Pelican
  */
-
 package animal;
 public class Pelican extends AirAnimal {
   /**

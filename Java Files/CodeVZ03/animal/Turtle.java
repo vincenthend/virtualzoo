@@ -2,7 +2,6 @@
  * @author Vincent Hendryanto H/13515089
  * Class Turtle, mengatur konstruksi Turtle
  */
-
 package animal;
 public class Turtle extends WaterAnimal {
   /**
