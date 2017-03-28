@@ -153,7 +153,6 @@ public class Driver {
   public void printMenu() {
     int choice, x1, y1, x2, y2;
     Scanner in = new Scanner(System.in);
-    choice = 0;
     do {
       System.out.println("=========================================");
       System.out.println("|		          VIRTUAL ZOO		      |");
@@ -199,7 +198,7 @@ public class Driver {
             System.out.println("Y2 :");
             y2 = in.nextInt();
             in.nextLine();
-            printZoo(x1, y1, x2, y2);
+            printZoo(x1, x2, y1, y2);
             System.out.println("");
             choice = 0;
           }
@@ -352,8 +351,8 @@ public class Driver {
       //interact
       if (((j - 1) >= 0) && (move != 3)) {
         c = z.getCell(i, j - 1);
-        if ((c.getCellId() >= 11) && (c.getCellId() <= 13)) {
-          if (c != null) {
+        if (c != null) {
+          if ((c.getCellId() >= 11) && (c.getCellId() <= 13)) {
             if (c.getCageId() > -1) {
               a = z.getCage(c.getCageId()).isSpaceOccupied(i, j - 1);
               if (a != null) {
@@ -365,8 +364,8 @@ public class Driver {
       }
       if (((i + 1) < z.getHeight()) && (move != 4)) {
         c = z.getCell(i + 1, j);
-        if ((c.getCellId() >= 11) && (c.getCellId() <= 13)) {
-          if (c != null) {
+        if (c != null) {
+          if ((c.getCellId() >= 11) && (c.getCellId() <= 13)) {
             if (c.getCageId() > -1) {
               a = z.getCage(c.getCageId()).isSpaceOccupied(i + 1, j);
               if (a != null) {
@@ -378,8 +377,8 @@ public class Driver {
       }
       if (((j + 1) < z.getWidth()) && (move != 1)) {
         c = z.getCell(i, j + 1);
-        if ((c.getCellId() >= 11) && (c.getCellId() <= 13)) {
-          if (c != null) {
+        if (c != null) {
+          if ((c.getCellId() >= 11) && (c.getCellId() <= 13)) {
             if (c.getCageId() > -1) {
               a = z.getCage(c.getCageId()).isSpaceOccupied(i, j + 1);
               if (a != null) {
@@ -391,8 +390,8 @@ public class Driver {
       }
       if (((i - 1) >= 0) && (move != 2)) {
         c = z.getCell(i - 1, j);
-        if ((c.getCellId() >= 11) && (c.getCellId() <= 13)) {
-          if (c != null) {
+        if (c != null) {
+          if ((c.getCellId() >= 11) && (c.getCellId() <= 13)) {
             if (c.getCageId() > -1) {
               a = z.getCage(c.getCageId()).isSpaceOccupied(i - 1, j);
               if (a != null) {

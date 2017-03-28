@@ -1,7 +1,4 @@
-/**
- * @author Mikhael Artur Darmakesuma / 13515099
- * Class driver, main program dan inisialisasi isi awal zoo
- */
+
 import animal.*;
 import cell.Cell;
 import cell.facility.Park;
@@ -18,12 +15,12 @@ import java.io.FileReader;
 import java.io.IOException;
 import java.util.Random;
 import java.util.Scanner;
-
+/**
+ * @author Mikhael Artur Darmakesuma / 13515099
+ * Class driver, main program dan inisialisasi isi awal zoo
+ */
 public class Driver {
   private Zoo z;
-  public Driver() {
-    //TBD
-  }
   /**
    * Inisialisasi driver dengan membaca dari file inputFile
    * Memasukkan data animal, habitat dari inputFile ke z dan menginisiasi cage
@@ -242,7 +239,6 @@ public class Driver {
   public void printMenu() {
     int choice, x1, y1, x2, y2;
     Scanner in = new Scanner(System.in);
-    choice = 0;
     do {
       System.out.println("=========================================");
       System.out.println("|		          VIRTUAL ZOO		      |");
@@ -288,7 +284,7 @@ public class Driver {
             System.out.println("Y2 :");
             y2 = in.nextInt();
             in.nextLine();
-            printZoo(x1, y1, x2, y2);
+            printZoo(x1, x2, y1, y2);
             System.out.println("");
             choice = 0;
           }
@@ -318,7 +314,7 @@ public class Driver {
    * I. S.: Sembarang
    * F. S.: Peta kebun binatang tertulis di layar
    */
-  public void printZoo() {//lebih pas dipindah ke zoo
+  public void printZoo() {
     int i, j;
     Cell cellTemp;
     Animal animalTemp;
@@ -353,7 +349,7 @@ public class Driver {
    * I. S.: Sembarang
    * F. S.: Peta kebun binatang tertulis di layar
    */
-  public void printZoo(int x, int y) {//lebih pas dipindah ke zoo
+  public void printZoo(int x, int y) {
     int i, j;
     Cell cellTemp;
     Animal animalTemp;
@@ -393,7 +389,7 @@ public class Driver {
    * I. S.: x1 <= x2, y1 <= y2
    * F. S.: Peta kebun binatang tertulis di layar
    */
-  public void printZoo(int x1, int x2, int y1, int y2) {//lebih pas dipindah ke zoo
+  public void printZoo(int x1, int x2, int y1, int y2) {
     int i, j;
     Cell cellTemp;
     Animal animalTemp;

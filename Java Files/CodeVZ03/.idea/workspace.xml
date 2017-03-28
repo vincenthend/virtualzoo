@@ -4,47 +4,7 @@
     <list default="true" id="f3f5a806-7a3e-4833-beed-09ebc4b25f2e" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../CodeVZ02/.idea/workspace.xml" afterPath="$PROJECT_DIR$/../CodeVZ02/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../CodeVZ02/Driver.java" afterPath="$PROJECT_DIR$/../CodeVZ02/Driver.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../CodeVZ02/cage/Cage.java" afterPath="$PROJECT_DIR$/../CodeVZ02/cage/Cage.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../CodeVZ02/cell/Cell.java" afterPath="$PROJECT_DIR$/../CodeVZ02/cell/Cell.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/codeStyleSettings.xml" afterPath="$PROJECT_DIR$/.idea/codeStyleSettings.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Driver.java" afterPath="$PROJECT_DIR$/Driver.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/animal/AirAnimal.java" afterPath="$PROJECT_DIR$/animal/AirAnimal.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/animal/Animal.java" afterPath="$PROJECT_DIR$/animal/Animal.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/animal/Bat.java" afterPath="$PROJECT_DIR$/animal/Bat.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/animal/Canary.java" afterPath="$PROJECT_DIR$/animal/Canary.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/animal/Cat.java" afterPath="$PROJECT_DIR$/animal/Cat.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/animal/Chameleon.java" afterPath="$PROJECT_DIR$/animal/Chameleon.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/animal/Chicken.java" afterPath="$PROJECT_DIR$/animal/Chicken.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/animal/Cow.java" afterPath="$PROJECT_DIR$/animal/Cow.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/animal/Dolphin.java" afterPath="$PROJECT_DIR$/animal/Dolphin.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/animal/Eagle.java" afterPath="$PROJECT_DIR$/animal/Eagle.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/animal/Goat.java" afterPath="$PROJECT_DIR$/animal/Goat.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/animal/Goldfish.java" afterPath="$PROJECT_DIR$/animal/Goldfish.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/animal/LandAnimal.java" afterPath="$PROJECT_DIR$/animal/LandAnimal.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/animal/Llama.java" afterPath="$PROJECT_DIR$/animal/Llama.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/animal/Mouse.java" afterPath="$PROJECT_DIR$/animal/Mouse.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/animal/Owl.java" afterPath="$PROJECT_DIR$/animal/Owl.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/animal/Pelican.java" afterPath="$PROJECT_DIR$/animal/Pelican.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/animal/Pigeon.java" afterPath="$PROJECT_DIR$/animal/Pigeon.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/animal/Salmon.java" afterPath="$PROJECT_DIR$/animal/Salmon.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/animal/Seal.java" afterPath="$PROJECT_DIR$/animal/Seal.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/animal/Sheep.java" afterPath="$PROJECT_DIR$/animal/Sheep.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/animal/Snake.java" afterPath="$PROJECT_DIR$/animal/Snake.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/animal/Squid.java" afterPath="$PROJECT_DIR$/animal/Squid.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/animal/Toucan.java" afterPath="$PROJECT_DIR$/animal/Toucan.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/animal/Turtle.java" afterPath="$PROJECT_DIR$/animal/Turtle.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/animal/WaterAnimal.java" afterPath="$PROJECT_DIR$/animal/WaterAnimal.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/animal/Whale.java" afterPath="$PROJECT_DIR$/animal/Whale.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/cage/Cage.java" afterPath="$PROJECT_DIR$/cage/Cage.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/cell/Cell.java" afterPath="$PROJECT_DIR$/cell/Cell.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/cell/facility/Park.java" afterPath="$PROJECT_DIR$/cell/facility/Park.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/cell/facility/Resto.java" afterPath="$PROJECT_DIR$/cell/facility/Resto.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/cell/facility/Road.java" afterPath="$PROJECT_DIR$/cell/facility/Road.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/cell/habitat/AirHabitat.java" afterPath="$PROJECT_DIR$/cell/habitat/AirHabitat.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/cell/habitat/Habitat.java" afterPath="$PROJECT_DIR$/cell/habitat/Habitat.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/cell/habitat/LandHabitat.java" afterPath="$PROJECT_DIR$/cell/habitat/LandHabitat.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/cell/habitat/WaterHabitat.java" afterPath="$PROJECT_DIR$/cell/habitat/WaterHabitat.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/zoo/Zoo.java" afterPath="$PROJECT_DIR$/zoo/Zoo.java" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -59,30 +19,7 @@
   </component>
   <component name="ExecutionTargetManager" SELECTED_TARGET="default_target" />
   <component name="FileEditorManager">
-    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="Driver.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Driver.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="104">
-              <caret line="551" column="9" lean-forward="false" selection-start-line="551" selection-start-column="9" selection-end-line="551" selection-end-column="9" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="LandAnimal.java" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/animal/LandAnimal.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="272">
-              <caret line="16" column="0" lean-forward="true" selection-start-line="16" selection-start-column="0" selection-end-line="16" selection-end-column="0" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-    </leaf>
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300" />
   </component>
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
@@ -134,12 +71,12 @@
         <option value="$PROJECT_DIR$/cell/habitat/LandHabitat.java" />
         <option value="$PROJECT_DIR$/cell/habitat/AirHabitat.java" />
         <option value="$PROJECT_DIR$/animal/Animal.java" />
-        <option value="$PROJECT_DIR$/Driver.java" />
         <option value="$PROJECT_DIR$/zoo/Zoo.java" />
         <option value="$PROJECT_DIR$/cage/Cage.java" />
         <option value="$PROJECT_DIR$/cell/Cell.java" />
         <option value="$PROJECT_DIR$/cell/habitat/Habitat.java" />
         <option value="$PROJECT_DIR$/animal/LandAnimal.java" />
+        <option value="$PROJECT_DIR$/Driver.java" />
       </list>
     </option>
   </component>
@@ -290,6 +227,16 @@
       <pane id="Scratches" />
       <pane id="ProjectPane">
         <subPane>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="CodeVZ03" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="External Libraries" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ExternalLibrariesNode" />
+            </PATH_ELEMENT>
+          </PATH>
           <PATH>
             <PATH_ELEMENT>
               <option name="myItemId" value="CodeVZ03" />
@@ -763,7 +710,7 @@
       <workItem from="1490601565894" duration="1580000" />
       <workItem from="1490603738787" duration="2772000" />
       <workItem from="1490677957076" duration="2341000" />
-      <workItem from="1490682535124" duration="545000" />
+      <workItem from="1490682535124" duration="971000" />
     </task>
     <task id="LOCAL-00001" summary="VZ03 Initialized">
       <created>1490525221759</created>
@@ -790,11 +737,10 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="15936000" />
+    <option name="totallyTimeSpent" value="16362000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
-    <editor active="true" />
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
@@ -810,7 +756,7 @@
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.24963397" sideWeight="0.5" order="6" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.24963397" sideWeight="0.5" order="6" side_tool="false" content_ui="combo" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.329653" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
@@ -1157,21 +1103,21 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Driver.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="104">
-          <caret line="551" column="9" lean-forward="false" selection-start-line="551" selection-start-column="9" selection-end-line="551" selection-end-column="9" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/animal/LandAnimal.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="272">
           <caret line="16" column="0" lean-forward="true" selection-start-line="16" selection-start-column="0" selection-end-line="16" selection-end-column="0" />
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Driver.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="125">
+          <caret line="390" column="5" lean-forward="true" selection-start-line="390" selection-start-column="5" selection-end-line="390" selection-end-column="5" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>

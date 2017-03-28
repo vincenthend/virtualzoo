@@ -2,50 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="1b2303dd-76d8-4a2d-91f2-75eb838afd0d" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Driver.java" afterPath="$PROJECT_DIR$/Driver.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/cage/Cage.java" afterPath="$PROJECT_DIR$/cage/Cage.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/cell/Cell.java" afterPath="$PROJECT_DIR$/cell/Cell.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../CodeVZ03/.idea/codeStyleSettings.xml" afterPath="$PROJECT_DIR$/../CodeVZ03/.idea/codeStyleSettings.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../CodeVZ03/.idea/workspace.xml" afterPath="$PROJECT_DIR$/../CodeVZ03/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../CodeVZ03/Driver.java" afterPath="$PROJECT_DIR$/../CodeVZ03/Driver.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../CodeVZ03/animal/AirAnimal.java" afterPath="$PROJECT_DIR$/../CodeVZ03/animal/AirAnimal.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../CodeVZ03/animal/Animal.java" afterPath="$PROJECT_DIR$/../CodeVZ03/animal/Animal.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../CodeVZ03/animal/Bat.java" afterPath="$PROJECT_DIR$/../CodeVZ03/animal/Bat.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../CodeVZ03/animal/Canary.java" afterPath="$PROJECT_DIR$/../CodeVZ03/animal/Canary.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../CodeVZ03/animal/Cat.java" afterPath="$PROJECT_DIR$/../CodeVZ03/animal/Cat.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../CodeVZ03/animal/Chameleon.java" afterPath="$PROJECT_DIR$/../CodeVZ03/animal/Chameleon.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../CodeVZ03/animal/Chicken.java" afterPath="$PROJECT_DIR$/../CodeVZ03/animal/Chicken.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../CodeVZ03/animal/Cow.java" afterPath="$PROJECT_DIR$/../CodeVZ03/animal/Cow.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../CodeVZ03/animal/Dolphin.java" afterPath="$PROJECT_DIR$/../CodeVZ03/animal/Dolphin.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../CodeVZ03/animal/Eagle.java" afterPath="$PROJECT_DIR$/../CodeVZ03/animal/Eagle.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../CodeVZ03/animal/Goat.java" afterPath="$PROJECT_DIR$/../CodeVZ03/animal/Goat.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../CodeVZ03/animal/Goldfish.java" afterPath="$PROJECT_DIR$/../CodeVZ03/animal/Goldfish.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../CodeVZ03/animal/LandAnimal.java" afterPath="$PROJECT_DIR$/../CodeVZ03/animal/LandAnimal.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../CodeVZ03/animal/Llama.java" afterPath="$PROJECT_DIR$/../CodeVZ03/animal/Llama.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../CodeVZ03/animal/Mouse.java" afterPath="$PROJECT_DIR$/../CodeVZ03/animal/Mouse.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../CodeVZ03/animal/Owl.java" afterPath="$PROJECT_DIR$/../CodeVZ03/animal/Owl.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../CodeVZ03/animal/Pelican.java" afterPath="$PROJECT_DIR$/../CodeVZ03/animal/Pelican.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../CodeVZ03/animal/Pigeon.java" afterPath="$PROJECT_DIR$/../CodeVZ03/animal/Pigeon.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../CodeVZ03/animal/Salmon.java" afterPath="$PROJECT_DIR$/../CodeVZ03/animal/Salmon.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../CodeVZ03/animal/Seal.java" afterPath="$PROJECT_DIR$/../CodeVZ03/animal/Seal.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../CodeVZ03/animal/Sheep.java" afterPath="$PROJECT_DIR$/../CodeVZ03/animal/Sheep.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../CodeVZ03/animal/Snake.java" afterPath="$PROJECT_DIR$/../CodeVZ03/animal/Snake.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../CodeVZ03/animal/Squid.java" afterPath="$PROJECT_DIR$/../CodeVZ03/animal/Squid.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../CodeVZ03/animal/Toucan.java" afterPath="$PROJECT_DIR$/../CodeVZ03/animal/Toucan.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../CodeVZ03/animal/Turtle.java" afterPath="$PROJECT_DIR$/../CodeVZ03/animal/Turtle.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../CodeVZ03/animal/WaterAnimal.java" afterPath="$PROJECT_DIR$/../CodeVZ03/animal/WaterAnimal.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../CodeVZ03/animal/Whale.java" afterPath="$PROJECT_DIR$/../CodeVZ03/animal/Whale.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../CodeVZ03/cage/Cage.java" afterPath="$PROJECT_DIR$/../CodeVZ03/cage/Cage.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../CodeVZ03/cell/Cell.java" afterPath="$PROJECT_DIR$/../CodeVZ03/cell/Cell.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../CodeVZ03/cell/facility/Park.java" afterPath="$PROJECT_DIR$/../CodeVZ03/cell/facility/Park.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../CodeVZ03/cell/facility/Resto.java" afterPath="$PROJECT_DIR$/../CodeVZ03/cell/facility/Resto.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../CodeVZ03/cell/facility/Road.java" afterPath="$PROJECT_DIR$/../CodeVZ03/cell/facility/Road.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../CodeVZ03/cell/habitat/AirHabitat.java" afterPath="$PROJECT_DIR$/../CodeVZ03/cell/habitat/AirHabitat.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../CodeVZ03/cell/habitat/Habitat.java" afterPath="$PROJECT_DIR$/../CodeVZ03/cell/habitat/Habitat.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../CodeVZ03/cell/habitat/LandHabitat.java" afterPath="$PROJECT_DIR$/../CodeVZ03/cell/habitat/LandHabitat.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../CodeVZ03/cell/habitat/WaterHabitat.java" afterPath="$PROJECT_DIR$/../CodeVZ03/cell/habitat/WaterHabitat.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../CodeVZ03/zoo/Zoo.java" afterPath="$PROJECT_DIR$/../CodeVZ03/zoo/Zoo.java" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -61,8 +20,8 @@
       <file leaf-file-name="Driver.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/Driver.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-929">
-              <caret line="93" column="83" lean-forward="true" selection-start-line="93" selection-start-column="83" selection-end-line="93" selection-end-column="83" />
+            <state relative-caret-position="-300">
+              <caret line="159" column="35" lean-forward="true" selection-start-line="159" selection-start-column="35" selection-end-line="159" selection-end-column="35" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -760,7 +719,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1490682545520</updated>
-      <workItem from="1490682546889" duration="535000" />
+      <workItem from="1490682546889" duration="961000" />
     </task>
     <servers />
   </component>
@@ -776,11 +735,10 @@
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="3979000" />
+    <option name="totallyTimeSpent" value="4405000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
-    <editor active="true" />
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
@@ -1298,8 +1256,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/Driver.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-929">
-          <caret line="93" column="83" lean-forward="true" selection-start-line="93" selection-start-column="83" selection-end-line="93" selection-end-column="83" />
+        <state relative-caret-position="-300">
+          <caret line="159" column="35" lean-forward="true" selection-start-line="159" selection-start-column="35" selection-end-line="159" selection-end-column="35" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
