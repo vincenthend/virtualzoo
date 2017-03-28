@@ -1,13 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="f3f5a806-7a3e-4833-beed-09ebc4b25f2e" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../CodeVZ02/.idea/workspace.xml" afterPath="$PROJECT_DIR$/../CodeVZ02/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Driver.java" afterPath="$PROJECT_DIR$/Driver.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/cage/Cage.java" afterPath="$PROJECT_DIR$/cage/Cage.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/cell/Cell.java" afterPath="$PROJECT_DIR$/cell/Cell.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/zoo/Zoo.java" afterPath="$PROJECT_DIR$/zoo/Zoo.java" />
-    </list>
+    <list default="true" id="f3f5a806-7a3e-4833-beed-09ebc4b25f2e" name="Default" comment="" />
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -48,8 +42,8 @@
       <file leaf-file-name="Zoo.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/zoo/Zoo.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="2">
-              <caret line="41" column="53" lean-forward="false" selection-start-line="41" selection-start-column="53" selection-end-line="41" selection-end-column="53" />
+            <state relative-caret-position="36">
+              <caret line="43" column="25" lean-forward="true" selection-start-line="43" selection-start-column="25" selection-end-line="43" selection-end-column="25" />
               <folding />
             </state>
           </provider>
@@ -904,7 +898,7 @@
       <workItem from="1490593565271" duration="1126000" />
       <workItem from="1490601565894" duration="1580000" />
       <workItem from="1490603738787" duration="2772000" />
-      <workItem from="1490677957076" duration="2341000" />
+      <workItem from="1490677957076" duration="2926000" />
     </task>
     <task id="LOCAL-00001" summary="VZ03 Initialized">
       <created>1490525221759</created>
@@ -931,7 +925,7 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="15391000" />
+    <option name="totallyTimeSpent" value="15976000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
@@ -1292,8 +1286,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/zoo/Zoo.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2">
-          <caret line="41" column="53" lean-forward="false" selection-start-line="41" selection-start-column="53" selection-end-line="41" selection-end-column="53" />
+        <state relative-caret-position="36">
+          <caret line="43" column="25" lean-forward="true" selection-start-line="43" selection-start-column="25" selection-end-line="43" selection-end-column="25" />
           <folding />
         </state>
       </provider>
