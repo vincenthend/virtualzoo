@@ -59,6 +59,8 @@ public class Zoo {
    * @param y Posisi ordinat habitat di mana cage akan dibuat
    */
   public void initCage(int x, int y) {
+    cageList[nCage] = new Cage();
+    cageList[nCage].setCageId(nCage);
     addToCage(x, y);
     nCage++;
   }
@@ -72,22 +74,22 @@ public class Zoo {
   public void addToCage(int x, int y) {
     cageList[nCage].addHabitat(cellList[x][y]);
     if (isInRange(x - 1, y)) {
-      if (cellList[x][y].getCellId() == cellList[x - 1][y].getCellId()) {
+      if (cellList[x][y].getCellId() == cellList[x - 1][y].getCellId() && cellList[x - 1][y].getCageId() == -1) {
         addToCage(x - 1, y);
       }
     }
     if (isInRange(x + 1, y)) {
-      if (cellList[x][y].getCellId() == cellList[x + 1][y].getCellId()) {
+      if (cellList[x][y].getCellId() == cellList[x + 1][y].getCellId() && cellList[x + 1][y].getCageId() == -1) {
         addToCage(x + 1, y);
       }
     }
     if (isInRange(x, y - 1)) {
-      if (cellList[x][y].getCellId() == cellList[x][y - 1].getCellId()) {
+      if (cellList[x][y].getCellId() == cellList[x][y - 1].getCellId() && cellList[x][y - 1].getCageId() == -1) {
         addToCage(x, y - 1);
       }
     }
     if (isInRange(x, y + 1)) {
-      if (cellList[x][y].getCellId() == cellList[x][y + 1].getCellId()) {
+      if (cellList[x][y].getCellId() == cellList[x][y + 1].getCellId() && cellList[x][y + 1].getCageId() == -1) {
         addToCage(x, y + 1);
       }
     }
