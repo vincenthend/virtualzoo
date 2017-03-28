@@ -1,8 +1,8 @@
+package animal;
 /**
  * @author Vincent Hendryanto H/13515089
- * Class Snake, mengatur konstruksi Snake
+ *         Class Snake, mengatur konstruksi Snake
  */
-package animal;
 public class Snake extends LandAnimal {
   /**
    * Mengatur konstruksi animal dengan spesifikasi yang sudah ditentukan

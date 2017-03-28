@@ -1,8 +1,8 @@
+package animal;
 /**
  * @author Vincent Hendryanto H/13515089
- * Class Chicken, mengatur konstruksi Chicken
+ *         Class Chicken, mengatur konstruksi Chicken
  */
-package animal;
 public class Chicken extends LandAnimal {
   /**
    * Mengatur konstruksi animal dengan spesifikasi yang sudah ditentukan

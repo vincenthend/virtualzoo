@@ -1,8 +1,8 @@
+package animal;
 /**
  * @author Vincent Hendryanto H/13515089
- * Class Llama, mengatur konstruksi Llama
+ *         Class Llama, mengatur konstruksi Llama
  */
-package animal;
 public class Llama extends LandAnimal {
   /**
    * Mengatur konstruksi animal dengan spesifikasi yang sudah ditentukan

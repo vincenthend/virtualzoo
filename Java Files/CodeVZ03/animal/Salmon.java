@@ -17,8 +17,8 @@ public class Salmon extends WaterAnimal {
     sound = "blub blub";
     code = ':';
     enemyId = new int[cEnemy];
-    enemyId [0] = 19;
-    enemyId [1] = 21;
+    enemyId[0] = 19;
+    enemyId[1] = 21;
   }
 }
 

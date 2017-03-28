@@ -16,7 +16,7 @@ public class Bat extends AirAnimal {
     cEnemy = 2;
     sound = "shriekkkkkk";
     code = '%';
-    enemyId = new int [cEnemy];
+    enemyId = new int[cEnemy];
     enemyId[0] = 2;
     enemyId[1] = 4;
   }

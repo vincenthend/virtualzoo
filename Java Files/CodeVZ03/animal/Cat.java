@@ -1,8 +1,8 @@
+package animal;
 /**
  * @author Vincent Hendryanto H/13515089
- * Class Cat, mengatur konstruksi Cat
+ *         Class Cat, mengatur konstruksi Cat
  */
-package animal;
 public class Cat extends LandAnimal {
   /**
    * Mengatur konstruksi animal dengan spesifikasi yang sudah ditentukan

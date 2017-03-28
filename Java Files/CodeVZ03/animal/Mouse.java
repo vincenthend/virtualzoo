@@ -17,7 +17,7 @@ public class Mouse extends LandAnimal {
     sound = "Squeak-squeak";
     code = '~';
     cEnemy = 1;
-    enemyId = new int [cEnemy];
+    enemyId = new int[cEnemy];
     enemyId[0] = 9;
   }
 }

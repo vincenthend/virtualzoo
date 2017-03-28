@@ -1,8 +1,8 @@
+package animal;
 /**
  * @author Vincent Hendryanto H/13515089
- * Class Squid, mengatur konstruksi Squid
+ *         Class Squid, mengatur konstruksi Squid
  */
-package animal;
 public class Squid extends WaterAnimal {
   /**
    * Mengatur konstruksi animal dengan spesifikasi yang sudah ditentukan
