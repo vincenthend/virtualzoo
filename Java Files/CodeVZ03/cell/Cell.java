@@ -24,31 +24,39 @@ public abstract class Cell implements Renderable {
   }
   /**
    * Melakukan render (mencetak Code)
+   * I. S.: Sembarang
+   * F. S.: code tercetak di layar
    */
   public void render() {
     System.out.print(code);
   }
   /**
    * @param c Code yang diinginkan
-   *          Mengatur code yang akan digunakan untuk render
+   * Mengatur code yang akan digunakan untuk render
+   * I. S.: Sembarang
+   * F. S.: Code diubah menjadi karakter yang disimpan di c
    */
   public void setCode(char c) {
     code = c;
   }
   /**
    * @param n Nilai cageId yang diinginkan
-   *          Mengatur nilai cageId
+   * Mengatur nilai cageId
+   * I. S.: Sembarang
+   * F. S.: cageId berubah menjadi n
    */
   public void setCageId(int n) {
     cageId = n;
   }
   /**
+   * @return Nilai cageId
    * Mengembalikan nilai cageId
    */
   public int getCageId() {
     return cageId;
   }
   /**
+   * @return Nilai cellId
    * Mengembalikan nilai cellId
    */
   public int getCellId() {
