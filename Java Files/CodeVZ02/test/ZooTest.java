@@ -1,7 +1,8 @@
-package zoo;
+package test;
 import animal.Animal;
 import cage.Cage;
 import cell.Cell;
+import zoo.Zoo;
 
 import static org.junit.Assert.assertTrue;
 
@@ -74,18 +75,18 @@ public class ZooTest {
     assertTrue(Z.countFoodHerbivore() == 0);
     Z.addCage();
     Cg = Z.getCage(0);
-    Cg.AddHabitat(cell1);
-    Cg.AddAnimal(a);
+    Cg.addHabitat(cell1);
+    Cg.addAnimal(a);
 
     Z.addCage();
     Cg = Z.getCage(1);
-    Cg.AddHabitat(cell2);
-    Cg.AddAnimal(b);
+    Cg.addHabitat(cell2);
+    Cg.addAnimal(b);
 
     Z.addCage();
     Cg = Z.getCage(2);
-    Cg.AddHabitat(cell3);
-    Cg.AddAnimal(c);
+    Cg.addHabitat(cell3);
+    Cg.addAnimal(c);
     assertTrue(Z.countFoodHerbivore() == 1);
   }
   @org.junit.Test
@@ -109,18 +110,18 @@ public class ZooTest {
     assertTrue(Z.countFoodCarnivore() == 0);
     Z.addCage();
     Cg = Z.getCage(0);
-    Cg.AddHabitat(cell1);
-    Cg.AddAnimal(a);
+    Cg.addHabitat(cell1);
+    Cg.addAnimal(a);
 
     Z.addCage();
     Cg = Z.getCage(1);
-    Cg.AddHabitat(cell2);
-    Cg.AddAnimal(b);
+    Cg.addHabitat(cell2);
+    Cg.addAnimal(b);
 
     Z.addCage();
     Cg = Z.getCage(2);
-    Cg.AddHabitat(cell3);
-    Cg.AddAnimal(c);
+    Cg.addHabitat(cell3);
+    Cg.addAnimal(c);
     assertTrue(Z.countFoodCarnivore() == 4);
   }
   @org.junit.Test
@@ -144,18 +145,18 @@ public class ZooTest {
     assertTrue(Z.countFoodOmnivore() == 0);
     Z.addCage();
     Cg = Z.getCage(0);
-    Cg.AddHabitat(cell1);
-    Cg.AddAnimal(a);
+    Cg.addHabitat(cell1);
+    Cg.addAnimal(a);
 
     Z.addCage();
     Cg = Z.getCage(1);
-    Cg.AddHabitat(cell2);
-    Cg.AddAnimal(b);
+    Cg.addHabitat(cell2);
+    Cg.addAnimal(b);
 
     Z.addCage();
     Cg = Z.getCage(2);
-    Cg.AddHabitat(cell3);
-    Cg.AddAnimal(c);
+    Cg.addHabitat(cell3);
+    Cg.addAnimal(c);
 
     assertTrue(Z.countFoodOmnivore() == 2);
   }
