@@ -1,21 +1,25 @@
 package cell.facility;
+
 /**
+ * Class Resto, melakukan pembuatan Resto pada x y terkait.
  * @author Vincent Hendryanto Halim / 13515089
- *         Class Resto, melakukan pembuatan Resto pada x y terkait
  */
 public class Park extends Facility {
-  private final char default_code = 'P';
+
+  private final char defaultCode = 'P';
+
   /**
-   * Melakukan konstruksi Resto dengan x dan y default
+   * Melakukan konstruksi Resto dengan x dan y default.
    */
   public Park() {
     locX = 0;
     locY = 0;
     cellId = 22;
-    code = default_code;
+    code = defaultCode;
   }
+
   /**
-   * Melakukan konstruksi Resto dengan x dan y terdefinisi
+   * Melakukan konstruksi Resto dengan x dan y terdefinisi.
    *
    * @param x nilai koordinat x
    * @param y nilai koordinat y
@@ -24,6 +28,6 @@ public class Park extends Facility {
     locX = x;
     locY = y;
     cellId = 22;
-    code = default_code;
+    code = defaultCode;
   }
 }
