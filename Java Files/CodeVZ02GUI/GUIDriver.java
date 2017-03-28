@@ -29,6 +29,7 @@ public class GUIDriver {
   private JPanel zooMap;
   private JPanel buttonPane;
   private JLabel[][] mapLabel;
+  private JLabel interactLabel;
 
 
   /**
@@ -149,10 +150,13 @@ public class GUIDriver {
 
     Button startTour = new Button("Start Tour");
     buttonPane.add(startTour);
-
     mainWindow.add(buttonPane);
     mainWindow.setVisible(true);
 
+    interactLabel = new JLabel("",JLabel.CENTER);
+    interactLabel.setSize(350,100);
+    Button stepTour = new Button("Step");
+    buttonPane.add(stepTour);
   }
 
   /**
