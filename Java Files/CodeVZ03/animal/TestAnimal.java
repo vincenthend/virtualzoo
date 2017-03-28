@@ -354,6 +354,21 @@ public class TestAnimal
 		assertEquals("23.Array Enemy awal tidak kosong!",0,animaltest.getEnemyList()[0]);
 	}
 	@Test
+	public void InitialAssertTest24()
+	{
+		Animal animaltest = new Penguin();
+		assertEquals("24.Tipe salah!",24,animaltest.getType());
+		assertEquals("24.Jumlah makanan salah!",1,animaltest.getFoodQuantity());
+		assertEquals("24.Tipe makanan salah!",2,animaltest.getFoodType());
+		assertEquals("24.Lokasi initial X salah!",0,animaltest.getLocationX());
+		assertEquals("24.Lokasi initial Y salah!",0,animaltest.getLocationY());
+		assertEquals("24.Habitat salah!",true,animaltest.getHabitat()[0]);
+		assertEquals("24.Habitat salah!",false,animaltest.getHabitat()[1]);
+		assertEquals("24.Habitat salah!",true,animaltest.getHabitat()[2]);		
+		assertEquals("24.Initial jumlah musuh salah!",0,animaltest.getCEnemy());
+		assertEquals("24.Array Enemy awal tidak kosong!",0,animaltest.getEnemyList()[0]);
+	}
+	@Test
 	public void SetterTest()
 	{
 		Animal animaltest = new Pelican();

@@ -13,9 +13,12 @@ public class Salmon extends WaterAnimal {
     foodWeight = 1;
     foodType = 2;
     type = 17;
-    cEnemy = 0;
+    cEnemy = 2;
     sound = "blub blub";
     code = ':';
+    enemyId = new int[cEnemy];
+    enemyId[0] = 19;
+    enemyId[1] = 21;
   }
 }
 

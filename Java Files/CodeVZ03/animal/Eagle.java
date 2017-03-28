@@ -1,8 +1,8 @@
+package animal;
 /**
  * @author Vincent Hendryanto H/13515089
- * Class Eagle, mengatur konstruksi Eagle
+ *         Class Eagle, mengatur konstruksi Eagle
  */
-package animal;
 public class Eagle extends AirAnimal {
   /**
    * Mengatur konstruksi animal dengan spesifikasi yang sudah ditentukan

@@ -1,8 +1,8 @@
+package animal;
 /**
  * @author Vincent Hendryanto H/13515089
- * Class Whale, mengatur konstruksi Whale
+ *         Class Whale, mengatur konstruksi Whale
  */
-package animal;
 public class Whale extends WaterAnimal {
   /**
    * Mengatur konstruksi animal dengan spesifikasi yang sudah ditentukan

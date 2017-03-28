@@ -1,8 +1,8 @@
+package animal;
 /**
  * @author Vincent Hendryanto H/13515089
- * Class Sheep, mengatur konstruksi Sheep
+ *         Class Sheep, mengatur konstruksi Sheep
  */
-package animal;
 public class Sheep extends LandAnimal {
   /**
    * Mengatur konstruksi animal dengan spesifikasi yang sudah ditentukan

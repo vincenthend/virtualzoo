@@ -13,9 +13,12 @@ public class Bat extends AirAnimal {
     foodWeight = 1;
     foodType = 1;
     type = 5;
-    cEnemy = 0;
+    cEnemy = 2;
     sound = "shriekkkkkk";
     code = '%';
+    enemyId = new int[cEnemy];
+    enemyId[0] = 2;
+    enemyId[1] = 4;
   }
 }
 

@@ -1,8 +1,8 @@
+package animal;
 /**
  * @author Vincent Hendryanto H/13515089
- * Class Toucan, mengatur konstruksi Toucan
+ *         Class Toucan, mengatur konstruksi Toucan
  */
-package animal;
 public class Toucan extends AirAnimal {
   /**
    * Mengatur konstruksi animal dengan spesifikasi yang sudah ditentukan

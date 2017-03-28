@@ -1,8 +1,8 @@
+package animal;
 /**
  * @author Vincent Hendryanto H/13515089
- * Class Pigeon, mengatur konstruksi Pigeon
+ *         Class Pigeon, mengatur konstruksi Pigeon
  */
-package animal;
 public class Pigeon extends AirAnimal {
   /**
    * Mengatur konstruksi animal dengan spesifikasi yang sudah ditentukan

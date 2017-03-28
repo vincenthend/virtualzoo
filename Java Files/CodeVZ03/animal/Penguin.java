@@ -1,21 +1,21 @@
 package animal;
 /**
  * @author Vincent Hendryanto H/13515089
- *         Class Chameleon, mengatur konstruksi Chameleon
+ *         Class Penguin, mengatur konstruksi Penguin
  */
-public class Chameleon extends LandAnimal {
+public class Penguin extends Amphibian {
   /**
    * Mengatur konstruksi animal dengan spesifikasi yang sudah ditentukan
    */
-  public Chameleon() {
-    super();
+  public Penguin() {
+    super(true, false, true);
     weight = 1;
     foodWeight = 1;
     foodType = 2;
-    type = 16;
+    type = 24;
     cEnemy = 0;
-    sound = "Scrook...";
-    code = '}';
+    sound = "*waaaah*";
+    code = '|';
   }
 }
 

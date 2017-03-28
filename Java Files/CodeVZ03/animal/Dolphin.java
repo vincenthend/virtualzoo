@@ -1,8 +1,8 @@
+package animal;
 /**
  * @author Vincent Hendryanto H/13515089
- * Class Dolphin, mengatur konstruksi Dolphin
+ *         Class Dolphin, mengatur konstruksi Dolphin
  */
-package animal;
 public class Dolphin extends WaterAnimal {
   /**
    * Mengatur konstruksi animal dengan spesifikasi yang sudah ditentukan
