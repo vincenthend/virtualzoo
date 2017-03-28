@@ -169,7 +169,6 @@ public class Zoo {
    */
   public int countFoodHerbivore() {
     int i, sum;
-    i = 0;
     sum = 0;
     for (i = 0; i < nCage; i++) {
       sum += cageList[i].countFoodHerbivore();
@@ -183,7 +182,6 @@ public class Zoo {
    */
   public int countFoodCarnivore() {
     int i, sum;
-    i = 0;
     sum = 0;
     for (i = 0; i < nCage; i++) {
       sum += cageList[i].countFoodCarnivore();
@@ -197,7 +195,6 @@ public class Zoo {
    */
   public int countFoodOmnivore() {
     int i, sum;
-    i = 0;
     sum = 0;
     for (i = 0; i < nCage; i++) {
       sum += cageList[i].countFoodOmnivore();

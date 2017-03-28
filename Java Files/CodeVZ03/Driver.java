@@ -24,6 +24,8 @@ public class Driver {
   /**
    * Inisialisasi driver dengan membaca dari file inputFile
    * Memasukkan data animal, habitat dari inputFile ke z dan menginisiasi cage
+   *
+   * @param inputFile Nama file input
    */
   public Driver(String inputFile) {
     try {
@@ -202,10 +204,11 @@ public class Driver {
   }
   /**
    * Main Program
+   *
+   * @param args Parameter saat eksekusi program
    */
   public static void main(String[] args) {
     Driver D = new Driver("resource/map.txt");
-
     D.printMenu();
   }
   /**
@@ -225,10 +228,8 @@ public class Driver {
       System.out.println("2. Mulai Tour");
       System.out.println("9. Keluar");
       System.out.println("Pilihan : ");
-
       choice = in.nextInt();
       in.nextLine();
-
       if (choice == 1) {
         do {
           System.out.println("=========================================");
@@ -240,7 +241,6 @@ public class Driver {
           System.out.println("Pilihan : ");
           choice = in.nextInt();
           in.nextLine();
-
           if (choice == 1) {
             printZoo();
             printStatus();
@@ -269,7 +269,6 @@ public class Driver {
       }
       else if (choice == 2) {
         startTour();
-
       }
     } while (choice != 9);
   }
@@ -325,6 +324,9 @@ public class Driver {
    * Menuliskan peta kebun binatang dengan posisi tour di x, y
    * I. S.: Sembarang
    * F. S.: Peta kebun binatang tertulis di layar
+   *
+   * @param x Posisi absis tour
+   * @param y Posisi ordinat tour
    */
   public void printZoo(int x, int y) {
     int i, j;
@@ -363,8 +365,13 @@ public class Driver {
   }
   /**
    * Menuliskan peta kebun binatang dari range x1-x2,y1-y2
-   * I. S.: x1 <= x2, y1 <= y2
+   * I. S.: x1 lebih kecil dari x2, y1 lebih kecil dari y2
    * F. S.: Peta kebun binatang tertulis di layar
+   *
+   * @param x1 Titik mulai x
+   * @param x2 Titik akhir x
+   * @param y1 Titik mulai y
+   * @param y2 Titik akhir y
    */
   public void printZoo(int x1, int x2, int y1, int y2) {
     int i, j;
@@ -435,7 +442,6 @@ public class Driver {
       printZoo(j, i);
       printStatus();
       System.out.println("(" + i + "," + j + ")" + c.getCellId());
-
       //interact
       if (((j - 1) >= 0) && (move != 3)) {
         c = z.getCell(i, j - 1);
@@ -542,6 +548,5 @@ public class Driver {
       }
       c = z.getCell(i, j);
     }
-
   }
 }

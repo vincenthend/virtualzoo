@@ -5,7 +5,11 @@ import org.junit.Test;
 
 import static org.junit.Assert.assertEquals;
 
-public class TestAnimal
+/**
+ * @author Alif Ijlal Wafi / 13515122
+ * Testclass for Animal etc
+ */
+public class AnimalTest
 {
 	@Test
 	public void InitialAssertTest1()
