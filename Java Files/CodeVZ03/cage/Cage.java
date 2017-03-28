@@ -70,7 +70,7 @@ public class Cage {
    *
    * @return nilai cageId
    */
-  public int getCageID() {
+  public int getCageId() {
     return cageId;
   }
   /**
@@ -80,7 +80,7 @@ public class Cage {
    *
    * @param n Nilai untuk cageId
    */
-  public void setCageID(int n) {
+  public void setCageId(int n) {
     cageId = n;
   }
   /**

@@ -15,7 +15,7 @@ public class CageTest {
   public void testCtor() {
     System.out.println("Testing Cage constructor...");
     Cage C = new Cage();
-    assertTrue(C.getCageID() == -1);
+    assertTrue(C.getCageId() == -1);
     assertTrue(C.getCageType() == 0);
     assertTrue(C.isFull());
   }
@@ -23,8 +23,8 @@ public class CageTest {
   public void testSetter() {
     System.out.println("Testing Cage setter...");
     Cage C = new Cage();
-    C.setCageID(5);
-    assertTrue(C.getCageID() == 5);
+    C.setCageId(5);
+    assertTrue(C.getCageId() == 5);
   }
   @Test
   public void testOther() {
