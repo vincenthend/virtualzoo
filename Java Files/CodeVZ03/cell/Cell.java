@@ -81,4 +81,12 @@ public abstract class Cell implements Renderable {
   public int getLocationY() {
     return locY;
   }
+  /**
+   * Mengembalikan apakah cell adalah habitat atau bukan
+   *
+   * @return true jika habitat, false jika bukan
+   */
+  public boolean isHabitat() {
+    return (cellId >= 11 && cellId <= 13);
+  }
 }
