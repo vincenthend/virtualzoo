@@ -1,11 +1,13 @@
 package animal;
+
 /**
+ * Class Chicken, mengatur konstruksi Chicken.
  * @author Vincent Hendryanto H/13515089
- *         Class Chicken, mengatur konstruksi Chicken
  */
 public class Chicken extends LandAnimal {
+
   /**
-   * Mengatur konstruksi animal dengan spesifikasi yang sudah ditentukan
+   * Mengatur konstruksi animal dengan spesifikasi yang sudah ditentukan.
    */
   public Chicken() {
     super();
@@ -13,7 +15,7 @@ public class Chicken extends LandAnimal {
     foodWeight = 1;
     foodType = 3;
     type = 8;
-    cEnemy = 0;
+    countEnemy = 0;
     sound = "Cock-a-doodle-doo!";
     code = '*';
   }

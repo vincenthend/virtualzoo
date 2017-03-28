@@ -1,56 +1,64 @@
 package zoo;
+
 import cage.Cage;
 import cell.Cell;
 
 /**
+ * Class Zoo, mengatur konstruksi zoo dan penambahan animal/cage.
  * @author Alif Ijlal W / 13515122
- *         Class Zoo, mengatur konstruksi zoo dan penambahan animal/cage
  */
 public class Zoo {
+
   private int width;
   private int height;
-  private int nCage;
-  private Cell cellList[][];
-  private Cage cageList[];
+  private int numCage;
+  private Cell[][] cellList;
+  private Cage[] cageList;
+
   /**
-   * Membuat Zoo dengan width 21 dan height 21
+   * Membuat Zoo dengan width 21 dan height 21.
    */
   public Zoo() {
-    nCage = 0;
+    numCage = 0;
     width = 21;
     height = 21;
     cellList = new Cell[width][height];
     cageList = new Cage[999];
   }
+
   /**
-   * Membuat Zoo dengan width w dan height h
+   * Membuat Zoo dengan width w dan height h.
    *
    * @param width Lebar zoo
    * @param height Tinggi zoo
    */
   public Zoo(int width, int height) {
-    nCage = 0;
+    numCage = 0;
     this.width = width;
     this.height = height;
     cellList = new Cell[width][this.height];
     cageList = new Cage[999];
   }
+
   /**
    * Melakukan penambahan cage untuk seluruh zoo
    * I. S.: Sembarang
    * F. S.: Seluruh cage dalam zoo dibuat dari habitat sejenis yang bersebelahan
    */
   public void addCage() {
-    int i, j;
+    int i;
+    int j;
     for (i = 0; i < height; i++) {
       for (j = 0; j < width; j++) {
-        if (cellList[i][j] != null)
+        if (cellList[i][j] != null) {
           if ((cellList[i][j].getCageId() == -1) && cellList[i][j].isHabitat()) {
             initCage(i, j);
           }
+        }
       }
     }
   }
+
   /**
    * Membuat sebuah cage baru
    * I. S.: Sembarang
@@ -60,44 +68,49 @@ public class Zoo {
    * @param y Posisi ordinat habitat di mana cage akan dibuat
    */
   public void initCage(int x, int y) {
-    cageList[nCage] = new Cage();
-    cageList[nCage].setCageId(nCage);
+    cageList[numCage] = new Cage();
+    cageList[numCage].setCageId(numCage);
     addToCage(x, y);
-    nCage++;
+    numCage++;
   }
+
   /**
-   * Memasukkan habitat yang bersebelahan ke cage
-   * I. S.: Cage sudah dibuat
-   * F. S.: Sebuah habitat dan habitat sejenis yang bersebelahan dengan habitat tersebut dimasukkan ke dalam cage
+   * Memasukkan habitat yang bersebelahan ke cage I. S.: Cage sudah dibuat F. S.: Sebuah habitat dan
+   * habitat sejenis yang bersebelahan dengan habitat tersebut dimasukkan ke dalam cage
    *
    * @param x Posisi absis habitat yang akan dimasukkan
    * @param y Posisi ordinat habitat yang akan dimasukkan
    */
   public void addToCage(int x, int y) {
-    cageList[nCage].addHabitat(cellList[x][y]);
+    cageList[numCage].addHabitat(cellList[x][y]);
     if (isInRange(x - 1, y) && cellList[x - 1][y] != null) {
-      if (cellList[x][y].getCellId() == cellList[x - 1][y].getCellId() && cellList[x - 1][y].getCageId() == -1) {
+      if (cellList[x][y].getCellId() == cellList[x - 1][y].getCellId()
+          && cellList[x - 1][y].getCageId() == -1) {
         addToCage(x - 1, y);
       }
     }
     if (isInRange(x + 1, y) && cellList[x + 1][y] != null) {
-      if (cellList[x][y].getCellId() == cellList[x + 1][y].getCellId() && cellList[x + 1][y].getCageId() == -1) {
+      if (cellList[x][y].getCellId() == cellList[x + 1][y].getCellId()
+          && cellList[x + 1][y].getCageId() == -1) {
         addToCage(x + 1, y);
       }
     }
     if (isInRange(x, y - 1) && cellList[x][y - 1] != null) {
-      if (cellList[x][y].getCellId() == cellList[x][y - 1].getCellId() && cellList[x][y - 1].getCageId() == -1) {
+      if (cellList[x][y].getCellId() == cellList[x][y - 1].getCellId()
+          && cellList[x][y - 1].getCageId() == -1) {
         addToCage(x, y - 1);
       }
     }
     if (isInRange(x, y + 1) && cellList[x][y + 1] != null) {
-      if (cellList[x][y].getCellId() == cellList[x][y + 1].getCellId() && cellList[x][y + 1].getCageId() == -1) {
+      if (cellList[x][y].getCellId() == cellList[x][y + 1].getCellId()
+          && cellList[x][y + 1].getCageId() == -1) {
         addToCage(x, y + 1);
       }
     }
   }
+
   /**
-   * Mengembalikan ada tidaknya cell x, y di dalam zoo
+   * Mengembalikan ada tidaknya cell x, y di dalam zoo.
    *
    * @param x Lokasi x cell
    * @param y Lokasi y cell
@@ -106,6 +119,7 @@ public class Zoo {
   public boolean isInRange(int x, int y) {
     return (x >= 0 && x < height && y >= 0 && y < width);
   }
+
   /**
    * Melakukan penambahan cell dengan cell C yang sudah dictor di tempat lain
    * I. S.: C terdefinisi, merupakan cell yang valid
@@ -113,29 +127,32 @@ public class Zoo {
    *
    * @param x Lokasi x Cell
    * @param y Lokasi y Cell
-   * @param C Cell yang akan ditambahkan
+   * @param c Cell yang akan ditambahkan
    */
-  public void addCell(int x, int y, Cell C) {
-    cellList[x][y] = C;
+  public void addCell(int x, int y, Cell c) {
+    cellList[x][y] = c;
   }
+
   /**
-   * Mengembalikan nilai width pada zoo
+   * Mengembalikan nilai width pada zoo.
    *
    * @return Nilai Width Zoo
    */
   public int getWidth() {
     return width;
   }
+
   /**
-   * Mengembalikan nilai height pada zoo
+   * Mengembalikan nilai height pada zoo.
    *
    * @return Nilai Height Zoo
    */
   public int getHeight() {
     return height;
   }
+
   /**
-   * Getter untuk cell dengan posisi x dan y
+   * Getter untuk cell dengan posisi x dan y.
    *
    * @param x Lokasi x Cell
    * @param y Lokasi y Cell
@@ -144,8 +161,9 @@ public class Zoo {
   public Cell getCell(int x, int y) {
     return cellList[x][y];
   }
+
   /**
-   * Getter untuk cage ke-n
+   * Getter untuk cage ke-n.
    *
    * @param n Nomor cage yang akan diambil
    * @return Alamat cage ke-n dalam memory
@@ -153,49 +171,53 @@ public class Zoo {
   public Cage getCage(int n) {
     return cageList[n];
   }
+
   /**
-   * Getter untuk jumlah cage
+   * Getter untuk jumlah cage.
    *
    * @return jumlah cage pada saat ini
    */
   public int getNCage() {
-    return nCage;
+    return numCage;
   }
+
   /**
-   * Menghitung total makanan herbivore dalam zoo
+   * Menghitung total makanan herbivore dalam zoo.
    *
    * @return total makanan herbivore
    */
   public int countFoodHerbivore() {
-    int i, sum;
-    sum = 0;
-    for (i = 0; i < nCage; i++) {
+    int i;
+    int sum = 0;
+    for (i = 0; i < numCage; i++) {
       sum += cageList[i].countFoodHerbivore();
     }
     return sum;
   }
+
   /**
-   * Menghitung total makanan carnivore dalam zoo
+   * Menghitung total makanan carnivore dalam zoo.
    *
    * @return total makanan carnivore
    */
   public int countFoodCarnivore() {
-    int i, sum;
-    sum = 0;
-    for (i = 0; i < nCage; i++) {
+    int i;
+    int sum = 0;
+    for (i = 0; i < numCage; i++) {
       sum += cageList[i].countFoodCarnivore();
     }
     return sum;
   }
+
   /**
-   * Menghitung total makanan omnivore dalam zoo
+   * Menghitung total makanan omnivore dalam zoo.
    *
    * @return total makanan omnivore
    */
   public int countFoodOmnivore() {
-    int i, sum;
-    sum = 0;
-    for (i = 0; i < nCage; i++) {
+    int i;
+    int sum = 0;
+    for (i = 0; i < numCage; i++) {
       sum += cageList[i].countFoodOmnivore();
     }
     return sum;

@@ -1,11 +1,13 @@
 package animal;
+
 /**
+ * Class Pelican, mengatur konstruksi Pelican.
  * @author Vincent Hendryanto H/13515089
- *         Class Pelican, mengatur konstruksi Pelican
  */
 public class Pelican extends AirAnimal {
+
   /**
-   * Mengatur konstruksi animal dengan spesifikasi yang sudah ditentukan
+   * Mengatur konstruksi animal dengan spesifikasi yang sudah ditentukan.
    */
   public Pelican() {
     super();
@@ -13,7 +15,7 @@ public class Pelican extends AirAnimal {
     foodWeight = 1;
     foodType = 2;
     type = 1;
-    cEnemy = 0;
+    countEnemy = 0;
     sound = "Kraoooo";
     code = '!';
   }
