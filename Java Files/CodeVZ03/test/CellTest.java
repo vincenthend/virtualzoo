@@ -9,7 +9,7 @@ import cell.habitat.WaterHabitat;
 import static org.junit.Assert.assertTrue;
 
 /**
- * @Author Adrian Mulyana N. / 13515075
+ * @author Adrian Mulyana N. / 13515075
  * Testclass for Cell dkk
  */
 public class CellTest {

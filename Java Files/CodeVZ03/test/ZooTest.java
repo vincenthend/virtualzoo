@@ -48,7 +48,7 @@ public class ZooTest {
   public void getCage() throws Exception {
     Zoo Z = new Zoo();
     System.out.println("Testing addCage - getCage");
-    Z.addCell(1,1,new AirHabitat(1,1));
+    Z.addCell(1, 1, new AirHabitat(1, 1));
     assertTrue(Z.getCage(0) == null);
     Z.addCage();
     assertTrue(Z.getCage(0) != null);
@@ -57,7 +57,7 @@ public class ZooTest {
   public void getNCage() throws Exception {
     Zoo Z = new Zoo();
     System.out.println("Testing getNCage");
-    Z.addCell(1,1,new AirHabitat(1,1));
+    Z.addCell(1, 1, new AirHabitat(1, 1));
     assertTrue(Z.getNCage() == 0);
     Z.addCage();
     assertTrue(Z.getNCage() == 1);
