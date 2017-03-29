@@ -1,11 +1,14 @@
 package animal;
+
 /**
+ * Class Canary, mengatur konstruksi Canary.
+ *
  * @author Vincent Hendryanto H/13515089
- *         Class Canary, mengatur konstruksi Canary
  */
 public class Canary extends AirAnimal {
+
   /**
-   * Mengatur konstruksi animal dengan spesifikasi yang sudah ditentukan
+   * Mengatur konstruksi animal dengan spesifikasi yang sudah ditentukan.
    */
   public Canary() {
     super();
@@ -13,7 +16,7 @@ public class Canary extends AirAnimal {
     foodWeight = 1;
     foodType = 1;
     type = 4;
-    cEnemy = 0;
+    countEnemy = 0;
     sound = "Kweee";
     code = '$';
   }
