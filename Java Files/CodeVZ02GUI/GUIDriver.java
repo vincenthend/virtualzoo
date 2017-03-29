@@ -4,16 +4,16 @@ import java.awt.Button;
 import java.awt.GridBagConstraints;
 import java.awt.GridBagLayout;
 import java.awt.GridLayout;
+import java.awt.event.ActionEvent;
 import java.io.BufferedReader;
 import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.io.IOException;
 import java.util.Random;
 import java.util.Scanner;
-import javax.swing.BorderFactory;
-import javax.swing.JFrame;
-import javax.swing.JLabel;
-import javax.swing.JPanel;
+import java.util.concurrent.TimeUnit;
+import javax.swing.*;
+
 import zoo.Zoo;
 
 /**
@@ -30,6 +30,7 @@ public class GUIDriver {
   private JPanel buttonPane;
   private JLabel[][] mapLabel;
   private JLabel interactLabel;
+  private boolean nextStep;
 
 
   /**
@@ -153,18 +154,28 @@ public class GUIDriver {
     mainWindow.add(buttonPane);
     mainWindow.setVisible(true);
 
+    //Action Button
+    startTour.addActionListener(new java.awt.event.ActionListener () {
+      public void actionPerformed (java.awt.event.ActionEvent evt) {
+        try {
+          startTourClick ();
+        } catch (InterruptedException e) {
+          e.printStackTrace();
+        }
+      }
+    });
     interactLabel = new JLabel("",JLabel.CENTER);
     interactLabel.setSize(350,100);
-    Button stepTour = new Button("Step");
-    buttonPane.add(stepTour);
   }
-
+  private void startTourClick() throws InterruptedException {
+    startTour();
+  }
   /**
    * Menuliskan menu ke layar, menerima pilihan menu dan mengeksekusi pilihan
    * I. S.: Sembarang
    * F. S.: Menu tertulis di layar, pilihan diterima dan dieksekusi
    */
-  public void printMenu() {
+  public void printMenu() throws InterruptedException {
     int choice;
     int x1;
     int x2;
@@ -313,7 +324,7 @@ public class GUIDriver {
         c.gridx = j;
         c.gridy = i;
         if(j==x && i==y){
-          mapLabel[i][j] = new JLabel("X");
+          symbol = "X";
         }
         else {
           cell = zoo.getCell(i, j);
@@ -392,7 +403,7 @@ public class GUIDriver {
    * I. S.: Sembarang
    * F. S.: Perjalanan tour kebun binatang tertulis di layar
    */
-  public void startTour() {
+  public void startTour() throws InterruptedException {
     int[] availMove = new int[4];
     int[] tx = new int[10];
     int[] ty = new int[10];
@@ -424,7 +435,10 @@ public class GUIDriver {
     boolean walk = true;
     while (c.getCellId() != 211 && walk) {
       //Print Zoo
+      mainWindow.remove(zooMap);
       printZoo(j, i);
+      mainWindow.add(zooMap);
+      mainWindow.repaint();
       printStatus();
       System.out.println("(" + i + "," + j + ")" + c.getCellId());
       //interact
@@ -528,6 +542,7 @@ public class GUIDriver {
         walk = false;
       }
       c = zoo.getCell(i, j);
+      TimeUnit.SECONDS.sleep(1);
     }
   }
 }
