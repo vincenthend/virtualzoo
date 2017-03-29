@@ -160,7 +160,12 @@ public class GUIDriver {
       public void actionPerformed(java.awt.event.ActionEvent evt) {
         try {
           startTourClick();
+
+          //Reinitialize window
           mainWindow.getContentPane().removeAll();
+          printZoo();
+          mainWindow.add(zooMap);
+          mainWindow.add(buttonPane);
           mainWindow.revalidate();
           mainWindow.repaint();
           mainWindow.setVisible(true);
@@ -304,18 +309,18 @@ public class GUIDriver {
     int[] availMove = new int[4];
     int[] tx = new int[10];
     int[] ty = new int[10];
-    final Cell[] c = {null};
-    final Animal[] a = new Animal[1];
+    Cell c = null;
+    Animal a = null;
     int tc = 0;
-    final int[] i = new int[1];
-    final int[] j = new int[1];
-    for (i[0] = 0; i[0] < zoo.getWidth(); i[0]++) {
-      for (j[0] = 0; j[0] < zoo.getHeight(); j[0]++) {
-        c[0] = zoo.getCell(i[0], j[0]);
-        if (c[0] != null) {
-          if (c[0].getCellId() == 210) {
-            tx[tc] = i[0];
-            ty[tc] = j[0];
+    int i;
+    int j;
+    for (i = 0; i < zoo.getWidth(); i++) {
+      for (j = 0; j < zoo.getHeight(); j++) {
+        c = zoo.getCell(i, j);
+        if (c != null) {
+          if (c.getCellId() == 210) {
+            tx[tc] = i;
+            ty[tc] = j;
             tc++;
           }
         }
@@ -323,140 +328,131 @@ public class GUIDriver {
     }
     Random rand = new Random(System.currentTimeMillis());
     int temp = Math.abs((rand.nextInt() % (tc)));
-    final int[] move = {0};
-    final int[] cntMove = new int[1];
-    i[0] = tx[temp];
-    j[0] = ty[temp];
-    final boolean[] walk = {true};
-    final Container[] container = {null};
+    int move = 0;
+    int cntMove = 0;
+    i = tx[temp];
+    j = ty[temp];
+    boolean walk = true;
+    Container container = null;
 
-    int delay = 20;
-    Timer timer = new Timer(delay, null);
-    timer.addActionListener(new ActionListener() {
-      public void actionPerformed(ActionEvent e) {
-        if (c[0].getCellId() == 211 || !walk[0]) {
-          timer.stop();
-        } else {
-          //Print Map
+    while (c.getCellId() != 211 && walk) {
+      //Print Map
+      container = mainWindow.getContentPane();
+      container.removeAll();
 
-          container[0] = mainWindow.getContentPane();
-          container[0].removeAll();
+      //Print Zoo
+      printZoo(j, i);
+      container.add(zooMap);
 
-          //Print Zoo
-          printZoo(j[0], i[0]);
-          container[0].add(zooMap);
+      mainWindow.setVisible(true);
+      mainWindow.revalidate();
+      mainWindow.repaint();
+      printStatus();
 
-          mainWindow.setVisible(true);
-          mainWindow.revalidate();
-          mainWindow.repaint();
-          printStatus();
-
-          System.out.println("(" + i[0] + "," + j[0] + ")" + c[0].getCellId());
-          //interact
-          if (((j[0] - 1) >= 0) && (move[0] != 3)) {
-            c[0] = zoo.getCell(i[0], j[0] - 1);
-            if (c[0] != null) {
-              if ((c[0].getCellId() >= 11) && (c[0].getCellId() <= 13)) {
-                if (c[0].getCageId() > -1) {
-                  a[0] = zoo.getCage(c[0].getCageId()).isSpaceOccupied(i[0], j[0] - 1);
-                  if (a[0] != null) {
-                    a[0].interact();
-                  }
-                }
+      System.out.println("(" + i + "," + j + ")" + c.getCellId());
+      //interact
+      if (((j - 1) >= 0) && (move != 3)) {
+        c = zoo.getCell(i, j - 1);
+        if (c != null) {
+          if ((c.getCellId() >= 11) && (c.getCellId() <= 13)) {
+            if (c.getCageId() > -1) {
+              a = zoo.getCage(c.getCageId()).isSpaceOccupied(i, j - 1);
+              if (a != null) {
+                a.interact();
               }
             }
           }
-          if (((i[0] + 1) < zoo.getHeight()) && (move[0] != 4)) {
-            c[0] = zoo.getCell(i[0] + 1, j[0]);
-            if (c[0] != null) {
-              if ((c[0].getCellId() >= 11) && (c[0].getCellId() <= 13)) {
-                if (c[0].getCageId() > -1) {
-                  a[0] = zoo.getCage(c[0].getCageId()).isSpaceOccupied(i[0] + 1, j[0]);
-                  if (a[0] != null) {
-                    a[0].interact();
-                  }
-                }
-              }
-            }
-          }
-          if (((j[0] + 1) < zoo.getWidth()) && (move[0] != 1)) {
-            c[0] = zoo.getCell(i[0], j[0] + 1);
-            if (c[0] != null) {
-              if ((c[0].getCellId() >= 11) && (c[0].getCellId() <= 13)) {
-                if (c[0].getCageId() > -1) {
-                  a[0] = zoo.getCage(c[0].getCageId()).isSpaceOccupied(i[0], j[0] + 1);
-                  if (a[0] != null) {
-                    a[0].interact();
-                  }
-                }
-              }
-            }
-          }
-          if (((i[0] - 1) >= 0) && (move[0] != 2)) {
-            c[0] = zoo.getCell(i[0] - 1, j[0]);
-            if (c[0] != null) {
-              if ((c[0].getCellId() >= 11) && (c[0].getCellId() <= 13)) {
-                if (c[0].getCageId() > -1) {
-                  a[0] = zoo.getCage(c[0].getCageId()).isSpaceOccupied(i[0] - 1, j[0]);
-                  if (a[0] != null) {
-                    a[0].interact();
-                  }
-                }
-              }
-            }
-          }
-          cntMove[0] = 0;
-          if (((j[0] - 1) >= 0) && (move[0] != 3)) {
-            c[0] = zoo.getCell(i[0], j[0] - 1);
-            if (c[0].getCellId() == 21 || c[0].getCellId() == 211) {
-              availMove[cntMove[0]] = 1;
-              cntMove[0]++;
-            }
-          }
-          if (((i[0] + 1) < zoo.getHeight()) && (move[0] != 4)) {
-            c[0] = zoo.getCell(i[0] + 1, j[0]);
-            if (c[0].getCellId() == 21 || c[0].getCellId() == 211) {
-              availMove[cntMove[0]] = 2;
-              cntMove[0]++;
-            }
-          }
-          if (((j[0] + 1) < zoo.getWidth()) && (move[0] != 1)) {
-            c[0] = zoo.getCell(i[0], j[0] + 1);
-            if (c[0].getCellId() == 21 || c[0].getCellId() == 211) {
-              availMove[cntMove[0]] = 3;
-              cntMove[0]++;
-            }
-          }
-          if (((i[0] - 1) >= 0) && (move[0] != 2)) {
-            c[0] = zoo.getCell(i[0] - 1, j[0]);
-            if (c[0].getCellId() == 21 || c[0].getCellId() == 211) {
-              availMove[cntMove[0]] = 4;
-              cntMove[0]++;
-            }
-          }
-          if (cntMove[0] > 0) {
-            move[0] = availMove[Math.abs((rand.nextInt() % cntMove[0]))];
-            if (move[0] == 1) {
-              j[0]--;
-            } else {
-              if (move[0] == 2) {
-                i[0]++;
-              } else {
-                if (move[0] == 3) {
-                  j[0]++;
-                } else {
-                  i[0]--;
-                }
-              }
-            }
-          } else {
-            walk[0] = false;
-          }
-          c[0] = zoo.getCell(i[0], j[0]);
         }
       }
-    });
-    timer.start();
-    container[0].add(buttonPane);
+      if (((i + 1) < zoo.getHeight()) && (move != 4)) {
+        c = zoo.getCell(i + 1, j);
+        if (c != null) {
+          if ((c.getCellId() >= 11) && (c.getCellId() <= 13)) {
+            if (c.getCageId() > -1) {
+              a = zoo.getCage(c.getCageId()).isSpaceOccupied(i + 1, j);
+              if (a != null) {
+                a.interact();
+              }
+            }
+          }
+        }
+      }
+      if (((j + 1) < zoo.getWidth()) && (move != 1)) {
+        c = zoo.getCell(i, j + 1);
+        if (c != null) {
+          if ((c.getCellId() >= 11) && (c.getCellId() <= 13)) {
+            if (c.getCageId() > -1) {
+              a = zoo.getCage(c.getCageId()).isSpaceOccupied(i, j + 1);
+              if (a != null) {
+                a.interact();
+              }
+            }
+          }
+        }
+      }
+      if (((i - 1) >= 0) && (move != 2)) {
+        c = zoo.getCell(i - 1, j);
+        if (c != null) {
+          if ((c.getCellId() >= 11) && (c.getCellId() <= 13)) {
+            if (c.getCageId() > -1) {
+              a = zoo.getCage(c.getCageId()).isSpaceOccupied(i - 1, j);
+              if (a != null) {
+                a.interact();
+              }
+            }
+          }
+        }
+      }
+      cntMove = 0;
+      if (((j - 1) >= 0) && (move != 3)) {
+        c = zoo.getCell(i, j - 1);
+        if (c.getCellId() == 21 || c.getCellId() == 211) {
+          availMove[cntMove] = 1;
+          cntMove++;
+        }
+      }
+      if (((i + 1) < zoo.getHeight()) && (move != 4)) {
+        c = zoo.getCell(i + 1, j);
+        if (c.getCellId() == 21 || c.getCellId() == 211) {
+          availMove[cntMove] = 2;
+          cntMove++;
+        }
+      }
+      if (((j + 1) < zoo.getWidth()) && (move != 1)) {
+        c = zoo.getCell(i, j + 1);
+        if (c.getCellId() == 21 || c.getCellId() == 211) {
+          availMove[cntMove] = 3;
+          cntMove++;
+        }
+      }
+      if (((i - 1) >= 0) && (move != 2)) {
+        c = zoo.getCell(i - 1, j);
+        if (c.getCellId() == 21 || c.getCellId() == 211) {
+          availMove[cntMove] = 4;
+          cntMove++;
+        }
+      }
+      if (cntMove > 0) {
+        move = availMove[Math.abs((rand.nextInt() % cntMove))];
+        if (move == 1) {
+          j--;
+        } else {
+          if (move == 2) {
+            i++;
+          } else {
+            if (move == 3) {
+              j++;
+            } else {
+              i--;
+            }
+          }
+        }
+      } else {
+        walk = false;
+      }
+      c = zoo.getCell(i, j);
+    }
+
+    container.add(buttonPane);
   }
 }
