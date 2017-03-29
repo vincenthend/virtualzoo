@@ -1,11 +1,14 @@
 package animal;
+
 /**
+ * Class Eagle, mengatur konstruksi Eagle.
+ *
  * @author Vincent Hendryanto H/13515089
- *         Class Eagle, mengatur konstruksi Eagle
  */
 public class Eagle extends AirAnimal {
+
   /**
-   * Mengatur konstruksi animal dengan spesifikasi yang sudah ditentukan
+   * Mengatur konstruksi animal dengan spesifikasi yang sudah ditentukan.
    */
   public Eagle() {
     super();
@@ -13,7 +16,7 @@ public class Eagle extends AirAnimal {
     foodWeight = 1;
     foodType = 2;
     type = 6;
-    cEnemy = 0;
+    countEnemy = 0;
     sound = "Squawk!";
     code = '^';
   }

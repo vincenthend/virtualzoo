@@ -1,11 +1,14 @@
 package animal;
+
 /**
+ * Class Goldfish, mengatur konstruksi Goldfish.
+ *
  * @author Vincent Hendryanto H/13515089
- *         Class Goldfish, mengatur konstruksi Goldfish
  */
 public class Goldfish extends WaterAnimal {
+
   /**
-   * Mengatur konstruksi animal dengan spesifikasi yang sudah ditentukan
+   * Mengatur konstruksi animal dengan spesifikasi yang sudah ditentukan.
    */
   public Goldfish() {
     super();
@@ -13,7 +16,7 @@ public class Goldfish extends WaterAnimal {
     foodWeight = 1;
     foodType = 2;
     type = 20;
-    cEnemy = 0;
+    countEnemy = 0;
     sound = "*glub glub*";
     code = '/';
   }
